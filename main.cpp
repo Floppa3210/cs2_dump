@@ -24,10 +24,10 @@
 #include "include/rtti_dump.hpp"
 #include "include/convar_dump.hpp"
 #include "include/vtable_dump.hpp"
+#include "include/pipeline_compat.hpp"
 
 // Schema System (E1-E5 implementation)
 #include "schemas.hpp"
-#include "schema_export.hpp"
 #include "schema_dump.hpp"
 #include "include/schema_tools.hpp"
 
@@ -114,76 +114,78 @@ uintptr_t ResolveRelativeAddress(uintptr_t address, int offset, int instrSize) {
 std::vector<FoundOffset> g_FoundOffsets;
 std::map<std::string, std::vector<FoundInterface>> g_Interfaces;
 std::vector<FoundButton> g_FoundButtons;
+std::vector<ComponentInfo> g_ComponentGraph;
 std::vector<ModuleExport> g_ModuleExports;
 std::vector<RTTIClass> g_RTTIClasses;
 std::vector<ConVar> g_ConVars;
 std::vector<VTable> g_VTables;
-std::vector<ComponentInfo> g_ComponentGraph;
 
 std::string g_OutputPath;
 
+namespace {
+constexpr bool kEnableButtonScan = true;
+constexpr bool kEnableInterfaceDump = true;
+constexpr bool kEnableExportDump = true;
+constexpr bool kEnableRTTIDump = true;
+constexpr bool kEnableConVarDump = true;
+constexpr bool kEnableVTableDump = true;
+} // namespace
 
-void WriteSummaryJson() {
-    std::ofstream out(g_OutputPath + "/meta/summary.json");
-    if (!out.is_open()) return;
-
-    int totalInterfaces = 0;
-    for (auto& [mod, ifaces] : g_Interfaces) totalInterfaces += (int)ifaces.size();
-
-    int totalSchemaClasses = 0;
-    int totalSchemaFields = 0;
-    int totalSchemaEnums = 0;
-    for (auto& [scope, classes] : g_SchemaClasses) {
-        totalSchemaClasses += (int)classes.size();
-        for (auto& cls : classes) totalSchemaFields += (int)cls.fields.size();
-    }
-    for (auto& [scope, enums] : g_SchemaEnums) totalSchemaEnums += (int)enums.size();
-
-    out << "{\n";
-    out << "  \"offsets\": " << g_FoundOffsets.size() << ",\n";
-    out << "  \"buttons\": " << g_FoundButtons.size() << ",\n";
-    out << "  \"interfaces\": " << totalInterfaces << ",\n";
-    out << "  \"exports\": " << g_ModuleExports.size() << ",\n";
-    out << "  \"rtti_classes\": " << g_RTTIClasses.size() << ",\n";
-    out << "  \"convars\": " << g_ConVars.size() << ",\n";
-    out << "  \"vtables\": " << g_VTables.size() << ",\n";
-    out << "  \"schema_classes\": " << totalSchemaClasses << ",\n";
-    out << "  \"schema_enums\": " << totalSchemaEnums << ",\n";
-    out << "  \"schema_fields\": " << totalSchemaFields << "\n";
-    out << "}\n";
-    out.close();
-
-    g_Logger.Success("Output", "meta/summary.json written");
-}
 // ============================================================================
 // MAIN DUMP FUNCTION
 // ============================================================================
 
 void DumpAll() {
     try {
-        // Create output directories (organized like a2x + more)
+        // Create output directories (focused a2x-style layout)
         char userProfile[MAX_PATH];
         GetEnvironmentVariableA("USERPROFILE", userProfile, MAX_PATH);
         g_OutputPath = std::string(userProfile) + "\\Documents\\CS2_Dump";
+
+        // Always start from a clean output directory to avoid stale extraction data.
+        try {
+            const std::filesystem::path outputPath(g_OutputPath);
+            const std::string pathLower = [] (std::string s) {
+                std::transform(s.begin(), s.end(), s.begin(), [](unsigned char c) {
+                    return static_cast<char>(std::tolower(c));
+                });
+                return s;
+            }(outputPath.string());
+
+            // Safety guard: only allow cleanup of the intended dump folder.
+            if (pathLower.find("cs2_dump") != std::string::npos && std::filesystem::exists(outputPath)) {
+                std::filesystem::remove_all(outputPath);
+            }
+        } catch (const std::exception& e) {
+            MessageBoxA(NULL, (std::string("Failed to clean output directory:\n") + e.what()).c_str(),
+                "Error", MB_OK | MB_ICONERROR);
+            return;
+        }
         
-        std::string patternsPath = g_OutputPath + "\\patterns";
-        std::string interfacesPath = g_OutputPath + "\\interfaces";
-        std::string offsetsPath = g_OutputPath + "\\offsets";
-        std::string rttiPath = g_OutputPath + "\\rtti";
-        std::string schemasPath = g_OutputPath + "\\schemas";
-        std::string sdkPath = g_OutputPath + "\\sdk";
         std::string logsPath = g_OutputPath + "\\logs";
+        std::string a2xOutputPath = g_OutputPath + "\\output";
+        std::string schemasPath = g_OutputPath + "\\schemas";
+        std::string exportsPath = g_OutputPath + "\\exports";
+        std::string rttiPath = g_OutputPath + "\\rtti";
+        std::string convarsPath = g_OutputPath + "\\convars";
+        std::string vtablesPath = g_OutputPath + "\\vtables";
+        std::string sdkPath = g_OutputPath + "\\sdk";
+        std::string docsPath = g_OutputPath + "\\docs";
+        std::string versionsPath = g_OutputPath + "\\versions";
         std::string metaPath = g_OutputPath + "\\meta";
         
         try {
             std::filesystem::create_directories(g_OutputPath);
-            std::filesystem::create_directories(patternsPath);
-            std::filesystem::create_directories(interfacesPath);
-            std::filesystem::create_directories(offsetsPath);
-            std::filesystem::create_directories(rttiPath);
-            std::filesystem::create_directories(schemasPath);
-            std::filesystem::create_directories(sdkPath);
             std::filesystem::create_directories(logsPath);
+            std::filesystem::create_directories(a2xOutputPath);
+            std::filesystem::create_directories(schemasPath);
+            std::filesystem::create_directories(exportsPath);
+            std::filesystem::create_directories(rttiPath);
+            std::filesystem::create_directories(convarsPath);
+            std::filesystem::create_directories(vtablesPath);
+            std::filesystem::create_directories(sdkPath);
+            std::filesystem::create_directories(docsPath);
+            std::filesystem::create_directories(versionsPath);
             std::filesystem::create_directories(metaPath);
         } catch (const std::exception& e) {
             g_Logger.Error("Main", std::string("Failed to create directories: ") + e.what());
@@ -200,14 +202,6 @@ void DumpAll() {
     g_Logger.Info("Main", "=== MODULE ENUMERATION ===");
     GetLoadedModules();
     
-    // Scan exports
-    try {
-        g_Logger.Info("Main", "=== EXPORT SCANNING ===");
-        ScanExports();
-    } catch (const std::exception& e) {
-        g_Logger.Error("Main", std::string("Export scanning failed: ") + e.what());
-    }
-
     // Scan patterns
     g_Logger.Info("Main", "=== PATTERN SCANNING ===");
     ScanPatterns(g_ClientPatterns, sizeof(g_ClientPatterns)/sizeof(g_ClientPatterns[0]), "client.dll");
@@ -275,42 +269,77 @@ void DumpAll() {
         }
     }
     
-    // Scan buttons - DISABLED (causes freeze, function is in commented code block)
-    /*
-    try {
-        g_Logger.Info("Main", "=== BUTTON SCANNING ===");
-        ScanButtons();
-    } catch (const std::exception& e) {
-        g_Logger.Error("Main", std::string("Button scanning failed: ") + e.what());
+    if (kEnableButtonScan) {
+        try {
+            g_Logger.Info("Main", "=== BUTTON SCANNING ===");
+            ScanButtons();
+        } catch (const std::exception& e) {
+            g_Logger.Error("Main", std::string("Button scanning failed: ") + e.what());
+        }
+    } else {
+        g_Logger.Warning("Main", "Button scanning skipped (disabled)");
     }
-    */
-    g_Logger.Warning("Main", "Button scanning skipped (disabled - function unavailable)");
-    
-    
-    // Dump interfaces - DISABLED (causes freeze)
-    /*
-    g_Logger.Info("Main", "=== INTERFACE DUMPING ===");
-    const char* interfaceModules[] = {
-        "client.dll", "engine2.dll", "schemasystem.dll", "tier0.dll",
-        "inputsystem.dll", "materialsystem2.dll", "scenesystem.dll",
-        "resourcesystem.dll", "particles.dll", "rendersystemdx11.dll",
-        "networksystem.dll", "panorama.dll", "vphysics2.dll",
-        "soundsystem.dll", "animationsystem.dll", "host.dll",
-        "matchmaking.dll", "localize.dll", "filesystem_stdio.dll"
-    };
-    
-    for (auto& modName : interfaceModules) {
-        DumpInterfaces(modName);
+
+    if (kEnableInterfaceDump) {
+        g_Logger.Info("Main", "=== INTERFACE DUMPING ===");
+        const char* interfaceModules[] = {
+            "client.dll", "engine2.dll", "schemasystem.dll", "tier0.dll",
+            "inputsystem.dll", "materialsystem2.dll", "scenesystem.dll",
+            "resourcesystem.dll", "particles.dll", "rendersystemdx11.dll",
+            "networksystem.dll", "panorama.dll", "vphysics2.dll",
+            "soundsystem.dll", "animationsystem.dll", "host.dll",
+            "matchmaking.dll", "localize.dll", "filesystem_stdio.dll"
+        };
+
+        for (const char* modName : interfaceModules) {
+            DumpInterfaces(modName);
+        }
+    } else {
+        g_Logger.Warning("Main", "Interface dumping skipped (disabled)");
     }
-    */
-    g_Logger.Warning("Main", "Interface dumping skipped (disabled)");
-    
-    // Scan RTTI classes
-    try {
-        g_Logger.Info("Main", "=== RTTI SCANNING ===");
-        ScanRTTI();
-    } catch (const std::exception& e) {
-        g_Logger.Error("Main", std::string("RTTI scanning failed: ") + e.what());
+
+    if (kEnableExportDump) {
+        try {
+            g_Logger.Info("Main", "=== EXPORT SCANNING ===");
+            ScanExports();
+        } catch (const std::exception& e) {
+            g_Logger.Error("Main", std::string("Export scan failed: ") + e.what());
+        }
+    } else {
+        g_Logger.Warning("Main", "Export scanning skipped (disabled)");
+    }
+
+    if (kEnableRTTIDump) {
+        try {
+            g_Logger.Info("Main", "=== RTTI SCANNING ===");
+            ScanRTTI();
+        } catch (const std::exception& e) {
+            g_Logger.Error("Main", std::string("RTTI scan failed: ") + e.what());
+        }
+    } else {
+        g_Logger.Warning("Main", "RTTI scanning skipped (disabled)");
+    }
+
+    if (kEnableConVarDump) {
+        try {
+            g_Logger.Info("Main", "=== CONVAR SCANNING ===");
+            ScanConVars();
+        } catch (const std::exception& e) {
+            g_Logger.Error("Main", std::string("ConVar scan failed: ") + e.what());
+        }
+    } else {
+        g_Logger.Warning("Main", "ConVar scanning skipped (disabled)");
+    }
+
+    if (kEnableVTableDump) {
+        try {
+            g_Logger.Info("Main", "=== VTABLE SCANNING ===");
+            ScanVTables();
+        } catch (const std::exception& e) {
+            g_Logger.Error("Main", std::string("VTable scan failed: ") + e.what());
+        }
+    } else {
+        g_Logger.Warning("Main", "VTable scanning skipped (disabled)");
     }
     
     // Dump schemas (pattern-based, safe)
@@ -319,7 +348,6 @@ void DumpAll() {
         auto schemaMod = FindModule("schemasystem.dll");
         if (schemaMod) {
             DumpSchemas(schemaMod->base, schemaMod->size);
-            WriteSchemaJSON(g_OutputPath);
         } else {
             g_Logger.Warning("Schemas", "schemasystem.dll not found - skipping schema extraction");
         }
@@ -327,13 +355,13 @@ void DumpAll() {
         g_Logger.Error("Main", std::string("Schema extraction failed: ") + e.what());
     }
     
-    // Build schema index and link to RTTI
+    // Build schema index
     try {
-        g_Logger.Info("Main", "=== LINKING DATA SOURCES ===");
+        g_Logger.Info("Main", "=== BUILDING SCHEMA INDEX ===");
         BuildSchemaIndex();
         LinkRTTIToSchemas();
     } catch (const std::exception& e) {
-        g_Logger.Error("Main", std::string("Data linking failed: ") + e.what());
+        g_Logger.Error("Main", std::string("Schema index build failed: ") + e.what());
     }
     
     // Advanced engine modeling
@@ -341,71 +369,37 @@ void DumpAll() {
     FlattenInheritance();
     DetectComponents();
     
-    // Scan ConVars
-    try {
-        g_Logger.Info("Main", "=== CONVAR SCANNING ===");
-        ScanConVars();
-    } catch (const std::exception& e) {
-        g_Logger.Error("Main", std::string("ConVar scanning failed: ") + e.what());
-    }
-    
-    // Scan VTables
-    try {
-        g_Logger.Info("Main", "=== VTABLE SCANNING ===");
-        ScanVTables();
-    } catch (const std::exception& e) {
-        g_Logger.Error("Main", std::string("VTable scanning failed: ") + e.what());
-    }
-    
     // Write output files
     g_Logger.Info("Main", "=== WRITING OUTPUT FILES ===");
-    WritePatternsHpp();
-    WritePatternsJson();
-    WriteOffsetsHpp();
-    WriteOffsetsJson();
-    WriteButtonsHpp();
-    WriteButtonsJson();
-    WriteInterfacesHpp();
-    WriteInterfacesJson();
+    WriteA2XLikeOutput();
     WriteExportsJson();
+    WriteExportsHpp();
     WriteRTTIJson();
-    WriteModulesJson();
-    WriteSummaryJson();
-    WriteAllSchemas();
+    WriteRTTIHpp();
     WriteConVarsJson();
+    WriteConVarsHpp();
     WriteVTablesJson();
+    WriteVTablesHpp();
     WriteComponentGraphJson();
-    
-    // Generate complete SDK
-    g_Logger.Info("Main", "=== SDK GENERATION ===");
+    WriteAllSchemas();
     GenerateSDK();
-    
-    // Runtime validation
-    g_Logger.Info("Main", "=== RUNTIME VALIDATION ===");
     ValidateOffsetsRuntime();
     WriteValidationReport();
-    
-    // Save versioned dump for diff comparison
-    g_Logger.Info("Main", "=== VERSIONING ===");
     SaveVersionedDump();
-    
-    // Generate HTML documentation
-    g_Logger.Info("Main", "=== HTML DOCUMENTATION ===");
     GenerateHTMLDocumentation();
     
     // Summary
     g_Logger.Info("Main", "=== DUMP COMPLETE ===");
     g_Logger.Info("Main", "Offsets found: " + std::to_string(g_FoundOffsets.size()));
     g_Logger.Info("Main", "Buttons found: " + std::to_string(g_FoundButtons.size()));
+    g_Logger.Info("Main", "Exports found: " + std::to_string(g_ModuleExports.size()));
+    g_Logger.Info("Main", "RTTI classes: " + std::to_string(g_RTTIClasses.size()));
+    g_Logger.Info("Main", "ConVars: " + std::to_string(g_ConVars.size()));
+    g_Logger.Info("Main", "VTables: " + std::to_string(g_VTables.size()));
     
     int totalInterfaces = 0;
     for (auto& [mod, ifaces] : g_Interfaces) totalInterfaces += (int)ifaces.size();
     g_Logger.Info("Main", "Interfaces found: " + std::to_string(totalInterfaces));
-    
-    g_Logger.Info("Main", "Exports found: " + std::to_string(g_ModuleExports.size()));
-    g_Logger.Info("Main", "RTTI classes found: " + std::to_string(g_RTTIClasses.size()));
-    g_Logger.Info("Main", "ConVars found: " + std::to_string(g_ConVars.size()));
-    g_Logger.Info("Main", "VTables found: " + std::to_string(g_VTables.size()));
     
     int totalSchemaClasses = 0;
     int totalSchemaFields = 0;
@@ -454,7 +448,28 @@ void DumpAll() {
 // DLL ENTRY POINT
 // ============================================================================
 
+static void InitLiveConsole() {
+    if (GetConsoleWindow()) return;
+    if (!AllocConsole()) return;
+
+    SetConsoleTitleA("CS2 Dumper Live Log");
+
+    FILE* out = nullptr;
+    FILE* err = nullptr;
+    FILE* in = nullptr;
+    freopen_s(&out, "CONOUT$", "w", stdout);
+    freopen_s(&err, "CONOUT$", "w", stderr);
+    freopen_s(&in, "CONIN$", "r", stdin);
+
+    HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    DWORD mode = 0;
+    if (hOut != INVALID_HANDLE_VALUE && GetConsoleMode(hOut, &mode)) {
+        SetConsoleMode(hOut, mode | ENABLE_VIRTUAL_TERMINAL_PROCESSING);
+    }
+}
+
 DWORD WINAPI DumpThread(LPVOID) {
+    InitLiveConsole();
     Sleep(2000); // Allow modules to fully initialize after injection.
     DumpAll();
     return 0;

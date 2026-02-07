@@ -42,6 +42,7 @@
 #include <memory>
 #include <regex>
 #include <cstring>
+#include <cctype>
 
 namespace fs = std::filesystem;
 
@@ -153,6 +154,12 @@ inline std::string WStringToString(const std::wstring& wstr) {
     std::string out(size - 1, 0);
     WideCharToMultiByte(CP_UTF8, 0, wstr.c_str(), -1, &out[0], size, nullptr, nullptr);
     return out;
+}
+
+inline std::string ToHex(uintptr_t value) {
+    std::stringstream ss;
+    ss << "0x" << std::hex << std::uppercase << value;
+    return ss.str();
 }
 
 // RAII wrapper for safe memory operations

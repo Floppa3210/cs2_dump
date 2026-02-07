@@ -22,7 +22,22 @@ extern std::vector<ModuleExport> g_ModuleExports;
 inline void ScanExports() {
     g_ModuleExports.clear();
 
+    constexpr bool kScanAllModules = true;
+    auto isGameModule = [](const std::string& name) -> bool {
+        static const std::set<std::string> kAllowed = {
+            "client.dll", "engine2.dll", "schemasystem.dll", "tier0.dll",
+            "inputsystem.dll", "materialsystem2.dll", "scenesystem.dll",
+            "resourcesystem.dll", "particles.dll", "rendersystemdx11.dll",
+            "networksystem.dll", "panorama.dll", "vphysics2.dll",
+            "soundsystem.dll", "animationsystem.dll", "host.dll",
+            "matchmaking.dll", "localize.dll", "filesystem_stdio.dll",
+            "server.dll"
+        };
+        return kAllowed.find(name) != kAllowed.end();
+    };
+
     for (const auto& mod : g_Modules) {
+        if (!kScanAllModules && !isGameModule(mod.name)) continue;
         if (!IsSafeToRead((void*)mod.base, sizeof(IMAGE_DOS_HEADER))) continue;
 
         auto dosHeader = reinterpret_cast<PIMAGE_DOS_HEADER>(mod.base);
@@ -67,11 +82,22 @@ inline void ScanExports() {
         }
     }
 
+    std::sort(g_ModuleExports.begin(), g_ModuleExports.end(), [](const ModuleExport& a, const ModuleExport& b) {
+        if (a.module != b.module) return a.module < b.module;
+        if (a.name != b.name) return a.name < b.name;
+        return a.rva < b.rva;
+    });
+    g_ModuleExports.erase(std::unique(g_ModuleExports.begin(), g_ModuleExports.end(),
+        [](const ModuleExport& a, const ModuleExport& b) {
+            return a.module == b.module && a.name == b.name && a.rva == b.rva;
+        }), g_ModuleExports.end());
+
     g_Logger.Success("Exports", "Found " + std::to_string(g_ModuleExports.size()) + " exports");
 }
 
 inline void WriteExportsJson() {
-    std::ofstream out(g_OutputPath + "/exports.json");
+    std::filesystem::create_directories(g_OutputPath + "/exports");
+    std::ofstream out(g_OutputPath + "/exports/exports.json");
     if (!out.is_open()) return;
 
     out << "{\n  \"exports\": [\n";
@@ -84,5 +110,23 @@ inline void WriteExportsJson() {
     out << "  ]\n}\n";
     out.close();
 
-    g_Logger.Success("Output", "exports.json written");
+    g_Logger.Success("Output", "exports/exports.json written");
+}
+
+inline void WriteExportsHpp() {
+    std::filesystem::create_directories(g_OutputPath + "/exports");
+    std::ofstream out(g_OutputPath + "/exports/exports.hpp");
+    if (!out.is_open()) return;
+
+    out << "// Auto-generated exports list\n";
+    out << "#pragma once\n\n";
+    out << "namespace cs2_dumper {\n";
+    out << "namespace exports {\n";
+    for (const auto& exp : g_ModuleExports) {
+        out << "constexpr const char* " << MakeCppIdentifier(exp.module + "_" + exp.name)
+            << " = \"0x" << std::hex << exp.rva << std::dec << "\";\n";
+    }
+    out << "} // namespace exports\n";
+    out << "} // namespace cs2_dumper\n";
+    g_Logger.Success("Output", "exports/exports.hpp written");
 }

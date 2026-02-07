@@ -16,6 +16,7 @@ ModuleInfo* FindModule(const std::string& name);
 
 inline void ScanButtons() {
     g_Logger.Info("Buttons", "Scanning button list...");
+    g_FoundButtons.clear();
 
     auto clientMod = FindModule("client.dll");
     if (!clientMod) {
@@ -75,7 +76,12 @@ inline void ScanButtons() {
     }
 
     // Main button iteration loop (no debug limit)
+    std::set<uintptr_t> visited;
     while (curButton && buttonCount < 100) {
+        if (!visited.insert(curButton).second) {
+            g_Logger.Warning("Buttons", "Detected loop in button linked list, stopping scan");
+            break;
+        }
         if (!IsSafeToRead((void*)curButton, 0x90)) {
             if (!IsSafeToRead((void*)curButton, 0x20)) break;
         }

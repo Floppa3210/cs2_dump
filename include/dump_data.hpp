@@ -53,6 +53,44 @@ inline std::string JsonEscape(const std::string& input) {
     return out;
 }
 
+inline std::string MakeCppIdentifier(const std::string& raw) {
+    std::string out;
+    out.reserve(raw.size() + 1);
+
+    auto isStart = [](unsigned char c) {
+        return std::isalpha(c) || c == '_';
+    };
+    auto isBody = [](unsigned char c) {
+        return std::isalnum(c) || c == '_';
+    };
+
+    for (unsigned char c : raw) {
+        out.push_back(isBody(c) ? static_cast<char>(c) : '_');
+    }
+
+    if (out.empty()) {
+        out = "_unnamed";
+    }
+    if (!isStart(static_cast<unsigned char>(out[0]))) {
+        out.insert(out.begin(), '_');
+    }
+
+    while (out.find("__") != std::string::npos) {
+        out.erase(out.find("__"), 1);
+    }
+
+    static const std::set<std::string> kKeywords = {
+        "class", "struct", "namespace", "template", "typename", "auto", "const",
+        "volatile", "signed", "unsigned", "static", "virtual", "public", "private",
+        "protected", "operator", "new", "delete", "switch", "case", "default"
+    };
+    if (kKeywords.find(out) != kKeywords.end()) {
+        out = "_" + out;
+    }
+
+    return out;
+}
+
 inline bool AddFoundOffset(const FoundOffset& off, bool overwriteIfExists) {
     auto it = std::find_if(
         g_FoundOffsets.begin(),

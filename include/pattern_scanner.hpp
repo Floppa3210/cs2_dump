@@ -26,8 +26,13 @@ private:
                 bytes.push_back(-1);
                 p += (p[1] == '?') ? 2 : 1;
             } else {
-                bytes.push_back(static_cast<int>(strtol(p, nullptr, 16)));
-                p += 2;
+                char* end = nullptr;
+                long value = strtol(p, &end, 16);
+                if (end == p) {
+                    break;
+                }
+                bytes.push_back(static_cast<int>(value & 0xFF));
+                p = end;
             }
         }
         return bytes;
@@ -67,7 +72,7 @@ public:
         if (!found) return false;
 
         uintptr_t resolved = ResolveRelative(found, pat.resolveOffset, pat.instrSize);
-        if (!resolved || resolved < mod.base) return false;
+        if (!resolved || resolved < mod.base || resolved >= (mod.base + mod.size)) return false;
 
         outRva = resolved - mod.base;
         return true;

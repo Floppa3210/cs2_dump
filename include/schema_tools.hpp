@@ -26,6 +26,7 @@ struct ComponentInfo {
 extern std::vector<ComponentInfo> g_ComponentGraph;
 
 inline void BuildSchemaIndex() {
+    g_SchemaClassIndex.clear();
     for (auto& [scope, classes] : g_SchemaClasses) {
         for (auto& cls : classes) {
             g_SchemaClassIndex[cls.name] = &cls;
@@ -88,7 +89,7 @@ inline void FlattenInheritance() {
 
     for (auto& [scope, classes] : g_SchemaClasses) {
         for (auto& cls : classes) {
-            if (!cls->parentClass.empty()) {
+            if (!cls.parentClass.empty()) {
                 cls.allFields = GetAllParentFields(cls.name, 0);
                 totalFlattened++;
             }
@@ -235,12 +236,12 @@ inline void WriteComponentGraphJson() {
     for (size_t i = 0; i < g_ComponentGraph.size(); i++) {
         auto& info = g_ComponentGraph[i];
         out << "    {\n";
-        out << "      \"class\": \"" << info.className << "\",\n";
-        out << "      \"role\": \"" << info.role << "\",\n";
+        out << "      \"class\": \"" << JsonEscape(info.className) << "\",\n";
+        out << "      \"role\": \"" << JsonEscape(info.role) << "\",\n";
         out << "      \"components\": [";
 
         for (size_t j = 0; j < info.detectedComponents.size(); j++) {
-            out << "\"" << info.detectedComponents[j] << "\"";
+            out << "\"" << JsonEscape(info.detectedComponents[j]) << "\"";
             if (j < info.detectedComponents.size() - 1) out << ",";
         }
 
@@ -281,6 +282,7 @@ inline std::string GetCppType(const std::string& schemaType) {
 inline void WriteSchemaStructsHpp(const std::string& scopeName, const std::vector<SchemaClass>& classes) {
     std::string filename = scopeName;
     std::replace(filename.begin(), filename.end(), '.', '_');
+    const std::string scopeIdentifier = MakeCppIdentifier(filename);
 
     std::ofstream out(g_OutputPath + "/schemas/" + filename + "_structs.hpp");
     if (!out.is_open()) return;
@@ -291,18 +293,20 @@ inline void WriteSchemaStructsHpp(const std::string& scopeName, const std::vecto
     out << "#include <cstdint>\n";
     out << "#include <cstddef>\n\n";
     out << "namespace cs2 {\n";
-    out << "namespace " << filename << " {\n\n";
+    out << "namespace " << scopeIdentifier << " {\n\n";
 
     for (auto& cls : classes) {
+        const std::string clsId = MakeCppIdentifier(cls.name);
+        const std::string parentId = MakeCppIdentifier(cls.parentClass);
         out << "// " << cls.name << " (size: 0x" << std::hex << cls.size << std::dec << ")\n";
         if (!cls.parentClass.empty()) {
-            out << "struct " << cls.name << " : public " << cls.parentClass << " {\n";
+            out << "struct " << clsId << " : public " << parentId << " {\n";
         } else {
-            out << "struct " << cls.name << " {\n";
+            out << "struct " << clsId << " {\n";
         }
 
         for (auto& field : cls.fields) {
-            out << "    " << GetCppType(field.type) << " " << field.name << ";";
+            out << "    " << GetCppType(field.type) << " " << MakeCppIdentifier(field.name) << ";";
             out << " // 0x" << std::hex << field.offset << std::dec;
             if (field.isNetworked) out << " [NET]";
             if (field.isPredicted) out << " [PRED]";
@@ -314,7 +318,7 @@ inline void WriteSchemaStructsHpp(const std::string& scopeName, const std::vecto
         out << "};\n\n";
     }
 
-    out << "} // namespace " << filename << "\n";
+    out << "} // namespace " << scopeIdentifier << "\n";
     out << "} // namespace cs2\n";
     out.close();
 
@@ -324,6 +328,7 @@ inline void WriteSchemaStructsHpp(const std::string& scopeName, const std::vecto
 inline void WriteSchemaHpp(const std::string& scopeName, const std::vector<SchemaClass>& classes) {
     std::string filename = scopeName;
     std::replace(filename.begin(), filename.end(), '.', '_');
+    const std::string scopeIdentifier = MakeCppIdentifier(filename);
 
     std::ofstream out(g_OutputPath + "/schemas/" + filename + "_dll.hpp");
     if (!out.is_open()) return;
@@ -336,13 +341,13 @@ inline void WriteSchemaHpp(const std::string& scopeName, const std::vector<Schem
     out << "// Classes: " << classes.size() << "\n\n";
     out << "namespace cs2_dumper {\n";
     out << "namespace schemas {\n";
-    out << "namespace " << filename << " {\n\n";
+    out << "namespace " << scopeIdentifier << " {\n\n";
 
     for (auto& cls : classes) {
         out << "// " << cls.name << " (size: 0x" << std::hex << cls.size << ")\n";
-        out << "namespace " << cls.name << " {\n";
+        out << "namespace " << MakeCppIdentifier(cls.name) << " {\n";
         for (auto& field : cls.fields) {
-            out << "    constexpr std::ptrdiff_t " << field.name << " = 0x"
+            out << "    constexpr std::ptrdiff_t " << MakeCppIdentifier(field.name) << " = 0x"
                 << std::hex << field.offset << "; // " << field.type << "\n";
         }
         out << "}\n\n";
@@ -360,26 +365,26 @@ inline void WriteSchemaJson(const std::string& scopeName, const std::vector<Sche
     if (!out.is_open()) return;
 
     out << "{\n";
-    out << "  \"module\": \"" << scopeName << ".dll\",\n";
+    out << "  \"module\": \"" << JsonEscape(scopeName) << ".dll\",\n";
     out << "  \"classes\": {\n";
 
     for (size_t c = 0; c < classes.size(); c++) {
         auto& cls = classes[c];
-        out << "    \"" << cls.name << "\": {\n";
+        out << "    \"" << JsonEscape(cls.name) << "\": {\n";
         out << "      \"size\": " << std::dec << cls.size << ",\n";
         out << "      \"alignOf\": " << (int)cls.alignOf << ",\n";
         out << "      \"hasBaseClass\": " << (cls.hasBaseClass ? "true" : "false") << ",\n";
         if (!cls.parentClass.empty()) {
-            out << "      \"parentClass\": \"" << cls.parentClass << "\",\n";
+            out << "      \"parentClass\": \"" << JsonEscape(cls.parentClass) << "\",\n";
         }
         out << "      \"fields\": {\n";
 
         for (size_t f = 0; f < cls.fields.size(); f++) {
             auto& field = cls.fields[f];
-            out << "        \"" << field.name << "\": {\n";
+            out << "        \"" << JsonEscape(field.name) << "\": {\n";
             out << "          \"offset\": " << std::dec << field.offset << ",\n";
-            out << "          \"type\": \"" << field.type << "\",\n";
-            out << "          \"category\": \"" << ClassifyField(field) << "\"";
+            out << "          \"type\": \"" << JsonEscape(field.type) << "\",\n";
+            out << "          \"category\": \"" << JsonEscape(ClassifyField(field)) << "\"";
 
             if (field.isNetworked || field.isPredicted || field.isReadOnly || field.isTransient) {
                 out << ",\n          \"flags\": [";
@@ -418,9 +423,9 @@ inline void WriteEnumsHpp() {
     for (auto& [scopeName, enums] : g_SchemaEnums) {
         out << "// Module: " << scopeName << ".dll\n";
         for (auto& e : enums) {
-            out << "enum class " << e.name << " : int64_t {\n";
+            out << "enum class " << MakeCppIdentifier(e.name) << " : int64_t {\n";
             for (auto& member : e.members) {
-                out << "    " << member.first << " = " << member.second << ",\n";
+                out << "    " << MakeCppIdentifier(member.first) << " = " << member.second << ",\n";
             }
             out << "};\n\n";
             totalEnums++;

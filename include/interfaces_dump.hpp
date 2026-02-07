@@ -76,11 +76,13 @@ inline void DumpInterfaces(const std::string& moduleName) {
                 CInterfaceRegister* pReg = reinterpret_cast<CInterfaceRegister*>(regHead);
 
                 std::vector<FoundInterface> moduleInterfaces;
+                std::set<std::string> seenNames;
+                int iterCount = 0;
 
-                while (pReg && IsSafeToRead(pReg, sizeof(CInterfaceRegister))) {
+                while (pReg && IsSafeToRead(pReg, sizeof(CInterfaceRegister)) && iterCount < 1024) {
                     if (pReg->szName && IsSafeToRead(pReg->szName, 1)) {
                         std::string name = SafeReadCString(pReg->szName, 64);
-                        if (!name.empty()) {
+                        if (!name.empty() && seenNames.insert(name).second) {
                             if (pReg->fnCreate) {
                                 uintptr_t rva = reinterpret_cast<uintptr_t>(pReg->fnCreate) - mod->base;
 
@@ -92,6 +94,7 @@ inline void DumpInterfaces(const std::string& moduleName) {
                         }
                     }
                     pReg = pReg->pNext;
+                    ++iterCount;
                 }
 
                 if (!moduleInterfaces.empty()) {

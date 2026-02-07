@@ -17,7 +17,7 @@ ModuleInfo* FindModule(const std::string& name);
 inline void ScanPatterns(PatternInfo* patterns, int count, const std::string& moduleName) {
     auto mod = FindModule(moduleName);
     if (!mod) {
-        g_Logger.Error("Patterns", moduleName + " not found");
+        g_Logger.Warning("Patterns", moduleName + " not found");
         return;
     }
 
@@ -43,10 +43,10 @@ inline void ScanPatterns(PatternInfo* patterns, int count, const std::string& mo
                     g_Logger.Warning("Patterns", std::string(pat.name) + " duplicated, keeping latest value " + ToHex(rva));
                 }
             } else {
-                g_Logger.Error("Patterns", std::string(pat.name) + " - failed to resolve");
+                g_Logger.Warning("Patterns", std::string(pat.name) + " - failed to resolve");
             }
         } else {
-            g_Logger.Error("Patterns", std::string(pat.name) + " - pattern not found");
+            g_Logger.Warning("Patterns", std::string(pat.name) + " - pattern not found");
         }
     }
 }

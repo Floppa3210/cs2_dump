@@ -88,9 +88,8 @@ inline bool ValidateSchemaClass(SchemaClass& cls) {
             cls.validationIssues.push_back(field.name + ": extends beyond class size");
         }
         
-        // Check 4: Alignment check (if specified)
+        // Check 4: Alignment check (warning only, not fatal)
         if (cls.alignOf > 0 && field.offset % cls.alignOf != 0) {
-            cls.isValid = false;
             cls.validationIssues.push_back(field.name + ": misaligned offset");
         }
     }
