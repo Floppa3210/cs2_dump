@@ -41,11 +41,13 @@ CMakeFiles/
 cmake_install.cmake
 Makefile
 *.cmake
+!CMakeLists.txt
 
 # Logs and dumps
 logs/
 *.log
 *.txt
+!CMakeLists.txt
 
 # Output directories
 CS2_Dump/
@@ -104,3 +106,9 @@ docs/.doctrees/
 config.local.*
 secrets.*
 *.env.local
+
+# History folder
+.history/
+
+# Example dumper (local only)
+dumper_ejemplo/
