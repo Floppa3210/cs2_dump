@@ -1,0 +1,14 @@
+{
+  "generator": "cs2_dumper",
+  "timestamp": "2026-02-07 09:26:37",
+  "counts": {
+    "offsets": 40,
+    "buttons": 16,
+    "interfaces": 86,
+    "schema_classes": 1464,
+    "exports": 61154,
+    "rtti_classes": 12611,
+    "convars": 5,
+    "vtables": 13
+  }
+}

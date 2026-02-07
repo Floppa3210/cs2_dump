@@ -1,0 +1,9 @@
+{
+  "convars": [
+    {"name":"debug_aranges","module":"tier0.dll","address":"0x7ffc4d00a9f0"},
+    {"name":"debug_info","module":"tier0.dll","address":"0x7ffc4d00a9c0"},
+    {"name":"debug_line_str","module":"tier0.dll","address":"0x7ffc4d00a9e0"},
+    {"name":"debug_pubnames","module":"tier0.dll","address":"0x7ffc4d00aa00"},
+    {"name":"debug_str","module":"tier0.dll","address":"0x7ffc4d00a9d0"}
+  ]
+}

@@ -1,0 +1,5399 @@
+{
+  "module": "client.dll",
+  "classes": {
+    "C_CSGO_TeamIntroCharacterPosition": {
+      "size": 5032,
+      "fields": {
+      }
+    },
+    "C_FireCrackerBlast": {
+      "size": 33936,
+      "fields": {
+      }
+    },
+    "CCSGO_WingmanIntroCounterTerroristPosition": {
+      "size": 5032,
+      "fields": {
+      }
+    },
+    "CPulseCell_WaitForCursorsWithTag": {
+      "size": 160,
+      "fields": {
+        "m_bTagSelfWhenComplete": 152,
+        "m_nDesiredKillPriority": 156
+      }
+    },
+    "C_SceneEntity::QueuedEvents_t": {
+      "size": 24,
+      "fields": {
+        "starttime": 0
+      }
+    },
+    "CCSPlayer_PingServices": {
+      "size": 80,
+      "fields": {
+        "m_hPlayerPing": 72
+      }
+    },
+    "CEconItemAttribute": {
+      "size": 72,
+      "fields": {
+        "m_iAttributeDefinitionIndex": 48,
+        "m_flValue": 52,
+        "m_flInitialValue": 56,
+        "m_nRefundableCurrency": 60,
+        "m_bSetBonus": 64
+      }
+    },
+    "CBaseTriggerAPI": {
+      "size": 8,
+      "fields": {
+      }
+    },
+    "PredictedDamageTag_t": {
+      "size": 64,
+      "fields": {
+        "nTagTick": 48,
+        "flFlinchModSmall": 52,
+        "flFlinchModLarge": 56,
+        "flFriendlyFireDamageReductionRatio": 60
+      }
+    },
+    "CFuncRetakeBarrier": {
+      "size": 5056,
+      "fields": {
+      }
+    },
+    "C_EnvWindShared": {
+      "size": 248,
+      "fields": {
+        "m_flStartTime": 8,
+        "m_iWindSeed": 12,
+        "m_iMinWind": 16,
+        "m_iMaxWind": 18,
+        "m_windRadius": 20,
+        "m_iMinGust": 24,
+        "m_iMaxGust": 26,
+        "m_flMinGustDelay": 28,
+        "m_flMaxGustDelay": 32,
+        "m_flGustDuration": 36,
+        "m_iGustDirChange": 40,
+        "m_iInitialWindDir": 42,
+        "m_flInitialWindSpeed": 44,
+        "m_location": 48,
+        "m_hEntOwner": 60
+      }
+    },
+    "C_SkyCamera": {
+      "size": 1704,
+      "fields": {
+        "m_skyboxData": 1544,
+        "m_skyboxSlotToken": 1688,
+        "m_bUseAngles": 1692,
+        "m_pNext": 1696
+      }
+    },
+    "CPulseCell_Base": {
+      "size": 72,
+      "fields": {
+        "m_nEditorNodeID": 8
+      }
+    },
+    "C_FuncRotating": {
+      "size": 3720,
+      "fields": {
+      }
+    },
+    "C_SoundOpvarSetPointBase": {
+      "size": 1576,
+      "fields": {
+        "m_iszStackName": 1544,
+        "m_iszOperatorName": 1552,
+        "m_iszOpvarName": 1560,
+        "m_iOpvarIndex": 1568,
+        "m_bUseAutoCompare": 1572,
+        "m_bFastRefresh": 1573
+      }
+    },
+    "C_EnvCubemapFog": {
+      "size": 1624,
+      "fields": {
+        "m_flEndDistance": 1544,
+        "m_flStartDistance": 1548,
+        "m_flFogFalloffExponent": 1552,
+        "m_bHeightFogEnabled": 1556,
+        "m_flFogHeightWidth": 1560,
+        "m_flFogHeightEnd": 1564,
+        "m_flFogHeightStart": 1568,
+        "m_flFogHeightExponent": 1572,
+        "m_flLODBias": 1576,
+        "m_bActive": 1580,
+        "m_bStartDisabled": 1581,
+        "m_flFogMaxOpacity": 1584,
+        "m_nCubemapSourceType": 1588,
+        "m_hSkyMaterial": 1592,
+        "m_iszSkyEntity": 1600,
+        "m_hFogCubemapTexture": 1608,
+        "m_bHasHeightFogEnd": 1616,
+        "m_bFirstTime": 1617
+      }
+    },
+    "C_CSGO_TeamSelectTerroristPosition": {
+      "size": 5032,
+      "fields": {
+      }
+    },
+    "C_BaseFlex::Emphasized_Phoneme": {
+      "size": 32,
+      "fields": {
+        "m_sClassName": 0,
+        "m_flAmount": 24,
+        "m_bRequired": 28,
+        "m_bBasechecked": 29,
+        "m_bValid": 30
+      }
+    },
+    "C_EnvParticleGlow": {
+      "size": 5200,
+      "fields": {
+        "m_flAlphaScale": 5176,
+        "m_flRadiusScale": 5180,
+        "m_flSelfIllumScale": 5184,
+        "m_ColorTint": 5188,
+        "m_hTextureOverride": 5192
+      }
+    },
+    "CCS_PortraitWorldCallbackHandler": {
+      "size": 1552,
+      "fields": {
+      }
+    },
+    "CCSPlayerController_InventoryServices": {
+      "size": 240,
+      "fields": {
+        "m_vecNetworkableLoadout": 64,
+        "m_unMusicID": 88,
+        "m_rank": 92,
+        "m_nPersonaDataPublicLevel": 116,
+        "m_nPersonaDataPublicCommendsLeader": 120,
+        "m_nPersonaDataPublicCommendsTeacher": 124,
+        "m_nPersonaDataPublicCommendsFriendly": 128,
+        "m_nPersonaDataXpTrailLevel": 132,
+        "m_vecServerAuthoritativeWeaponSlots": 136
+      }
+    },
+    "CCSPlayerModernJump": {
+      "size": 56,
+      "fields": {
+        "m_nLastActualJumpPressTick": 16,
+        "m_flLastActualJumpPressFrac": 20,
+        "m_nLastUsableJumpPressTick": 24,
+        "m_flLastUsableJumpPressFrac": 28,
+        "m_nLastLandedTick": 32,
+        "m_flLastLandedFrac": 36,
+        "m_flLastLandedVelocityX": 40,
+        "m_flLastLandedVelocityY": 44,
+        "m_flLastLandedVelocityZ": 48
+      }
+    },
+    "C_EconEntity::AttachedModelData_t": {
+      "size": 4,
+      "fields": {
+        "m_iModelDisplayFlags": 0
+      }
+    },
+    "CPulse_ResumePoint": {
+      "size": 72,
+      "fields": {
+      }
+    },
+    "CTriggerFan": {
+      "size": 4032,
+      "fields": {
+        "m_vFanOriginOffset": 3928,
+        "m_vDirection": 3940,
+        "m_bPushTowardsInfoTarget": 3952,
+        "m_bPushAwayFromInfoTarget": 3953,
+        "m_qNoiseDelta": 3968,
+        "m_hInfoFan": 3984,
+        "m_flForce": 3988,
+        "m_bFalloff": 3992,
+        "m_RampTimer": 4000
+      }
+    },
+    "C_HostageCarriableProp": {
+      "size": 4464,
+      "fields": {
+      }
+    },
+    "C_BulletHitModel": {
+      "size": 4536,
+      "fields": {
+        "m_matLocal": 4456,
+        "m_iBoneIndex": 4504,
+        "m_hPlayerParent": 4508,
+        "m_bIsHit": 4512,
+        "m_flTimeCreated": 4516,
+        "m_vecStartPos": 4520
+      }
+    },
+    "C_FuncElectrifiedVolume": {
+      "size": 3744,
+      "fields": {
+        "m_nAmbientEffect": 3720,
+        "m_EffectName": 3728,
+        "m_bState": 3736
+      }
+    },
+    "C_MapVetoPickController": {
+      "size": 3920,
+      "fields": {
+        "m_nDraftType": 1560,
+        "m_nTeamWinningCoinToss": 1564,
+        "m_nTeamWithFirstChoice": 1568,
+        "m_nVoteMapIdsList": 1824,
+        "m_nAccountIDs": 1852,
+        "m_nMapId0": 2108,
+        "m_nMapId1": 2364,
+        "m_nMapId2": 2620,
+        "m_nMapId3": 2876,
+        "m_nMapId4": 3132,
+        "m_nMapId5": 3388,
+        "m_nStartingSide0": 3644,
+        "m_nCurrentPhase": 3900,
+        "m_nPhaseStartTick": 3904,
+        "m_nPhaseDurationTicks": 3908,
+        "m_nPostDataUpdateTick": 3912,
+        "m_bDisabledHud": 3916
+      }
+    },
+    "C_EnvVolumetricFogVolume": {
+      "size": 1616,
+      "fields": {
+        "m_bActive": 1544,
+        "m_vBoxMins": 1548,
+        "m_vBoxMaxs": 1560,
+        "m_bStartDisabled": 1572,
+        "m_bIndirectUseLPVs": 1573,
+        "m_flStrength": 1576,
+        "m_nFalloffShape": 1580,
+        "m_flFalloffExponent": 1584,
+        "m_flHeightFogDepth": 1588,
+        "m_fHeightFogEdgeWidth": 1592,
+        "m_fIndirectLightStrength": 1596,
+        "m_fSunLightStrength": 1600,
+        "m_fNoiseStrength": 1604,
+        "m_TintColor": 1608,
+        "m_bOverrideTintColor": 1612,
+        "m_bOverrideIndirectLightStrength": 1613,
+        "m_bOverrideSunLightStrength": 1614,
+        "m_bOverrideNoiseStrength": 1615
+      }
+    },
+    "C_CSGO_EndOfMatchCharacterPosition": {
+      "size": 5032,
+      "fields": {
+      }
+    },
+    "CPulseCell_PlaySequence": {
+      "size": 248,
+      "fields": {
+        "m_SequenceName": 72,
+        "m_PulseAnimEvents": 80,
+        "m_OnFinished": 104,
+        "m_OnCanceled": 176
+      }
+    },
+    "C_BaseEntityAPI": {
+      "size": 8,
+      "fields": {
+      }
+    },
+    "C_BarnLight": {
+      "size": 4504,
+      "fields": {
+        "m_bEnabled": 3720,
+        "m_nColorMode": 3724,
+        "m_Color": 3728,
+        "m_flColorTemperature": 3732,
+        "m_flBrightness": 3736,
+        "m_flBrightnessScale": 3740,
+        "m_nDirectLight": 3744,
+        "m_nBakedShadowIndex": 3748,
+        "m_nLightPathUniqueId": 3752,
+        "m_nLightMapUniqueId": 3756,
+        "m_nLuminaireShape": 3760,
+        "m_flLuminaireSize": 3764,
+        "m_flLuminaireAnisotropy": 3768,
+        "m_LightStyleString": 3776,
+        "m_flLightStyleStartTime": 3784,
+        "m_QueuedLightStyleStrings": 3792,
+        "m_LightStyleEvents": 3816,
+        "m_LightStyleTargets": 3840,
+        "m_StyleEvent": 3864,
+        "m_hLightCookie": 3960,
+        "m_flShape": 3968,
+        "m_flSoftX": 3972,
+        "m_flSoftY": 3976,
+        "m_flSkirt": 3980,
+        "m_flSkirtNear": 3984,
+        "m_vSizeParams": 3988,
+        "m_flRange": 4000,
+        "m_vShear": 4004,
+        "m_nBakeSpecularToCubemaps": 4016,
+        "m_vBakeSpecularToCubemapsSize": 4020,
+        "m_nCastShadows": 4032,
+        "m_nShadowMapSize": 4036,
+        "m_nShadowPriority": 4040,
+        "m_bContactShadow": 4044,
+        "m_bForceShadowsEnabled": 4045,
+        "m_nBounceLight": 4048,
+        "m_flBounceScale": 4052,
+        "m_bDynamicBounce": 4056,
+        "m_flMinRoughness": 4060,
+        "m_vAlternateColor": 4064,
+        "m_fAlternateColorBrightness": 4076,
+        "m_nFog": 4080,
+        "m_flFogStrength": 4084,
+        "m_nFogShadows": 4088,
+        "m_flFogScale": 4092,
+        "m_bFogMixedShadows": 4096,
+        "m_flFadeSizeStart": 4100,
+        "m_flFadeSizeEnd": 4104,
+        "m_flShadowFadeSizeStart": 4108,
+        "m_flShadowFadeSizeEnd": 4112,
+        "m_bPrecomputedFieldsValid": 4116,
+        "m_vPrecomputedBoundsMins": 4120,
+        "m_vPrecomputedBoundsMaxs": 4132,
+        "m_vPrecomputedOBBOrigin": 4144,
+        "m_vPrecomputedOBBAngles": 4156,
+        "m_vPrecomputedOBBExtent": 4168,
+        "m_nPrecomputedSubFrusta": 4180,
+        "m_vPrecomputedOBBOrigin0": 4184,
+        "m_vPrecomputedOBBAngles0": 4196,
+        "m_vPrecomputedOBBExtent0": 4208,
+        "m_vPrecomputedOBBOrigin1": 4220,
+        "m_vPrecomputedOBBAngles1": 4232,
+        "m_vPrecomputedOBBExtent1": 4244,
+        "m_vPrecomputedOBBOrigin2": 4256,
+        "m_vPrecomputedOBBAngles2": 4268,
+        "m_vPrecomputedOBBExtent2": 4280,
+        "m_vPrecomputedOBBOrigin3": 4292,
+        "m_vPrecomputedOBBAngles3": 4304,
+        "m_vPrecomputedOBBExtent3": 4316,
+        "m_vPrecomputedOBBOrigin4": 4328,
+        "m_vPrecomputedOBBAngles4": 4340,
+        "m_vPrecomputedOBBExtent4": 4352,
+        "m_vPrecomputedOBBOrigin5": 4364,
+        "m_vPrecomputedOBBAngles5": 4376,
+        "m_vPrecomputedOBBExtent5": 4388,
+        "m_bInitialBoneSetup": 4464,
+        "m_VisClusters": 4472
+      }
+    },
+    "CPulseCell_LerpCameraSettings": {
+      "size": 184,
+      "fields": {
+        "m_flSeconds": 144,
+        "m_Start": 148,
+        "m_End": 164
+      }
+    },
+    "CPointOffScreenIndicatorUi": {
+      "size": 4336,
+      "fields": {
+        "m_bBeenEnabled": 4320,
+        "m_bHide": 4321,
+        "m_flSeenTargetTime": 4324,
+        "m_pTargetPanel": 4328
+      }
+    },
+    "CCSObserver_UseServices": {
+      "size": 72,
+      "fields": {
+      }
+    },
+    "C_PostProcessingVolume": {
+      "size": 3992,
+      "fields": {
+        "m_hPostSettings": 3944,
+        "m_flFadeDuration": 3952,
+        "m_flMinLogExposure": 3956,
+        "m_flMaxLogExposure": 3960,
+        "m_flMinExposure": 3964,
+        "m_flMaxExposure": 3968,
+        "m_flExposureCompensation": 3972,
+        "m_flExposureFadeSpeedUp": 3976,
+        "m_flExposureFadeSpeedDown": 3980,
+        "m_flTonemapEVSmoothingRange": 3984,
+        "m_bMaster": 3988,
+        "m_bExposureControl": 3989
+      }
+    },
+    "CCSPlayer_UseServices": {
+      "size": 72,
+      "fields": {
+      }
+    },
+    "C_CSGO_CounterTerroristWingmanIntroCamera": {
+      "size": 1688,
+      "fields": {
+      }
+    },
+    "CPulseCell_PickBestOutflowSelector": {
+      "size": 104,
+      "fields": {
+        "m_nCheckType": 72,
+        "m_OutflowList": 80
+      }
+    },
+    "CInfoFan": {
+      "size": 1632,
+      "fields": {
+        "m_fFanForceMaxRadius": 1608,
+        "m_fFanForceMinRadius": 1612,
+        "m_flCurveDistRange": 1616,
+        "m_FanForceCurveString": 1624
+      }
+    },
+    "C_VoteController": {
+      "size": 1600,
+      "fields": {
+        "m_iActiveIssueIndex": 1560,
+        "m_iOnlyTeamToVote": 1564,
+        "m_nVoteOptionCount": 1568,
+        "m_nPotentialVotes": 1588,
+        "m_bVotesDirty": 1592,
+        "m_bTypeDirty": 1593,
+        "m_bIsYesNoVote": 1594
+      }
+    },
+    "C_CSPlayerPawnBase": {
+      "size": 5712,
+      "fields": {
+        "m_pPingServices": 5568,
+        "m_previousPlayerState": 5576,
+        "m_iPlayerState": 5580,
+        "m_bHasMovedSinceSpawn": 5584,
+        "m_flLastSpawnTimeIndex": 5588,
+        "m_iProgressBarDuration": 5592,
+        "m_flProgressBarStartTime": 5596,
+        "m_flClientDeathTime": 5600,
+        "m_flFlashBangTime": 5604,
+        "m_flFlashScreenshotAlpha": 5608,
+        "m_flFlashOverlayAlpha": 5612,
+        "m_bFlashBuildUp": 5616,
+        "m_bFlashDspHasBeenCleared": 5617,
+        "m_bFlashScreenshotHasBeenGrabbed": 5618,
+        "m_flFlashMaxAlpha": 5620,
+        "m_flFlashDuration": 5624,
+        "m_flClientHealthFadeChangeTimestamp": 5628,
+        "m_nClientHealthFadeParityValue": 5632,
+        "m_fNextThinkPushAway": 5636,
+        "m_flCurrentMusicStartTime": 5644,
+        "m_flMusicRoundStartTime": 5648,
+        "m_bDeferStartMusicOnWarmup": 5652,
+        "m_flLastSmokeOverlayAlpha": 5656,
+        "m_flLastSmokeAge": 5660,
+        "m_vLastSmokeOverlayColor": 5664,
+        "m_hOriginalController": 5704
+      }
+    },
+    "C_C4": {
+      "size": 8064,
+      "fields": {
+        "m_activeLightParticleIndex": 8000,
+        "m_eActiveLightEffect": 8004,
+        "m_bStartedArming": 8008,
+        "m_fArmedTime": 8012,
+        "m_bBombPlacedAnimation": 8016,
+        "m_bIsPlantingViaUse": 8017,
+        "m_entitySpottedState": 8024,
+        "m_nSpotRules": 8048,
+        "m_bPlayedArmingBeeps": 8052,
+        "m_bBombPlanted": 8059
+      }
+    },
+    "C_BreakableProp": {
+      "size": 4816,
+      "fields": {
+        "m_CPropDataComponent": 4512,
+        "m_OnStartDeath": 4576,
+        "m_OnBreak": 4600,
+        "m_OnHealthChanged": 4624,
+        "m_OnTakeDamage": 4656,
+        "m_impactEnergyScale": 4680,
+        "m_iMinHealthDmg": 4684,
+        "m_flPressureDelay": 4688,
+        "m_flDefBurstScale": 4692,
+        "m_vDefBurstOffset": 4696,
+        "m_hBreaker": 4708,
+        "m_PerformanceMode": 4712,
+        "m_flPreventDamageBeforeTime": 4716,
+        "m_BreakableContentsType": 4720,
+        "m_strBreakableContentsPropGroupOverride": 4728,
+        "m_strBreakableContentsParticleOverride": 4736,
+        "m_bHasBreakPiecesOrCommands": 4744,
+        "m_explodeDamage": 4748,
+        "m_explodeRadius": 4752,
+        "m_nExplosionType": 4756,
+        "m_explosionDelay": 4760,
+        "m_explosionBuildupSound": 4768,
+        "m_explosionCustomEffect": 4776,
+        "m_explosionCustomSound": 4784,
+        "m_explosionModifier": 4792,
+        "m_hPhysicsAttacker": 4800,
+        "m_flLastPhysicsInfluenceTime": 4804,
+        "m_flDefaultFadeScale": 4808,
+        "m_hLastAttacker": 4812
+      }
+    },
+    "CCSGO_WingmanIntroTerroristPosition": {
+      "size": 5032,
+      "fields": {
+      }
+    },
+    "CPrecipitationVData": {
+      "size": 296,
+      "fields": {
+        "m_szParticlePrecipitationEffect": 40,
+        "m_flInnerDistance": 264,
+        "m_nAttachType": 268,
+        "m_bBatchSameVolumeType": 272,
+        "m_nRTEnvCP": 276,
+        "m_nRTEnvCPComponent": 280,
+        "m_szModifier": 288
+      }
+    },
+    "C_RetakeGameRules": {
+      "size": 344,
+      "fields": {
+        "m_nMatchSeed": 312,
+        "m_bBlockersPresent": 316,
+        "m_bRoundInProgress": 317,
+        "m_iFirstSecondHalfRound": 320,
+        "m_iBombSite": 324,
+        "m_hBombPlanter": 328
+      }
+    },
+    "CPulseCell_WaitForObservable": {
+      "size": 264,
+      "fields": {
+        "m_Condition": 72,
+        "m_OnTrue": 192
+      }
+    },
+    "C_SoundAreaEntitySphere": {
+      "size": 1592,
+      "fields": {
+        "m_flRadius": 1584
+      }
+    },
+    "CPulseCell_Step_EntFire": {
+      "size": 80,
+      "fields": {
+        "m_Input": 72
+      }
+    },
+    "C_WeaponAWP": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_BaseButton": {
+      "size": 3736,
+      "fields": {
+        "m_glowEntity": 3720,
+        "m_usable": 3724,
+        "m_szDisplayText": 3728
+      }
+    },
+    "CCSObserver_ObserverServices": {
+      "size": 240,
+      "fields": {
+        "m_obsInterpState": 100
+      }
+    },
+    "CHitboxComponent": {
+      "size": 24,
+      "fields": {
+        "m_flBoundsExpandRadius": 20
+      }
+    },
+    "ServerAuthoritativeWeaponSlot_t": {
+      "size": 56,
+      "fields": {
+        "unClass": 48,
+        "unSlot": 50,
+        "unItemDefIdx": 52
+      }
+    },
+    "C_CSMinimapBoundary": {
+      "size": 1544,
+      "fields": {
+      }
+    },
+    "CPathQueryComponent": {
+      "size": 160,
+      "fields": {
+      }
+    },
+    "C_Precipitation": {
+      "size": 4008,
+      "fields": {
+        "m_flDensity": 3928,
+        "m_flParticleInnerDist": 3944,
+        "m_pParticleDef": 3952,
+        "m_tParticlePrecipTraceTimer": 3992,
+        "m_bActiveParticlePrecipEmitter": 4000,
+        "m_bParticlePrecipInitialized": 4001,
+        "m_bHasSimulatedSinceLastSceneObjectUpdate": 4002,
+        "m_nAvailableSheetSequencesMaxIndex": 4004
+      }
+    },
+    "CLogicRelay": {
+      "size": 1552,
+      "fields": {
+        "m_bDisabled": 1544,
+        "m_bWaitForRefire": 1545,
+        "m_bTriggerOnce": 1546,
+        "m_bFastRetrigger": 1547,
+        "m_bPassthoughCaller": 1548
+      }
+    },
+    "SequenceHistory_t": {
+      "size": 24,
+      "fields": {
+        "m_hSequence": 0,
+        "m_flSeqStartTime": 4,
+        "m_flSeqFixedCycle": 8,
+        "m_nSeqLoopMode": 12,
+        "m_flPlaybackRate": 16,
+        "m_flCyclesPerSecond": 20
+      }
+    },
+    "CPlayer_ItemServices": {
+      "size": 72,
+      "fields": {
+      }
+    },
+    "CPulse_OutflowConnection": {
+      "size": 72,
+      "fields": {
+        "m_SourceOutflowName": 0,
+        "m_nDestChunk": 16,
+        "m_nInstruction": 20,
+        "m_OutflowRegisterMap": 24
+      }
+    },
+    "C_WeaponUMP45": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_WeaponG3SG1": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_SpotlightEnd": {
+      "size": 3736,
+      "fields": {
+        "m_flLightScale": 3720,
+        "m_Radius": 3724
+      }
+    },
+    "C_Fish": {
+      "size": 4696,
+      "fields": {
+        "m_pos": 4456,
+        "m_vel": 4468,
+        "m_angles": 4480,
+        "m_localLifeState": 4492,
+        "m_deathDepth": 4496,
+        "m_deathAngle": 4500,
+        "m_buoyancy": 4504,
+        "m_wiggleTimer": 4512,
+        "m_wigglePhase": 4536,
+        "m_wiggleRate": 4540,
+        "m_actualPos": 4544,
+        "m_actualAngles": 4556,
+        "m_poolOrigin": 4568,
+        "m_waterLevel": 4580,
+        "m_gotUpdate": 4584,
+        "m_x": 4588,
+        "m_y": 4592,
+        "m_z": 4596,
+        "m_angle": 4600,
+        "m_errorHistory": 4604,
+        "m_errorHistoryIndex": 4684,
+        "m_errorHistoryCount": 4688,
+        "m_averageError": 4692
+      }
+    },
+    "C_WeaponFamas": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_EnvVolumetricFogController": {
+      "size": 1720,
+      "fields": {
+        "m_flScattering": 1544,
+        "m_TintColor": 1548,
+        "m_flAnisotropy": 1552,
+        "m_flFadeSpeed": 1556,
+        "m_flDrawDistance": 1560,
+        "m_flFadeInStart": 1564,
+        "m_flFadeInEnd": 1568,
+        "m_flIndirectStrength": 1572,
+        "m_nVolumeDepth": 1576,
+        "m_fFirstVolumeSliceThickness": 1580,
+        "m_nIndirectTextureDimX": 1584,
+        "m_nIndirectTextureDimY": 1588,
+        "m_nIndirectTextureDimZ": 1592,
+        "m_vBoxMins": 1596,
+        "m_vBoxMaxs": 1608,
+        "m_bActive": 1620,
+        "m_flStartAnisoTime": 1624,
+        "m_flStartScatterTime": 1628,
+        "m_flStartDrawDistanceTime": 1632,
+        "m_flStartAnisotropy": 1636,
+        "m_flStartScattering": 1640,
+        "m_flStartDrawDistance": 1644,
+        "m_flDefaultAnisotropy": 1648,
+        "m_flDefaultScattering": 1652,
+        "m_flDefaultDrawDistance": 1656,
+        "m_bStartDisabled": 1660,
+        "m_bEnableIndirect": 1661,
+        "m_bIsMaster": 1662,
+        "m_hFogIndirectTexture": 1664,
+        "m_nForceRefreshCount": 1672,
+        "m_fNoiseSpeed": 1676,
+        "m_fNoiseStrength": 1680,
+        "m_vNoiseScale": 1684,
+        "m_fWindSpeed": 1696,
+        "m_vWindDirection": 1700,
+        "m_bFirstTime": 1712
+      }
+    },
+    "CPulseGraphDef": {
+      "size": 408,
+      "fields": {
+        "m_DomainIdentifier": 8,
+        "m_DomainSubType": 24,
+        "m_ParentMapName": 48,
+        "m_ParentXmlName": 64,
+        "m_Chunks": 80,
+        "m_Cells": 104,
+        "m_Vars": 128,
+        "m_PublicOutputs": 152,
+        "m_InvokeBindings": 176,
+        "m_CallInfos": 200,
+        "m_Constants": 224,
+        "m_DomainValues": 248,
+        "m_BlackboardReferences": 272,
+        "m_OutputConnections": 296
+      }
+    },
+    "C_EnvDetailController": {
+      "size": 1552,
+      "fields": {
+        "m_flFadeStartDist": 1544,
+        "m_flFadeEndDist": 1548
+      }
+    },
+    "C_EnvWindVolume": {
+      "size": 1600,
+      "fields": {
+        "m_bActive": 1544,
+        "m_vBoxMins": 1548,
+        "m_vBoxMaxs": 1560,
+        "m_bStartDisabled": 1572,
+        "m_nShape": 1576,
+        "m_fWindSpeedMultiplier": 1580,
+        "m_fWindTurbulenceMultiplier": 1584,
+        "m_fWindSpeedVariationMultiplier": 1588,
+        "m_fWindDirectionVariationMultiplier": 1592
+      }
+    },
+    "CBasePlayerControllerAPI": {
+      "size": 8,
+      "fields": {
+      }
+    },
+    "CHostageRescueZoneShim": {
+      "size": 3928,
+      "fields": {
+      }
+    },
+    "CEnvSoundscapeAlias_snd_soundscape": {
+      "size": 1688,
+      "fields": {
+      }
+    },
+    "CCSPlayer_HostageServices": {
+      "size": 80,
+      "fields": {
+        "m_hCarriedHostage": 72,
+        "m_hCarriedHostageProp": 76
+      }
+    },
+    "C_GameRulesProxy": {
+      "size": 1544,
+      "fields": {
+      }
+    },
+    "CRenderComponent": {
+      "size": 208,
+      "fields": {
+        "__m_pChainEntity": 16,
+        "m_bIsRenderingWithViewModels": 80,
+        "m_nSplitscreenFlags": 84,
+        "m_bEnableRendering": 88,
+        "m_bInterpolationReadyToDraw": 168
+      }
+    },
+    "C_Team": {
+      "size": 1728,
+      "fields": {
+        "m_aPlayerControllers": 1544,
+        "m_aPlayers": 1568,
+        "m_iScore": 1592,
+        "m_szTeamname": 1596
+      }
+    },
+    "C_PathParticleRopeAlias_path_particle_rope_clientside": {
+      "size": 1816,
+      "fields": {
+      }
+    },
+    "CPointChildModifier": {
+      "size": 1552,
+      "fields": {
+        "m_bOrphanInsteadOfDeletingChildrenOnRemove": 1544
+      }
+    },
+    "CCSPlayerLegacyJump": {
+      "size": 24,
+      "fields": {
+        "m_bOldJumpPressed": 16,
+        "m_flJumpPressedTime": 20
+      }
+    },
+    "C_WeaponNOVA": {
+      "size": 8000,
+      "fields": {
+      }
+    },
+    "C_DEagle": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_CS2HudModelAddon": {
+      "size": 4624,
+      "fields": {
+      }
+    },
+    "C_TriggerMultiple": {
+      "size": 3928,
+      "fields": {
+      }
+    },
+    "C_CSGO_TeamPreviewCamera": {
+      "size": 1688,
+      "fields": {
+        "m_nVariant": 1680
+      }
+    },
+    "C_ColorCorrectionVolume": {
+      "size": 4480,
+      "fields": {
+        "m_LastEnterWeight": 3928,
+        "m_LastEnterTime": 3932,
+        "m_LastExitWeight": 3936,
+        "m_LastExitTime": 3940,
+        "m_bEnabled": 3944,
+        "m_MaxWeight": 3948,
+        "m_FadeDuration": 3952,
+        "m_Weight": 3956,
+        "m_lookupFilename": 3960
+      }
+    },
+    "CPlayer_MovementServices": {
+      "size": 576,
+      "fields": {
+        "m_nImpulse": 72,
+        "m_nButtons": 80,
+        "m_nQueuedButtonDownMask": 112,
+        "m_nQueuedButtonChangeMask": 120,
+        "m_nButtonDoublePressed": 128,
+        "m_pButtonPressedCmdNumber": 136,
+        "m_nLastCommandNumberProcessed": 392,
+        "m_nToggleButtonDownMask": 400,
+        "m_flMaxspeed": 416,
+        "m_arrForceSubtickMoveWhen": 420,
+        "m_flForwardMove": 436,
+        "m_flLeftMove": 440,
+        "m_flUpMove": 444,
+        "m_vecLastMovementImpulses": 448,
+        "m_vecOldViewAngles": 552
+      }
+    },
+    "CInfoDynamicShadowHintBox": {
+      "size": 1592,
+      "fields": {
+        "m_vBoxMins": 1568,
+        "m_vBoxMaxs": 1580
+      }
+    },
+    "CBaseAnimGraphController": {
+      "size": 6968,
+      "fields": {
+        "m_nAnimationAlgorithm": 24,
+        "m_animGraphNetworkedVars": 32,
+        "m_pAnimGraphInstance": 5296,
+        "m_nNextExternalGraphHandle": 5392,
+        "m_vecSecondarySkeletonNames": 5400,
+        "m_vecSecondarySkeletons": 5424,
+        "m_nSecondarySkeletonMasterCount": 5448,
+        "m_flSoundSyncTime": 5456,
+        "m_nActiveIKChainMask": 5460,
+        "m_hSequence": 5544,
+        "m_flSeqStartTime": 5548,
+        "m_flSeqFixedCycle": 5552,
+        "m_nAnimLoopMode": 5556,
+        "m_flPlaybackRate": 5560,
+        "m_nNotifyState": 5572,
+        "m_bNetworkedAnimationInputsChanged": 5573,
+        "m_bNetworkedSequenceChanged": 5574,
+        "m_bLastUpdateSkipped": 5575,
+        "m_bSequenceFinished": 5576,
+        "m_nPrevAnimUpdateTick": 5580,
+        "m_hGraphDefinitionAG2": 6248,
+        "m_serializedPoseRecipeAG2": 6256,
+        "m_nSerializePoseRecipeSizeAG2": 6280,
+        "m_nSerializePoseRecipeVersionAG2": 6284,
+        "m_nServerGraphInstanceIteration": 6288,
+        "m_nServerSerializationContextIteration": 6292,
+        "m_primaryGraphId": 6296,
+        "m_vecExternalGraphIds": 6304,
+        "m_vecExternalClipIds": 6328,
+        "m_sAnimGraph2Identifier": 6352,
+        "m_vecExternalGraphs": 6904,
+        "m_nPrevAnimationAlgorithm": 6961
+      }
+    },
+    "C_ColorCorrection": {
+      "size": 2128,
+      "fields": {
+        "m_vecOrigin": 1544,
+        "m_MinFalloff": 1556,
+        "m_MaxFalloff": 1560,
+        "m_flFadeInDuration": 1564,
+        "m_flFadeOutDuration": 1568,
+        "m_flMaxWeight": 1572,
+        "m_flCurWeight": 1576,
+        "m_netlookupFilename": 1580,
+        "m_bEnabled": 2092,
+        "m_bMaster": 2093,
+        "m_bClientSide": 2094,
+        "m_bExclusive": 2095,
+        "m_bEnabledOnClient": 2096,
+        "m_flCurWeightOnClient": 2100,
+        "m_bFadingIn": 2104,
+        "m_flFadeStartWeight": 2108,
+        "m_flFadeStartTime": 2112,
+        "m_flFadeDuration": 2116
+      }
+    },
+    "CBuoyancyHelper": {
+      "size": 280,
+      "fields": {
+        "m_nFluidType": 24,
+        "m_flFluidDensity": 28,
+        "m_flNeutrallyBuoyantGravity": 32,
+        "m_flNeutrallyBuoyantLinearDamping": 36,
+        "m_flNeutrallyBuoyantAngularDamping": 40,
+        "m_bNeutrallyBuoyant": 44,
+        "m_vecFractionOfWheelSubmergedForWheelFriction": 48,
+        "m_vecWheelFrictionScales": 72,
+        "m_vecFractionOfWheelSubmergedForWheelDrag": 96,
+        "m_vecWheelDrag": 120
+      }
+    },
+    "C_PhysBox": {
+      "size": 3720,
+      "fields": {
+      }
+    },
+    "CCSPlayer_CameraServices": {
+      "size": 832,
+      "fields": {
+        "m_flDeathCamTilt": 680,
+        "m_vClientScopeInaccuracy": 688
+      }
+    },
+    "CFilterMultiple": {
+      "size": 1728,
+      "fields": {
+        "m_nFilterType": 1600,
+        "m_iFilterName": 1608,
+        "m_hFilter": 1688
+      }
+    },
+    "CPulseCell_FireCursors": {
+      "size": 248,
+      "fields": {
+        "m_Outflows": 72,
+        "m_bWaitForChildOutflows": 96,
+        "m_OnFinished": 104,
+        "m_OnCanceled": 176
+      }
+    },
+    "CEnvSoundscape": {
+      "size": 1688,
+      "fields": {
+        "m_OnPlay": 1544,
+        "m_flRadius": 1568,
+        "m_soundEventName": 1576,
+        "m_bOverrideWithEvent": 1584,
+        "m_soundscapeIndex": 1588,
+        "m_soundscapeEntityListId": 1592,
+        "m_positionNames": 1600,
+        "m_hProxySoundscape": 1664,
+        "m_bDisabled": 1668,
+        "m_soundscapeName": 1672,
+        "m_soundEventHash": 1680
+      }
+    },
+    "C_SoundEventEntityAlias_snd_event_point": {
+      "size": 1720,
+      "fields": {
+      }
+    },
+    "C_FogController": {
+      "size": 1656,
+      "fields": {
+        "m_fog": 1544,
+        "m_bUseAngles": 1648,
+        "m_iChangedVariables": 1652
+      }
+    },
+    "C_SoundOpvarSetOBBWindEntity": {
+      "size": 1576,
+      "fields": {
+      }
+    },
+    "C_MolotovGrenade": {
+      "size": 8192,
+      "fields": {
+      }
+    },
+    "C_NetTestBaseCombatCharacter": {
+      "size": 5080,
+      "fields": {
+      }
+    },
+    "CBodyComponentPoint": {
+      "size": 464,
+      "fields": {
+        "m_sceneNode": 128
+      }
+    },
+    "C_WeaponM4A1Silencer": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_EconItemView": {
+      "size": 1136,
+      "fields": {
+        "m_bInventoryImageRgbaRequested": 96,
+        "m_bInventoryImageTriedCache": 97,
+        "m_nInventoryImageRgbaWidth": 128,
+        "m_nInventoryImageRgbaHeight": 132,
+        "m_szCurrentLoadCachedFileName": 136,
+        "m_bRestoreCustomMaterialAfterPrecache": 440,
+        "m_iItemDefinitionIndex": 442,
+        "m_iEntityQuality": 444,
+        "m_iEntityLevel": 448,
+        "m_iItemID": 456,
+        "m_iItemIDHigh": 464,
+        "m_iItemIDLow": 468,
+        "m_iAccountID": 472,
+        "m_iInventoryPosition": 476,
+        "m_bInitialized": 488,
+        "m_bDisallowSOC": 489,
+        "m_bIsStoreItem": 490,
+        "m_bIsTradeItem": 491,
+        "m_iEntityQuantity": 492,
+        "m_iRarityOverride": 496,
+        "m_iQualityOverride": 500,
+        "m_iOriginOverride": 504,
+        "m_ubStyleOverride": 508,
+        "m_unClientFlags": 509,
+        "m_AttributeList": 520,
+        "m_NetworkedDynamicAttributes": 640,
+        "m_szCustomName": 760,
+        "m_szCustomNameOverride": 921,
+        "m_bInitializedTags": 1128
+      }
+    },
+    "CPulseCell_Timeline::TimelineEvent_t": {
+      "size": 80,
+      "fields": {
+        "m_flTimeFromPrevious": 0,
+        "m_EventOutflow": 8
+      }
+    },
+    "CPulseCell_IntervalTimer::CursorState_t": {
+      "size": 20,
+      "fields": {
+        "m_StartTime": 0,
+        "m_EndTime": 4,
+        "m_flWaitInterval": 8,
+        "m_flWaitIntervalHigh": 12,
+        "m_bCompleteOnNextWake": 16
+      }
+    },
+    "CPulseCell_BaseRequirement": {
+      "size": 72,
+      "fields": {
+      }
+    },
+    "CPulseCell_BaseState": {
+      "size": 72,
+      "fields": {
+      }
+    },
+    "OutflowWithRequirements_t": {
+      "size": 128,
+      "fields": {
+        "m_Connection": 0,
+        "m_DestinationFlowNodeID": 72,
+        "m_RequirementNodeIDs": 80,
+        "m_nCursorStateBlockIndex": 104
+      }
+    },
+    "CPulseCell_IsRequirementValid": {
+      "size": 72,
+      "fields": {
+      }
+    },
+    "C_SoundEventPathCornerEntity": {
+      "size": 1744,
+      "fields": {
+        "m_vecCornerPairsNetworked": 1720
+      }
+    },
+    "C_InfoVisibilityBox": {
+      "size": 1568,
+      "fields": {
+        "m_nMode": 1548,
+        "m_vBoxSize": 1552,
+        "m_bEnabled": 1564
+      }
+    },
+    "CCSPlayer_ItemServices": {
+      "size": 80,
+      "fields": {
+        "m_bHasDefuser": 72,
+        "m_bHasHelmet": 73
+      }
+    },
+    "CPulseCell_Value_Gradient": {
+      "size": 96,
+      "fields": {
+        "m_Gradient": 72
+      }
+    },
+    "IntervalTimer": {
+      "size": 16,
+      "fields": {
+        "m_timestamp": 8,
+        "m_nWorldGroupId": 12
+      }
+    },
+    "audioparams_t": {
+      "size": 120,
+      "fields": {
+        "localSound": 8,
+        "soundscapeIndex": 104,
+        "localBits": 108,
+        "soundscapeEntityListIndex": 112,
+        "soundEventHash": 116
+      }
+    },
+    "C_PathParticleRope": {
+      "size": 1816,
+      "fields": {
+        "m_bStartActive": 1552,
+        "m_flMaxSimulationTime": 1556,
+        "m_iszEffectName": 1560,
+        "m_PathNodes_Name": 1568,
+        "m_flParticleSpacing": 1592,
+        "m_flSlack": 1596,
+        "m_flRadius": 1600,
+        "m_ColorTint": 1604,
+        "m_nEffectState": 1608,
+        "m_iEffectIndex": 1616,
+        "m_PathNodes_Position": 1624,
+        "m_PathNodes_TangentIn": 1648,
+        "m_PathNodes_TangentOut": 1672,
+        "m_PathNodes_Color": 1696,
+        "m_PathNodes_PinEnabled": 1720,
+        "m_PathNodes_RadiusScale": 1744
+      }
+    },
+    "C_DecoyProjectile": {
+      "size": 5224,
+      "fields": {
+        "m_nDecoyShotTick": 5176,
+        "m_nClientLastKnownDecoyShotTick": 5180,
+        "m_flTimeParticleEffectSpawn": 5216
+      }
+    },
+    "C_AttributeContainer": {
+      "size": 1232,
+      "fields": {
+        "m_Item": 80,
+        "m_iExternalItemProviderRegisteredToken": 1216,
+        "m_ullRegisteredAsItemID": 1224
+      }
+    },
+    "C_CSWeaponBase": {
+      "size": 8000,
+      "fields": {
+        "m_iWeaponGameplayAnimState": 6472,
+        "m_flWeaponGameplayAnimStateTimestamp": 6476,
+        "m_flInspectCancelCompleteTime": 6480,
+        "m_bInspectPending": 6484,
+        "m_bInspectShouldLoop": 6485,
+        "m_flCrosshairDistance": 6528,
+        "m_iAmmoLastCheck": 6532,
+        "m_nLastEmptySoundCmdNum": 6536,
+        "m_bFireOnEmpty": 6540,
+        "m_OnPlayerPickup": 6544,
+        "m_weaponMode": 6568,
+        "m_flTurningInaccuracyDelta": 6572,
+        "m_vecTurningInaccuracyEyeDirLast": 6576,
+        "m_flTurningInaccuracy": 6588,
+        "m_fAccuracyPenalty": 6592,
+        "m_flLastAccuracyUpdateTime": 6596,
+        "m_fAccuracySmoothedForZoom": 6600,
+        "m_iRecoilIndex": 6604,
+        "m_flRecoilIndex": 6608,
+        "m_bBurstMode": 6612,
+        "m_flLastBurstModeChangeTime": 6616,
+        "m_nPostponeFireReadyTicks": 6620,
+        "m_flPostponeFireReadyFrac": 6624,
+        "m_bInReload": 6628,
+        "m_flDroppedAtTime": 6632,
+        "m_bIsHauledBack": 6636,
+        "m_bSilencerOn": 6637,
+        "m_flTimeSilencerSwitchComplete": 6640,
+        "m_flWeaponActionPlaybackRate": 6644,
+        "m_iOriginalTeamNumber": 6648,
+        "m_iMostRecentTeamNumber": 6652,
+        "m_bDroppedNearBuyZone": 6656,
+        "m_flNextAttackRenderTimeOffset": 6660,
+        "m_bClearWeaponIdentifyingUGC": 6816,
+        "m_bVisualsDataSet": 6817,
+        "m_bUIWeapon": 6818,
+        "m_nCustomEconReloadEventId": 6820,
+        "m_nextPrevOwnerUseTime": 6832,
+        "m_hPrevOwner": 6836,
+        "m_nDropTick": 6840,
+        "m_bWasActiveWeaponWhenDropped": 6844,
+        "m_donated": 6876,
+        "m_fLastShotTime": 6880,
+        "m_bWasOwnedByCT": 6884,
+        "m_bWasOwnedByTerrorist": 6885,
+        "m_flNextClientFireBulletTime": 6888,
+        "m_flNextClientFireBulletTime_Repredict": 6892,
+        "m_IronSightController": 7248,
+        "m_iIronSightMode": 7424,
+        "m_flLastLOSTraceFailureTime": 7448,
+        "m_flWatTickOffset": 7544,
+        "m_flLastShakeTime": 7564
+      }
+    },
+    "CTimeline": {
+      "size": 552,
+      "fields": {
+        "m_flValues": 16,
+        "m_nValueCounts": 272,
+        "m_nBucketCount": 528,
+        "m_flInterval": 532,
+        "m_flFinalValue": 536,
+        "m_nCompressionType": 540,
+        "m_bStopped": 544
+      }
+    },
+    "CPulseCursorFuncs": {
+      "size": 1,
+      "fields": {
+      }
+    },
+    "C_TonemapController2": {
+      "size": 1568,
+      "fields": {
+        "m_flAutoExposureMin": 1544,
+        "m_flAutoExposureMax": 1548,
+        "m_flExposureAdaptationSpeedUp": 1552,
+        "m_flExposureAdaptationSpeedDown": 1556,
+        "m_flTonemapEVSmoothingRange": 1560
+      }
+    },
+    "CountdownTimer": {
+      "size": 24,
+      "fields": {
+        "m_duration": 8,
+        "m_timestamp": 12,
+        "m_timescale": 16,
+        "m_nWorldGroupId": 20
+      }
+    },
+    "PulseNodeDynamicOutflows_t::DynamicOutflow_t": {
+      "size": 80,
+      "fields": {
+        "m_OutflowID": 0,
+        "m_Connection": 8
+      }
+    },
+    "C_WeaponMag7": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "WeaponPurchaseCount_t": {
+      "size": 56,
+      "fields": {
+        "m_nItemDefIndex": 48,
+        "m_nCount": 50
+      }
+    },
+    "CBasePulseGraphInstance": {
+      "size": 280,
+      "fields": {
+      }
+    },
+    "FilterHealth": {
+      "size": 1616,
+      "fields": {
+        "m_bAdrenalineActive": 1600,
+        "m_iHealthMin": 1604,
+        "m_iHealthMax": 1608
+      }
+    },
+    "C_PointClientUIHUD": {
+      "size": 4224,
+      "fields": {
+        "m_bCheckCSSClasses": 3776,
+        "m_bIgnoreInput": 4152,
+        "m_flWidth": 4156,
+        "m_flHeight": 4160,
+        "m_flDPI": 4164,
+        "m_flInteractDistance": 4168,
+        "m_flDepthOffset": 4172,
+        "m_unOwnerContext": 4176,
+        "m_unHorizontalAlign": 4180,
+        "m_unVerticalAlign": 4184,
+        "m_unOrientation": 4188,
+        "m_bAllowInteractionFromAllSceneWorlds": 4192,
+        "m_vecCSSClasses": 4200
+      }
+    },
+    "CPulseCell_Inflow_GraphHook": {
+      "size": 144,
+      "fields": {
+        "m_HookName": 128
+      }
+    },
+    "SignatureOutflow_Resume": {
+      "size": 72,
+      "fields": {
+      }
+    },
+    "CPathSimpleAPI": {
+      "size": 8,
+      "fields": {
+      }
+    },
+    "C_InfoLadderDismount": {
+      "size": 1544,
+      "fields": {
+      }
+    },
+    "C_PointCommentaryNode": {
+      "size": 4552,
+      "fields": {
+        "m_bActive": 4480,
+        "m_bWasActive": 4481,
+        "m_flEndTime": 4484,
+        "m_flStartTime": 4488,
+        "m_flStartTimeInCommentary": 4492,
+        "m_iszCommentaryFile": 4496,
+        "m_iszTitle": 4504,
+        "m_iszSpeakers": 4512,
+        "m_iNodeNumber": 4520,
+        "m_iNodeNumberMax": 4524,
+        "m_bListenedTo": 4528,
+        "m_sndCommentary": 4536,
+        "m_hViewPosition": 4544,
+        "m_bRestartAfterRestore": 4548
+      }
+    },
+    "CSpriteOriented": {
+      "size": 3840,
+      "fields": {
+      }
+    },
+    "shard_model_desc_t": {
+      "size": 128,
+      "fields": {
+        "m_nModelID": 8,
+        "m_hMaterialBase": 16,
+        "m_hMaterialDamageOverlay": 24,
+        "m_solid": 32,
+        "m_vecPanelSize": 36,
+        "m_vecStressPositionA": 44,
+        "m_vecStressPositionB": 52,
+        "m_vecPanelVertices": 64,
+        "m_vInitialPanelVertices": 88,
+        "m_flGlassHalfThickness": 112,
+        "m_bHasParent": 116,
+        "m_bParentFrozen": 117,
+        "m_SurfacePropStringToken": 120
+      }
+    },
+    "C_KeychainModule": {
+      "size": 4472,
+      "fields": {
+        "m_nKeychainDefID": 4464,
+        "m_nKeychainSeed": 4468
+      }
+    },
+    "CFuncWater": {
+      "size": 4000,
+      "fields": {
+        "m_BuoyancyHelper": 3720
+      }
+    },
+    "CCSPlayer_GlowServices": {
+      "size": 80,
+      "fields": {
+      }
+    },
+    "CCSGameModeRules": {
+      "size": 48,
+      "fields": {
+        "__m_pChainEntity": 8
+      }
+    },
+    "C_Flashbang": {
+      "size": 8192,
+      "fields": {
+      }
+    },
+    "C_PointClientUIWorldTextPanel": {
+      "size": 4832,
+      "fields": {
+        "m_messageText": 4320
+      }
+    },
+    "CCSPlayer_WaterServices": {
+      "size": 112,
+      "fields": {
+        "m_flWaterJumpTime": 72,
+        "m_vecWaterJumpVel": 76,
+        "m_flSwimSoundTime": 88
+      }
+    },
+    "C_CSObserverPawn": {
+      "size": 5720,
+      "fields": {
+        "m_hDetectParentChange": 5712
+      }
+    },
+    "ViewAngleServerChange_t": {
+      "size": 72,
+      "fields": {
+        "nType": 48,
+        "qAngle": 52,
+        "nIndex": 64
+      }
+    },
+    "C_FuncLadder": {
+      "size": 3808,
+      "fields": {
+        "m_vecLadderDir": 3720,
+        "m_Dismounts": 3736,
+        "m_vecLocalTop": 3760,
+        "m_vecPlayerMountPositionTop": 3772,
+        "m_vecPlayerMountPositionBottom": 3784,
+        "m_flAutoRideSpeed": 3796,
+        "m_bDisabled": 3800,
+        "m_bFakeLadder": 3801,
+        "m_bHasSlack": 3802
+      }
+    },
+    "C_WeaponMP5SD": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_World": {
+      "size": 3720,
+      "fields": {
+      }
+    },
+    "C_CSGO_TeamSelectCounterTerroristPosition": {
+      "size": 5032,
+      "fields": {
+      }
+    },
+    "C_WeaponGalilAR": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "CCSPlayerBase_CameraServices": {
+      "size": 680,
+      "fields": {
+        "m_iFOV": 656,
+        "m_iFOVStart": 660,
+        "m_flFOVTime": 664,
+        "m_flFOVRate": 668,
+        "m_hZoomOwner": 672,
+        "m_flLastShotFOV": 676
+      }
+    },
+    "C_TeamplayRules": {
+      "size": 64,
+      "fields": {
+      }
+    },
+    "CPulseCell_Inflow_BaseEntrypoint": {
+      "size": 128,
+      "fields": {
+        "m_EntryChunk": 72,
+        "m_RegisterMap": 80
+      }
+    },
+    "C_WeaponSG556": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_CSPlayerPawn": {
+      "size": 16112,
+      "fields": {
+        "m_pBulletServices": 5728,
+        "m_pHostageServices": 5736,
+        "m_pBuyServices": 5744,
+        "m_pGlowServices": 5752,
+        "m_pActionTrackingServices": 5760,
+        "m_pDamageReactServices": 5768,
+        "m_flHealthShotBoostExpirationTime": 5776,
+        "m_flLastFiredWeaponTime": 5780,
+        "m_bHasFemaleVoice": 5784,
+        "m_flLandingTimeSeconds": 5788,
+        "m_flOldFallVelocity": 5792,
+        "m_szLastPlaceName": 5796,
+        "m_bPrevDefuser": 5814,
+        "m_bPrevHelmet": 5815,
+        "m_nPrevArmorVal": 5816,
+        "m_nPrevGrenadeAmmoCount": 5820,
+        "m_unPreviousWeaponHash": 5824,
+        "m_unWeaponHash": 5828,
+        "m_bInBuyZone": 5832,
+        "m_bPreviouslyInBuyZone": 5833,
+        "m_aimPunchAngle": 5836,
+        "m_aimPunchAngleVel": 5848,
+        "m_aimPunchTickBase": 5860,
+        "m_aimPunchTickFraction": 5864,
+        "m_bInLanding": 5904,
+        "m_flLandingStartTime": 5908,
+        "m_bInHostageRescueZone": 5912,
+        "m_bInBombZone": 5913,
+        "m_bIsBuyMenuOpen": 5914,
+        "m_flTimeOfLastInjury": 5916,
+        "m_flNextSprayDecalTime": 5920,
+        "m_iRetakesOffering": 6264,
+        "m_iRetakesOfferingCard": 6268,
+        "m_bRetakesHasDefuseKit": 6272,
+        "m_bRetakesMVPLastRound": 6273,
+        "m_iRetakesMVPBoostItem": 6276,
+        "m_RetakesMVPBoostExtraUtility": 6280,
+        "m_bNeedToReApplyGloves": 6285,
+        "m_EconGloves": 6288,
+        "m_nEconGlovesChanged": 7424,
+        "m_bMustSyncRagdollState": 7425,
+        "m_nRagdollDamageBone": 7428,
+        "m_vRagdollDamageForce": 7432,
+        "m_vRagdollDamagePosition": 7444,
+        "m_szRagdollDamageWeaponName": 7456,
+        "m_bRagdollDamageHeadshot": 7520,
+        "m_vRagdollServerOrigin": 7524,
+        "m_lastLandTime": 9184,
+        "m_bOnGroundLastTick": 9188,
+        "m_hHudModelArms": 9216,
+        "m_qDeathEyeAngles": 9220,
+        "m_bSkipOneHeadConstraintUpdate": 9232,
+        "m_bLeftHanded": 9233,
+        "m_fSwitchedHandednessTime": 9236,
+        "m_flViewmodelOffsetX": 9240,
+        "m_flViewmodelOffsetY": 9244,
+        "m_flViewmodelOffsetZ": 9248,
+        "m_flViewmodelFOV": 9252,
+        "m_vecPlayerPatchEconIndices": 9256,
+        "m_GunGameImmunityColor": 9312,
+        "m_vecBulletHitModels": 9392,
+        "m_bIsWalking": 9416,
+        "m_thirdPersonHeading": 9424,
+        "m_flSlopeDropOffset": 9568,
+        "m_flSlopeDropHeight": 9688,
+        "m_vHeadConstraintOffset": 9808,
+        "m_entitySpottedState": 9952,
+        "m_bIsScoped": 9976,
+        "m_bResumeZoom": 9977,
+        "m_bIsDefusing": 9978,
+        "m_bIsGrabbingHostage": 9979,
+        "m_iBlockingUseActionInProgress": 9980,
+        "m_flEmitSoundTime": 9984,
+        "m_bInNoDefuseArea": 9988,
+        "m_nWhichBombZone": 9992,
+        "m_iShotsFired": 9996,
+        "m_flFlinchStack": 10000,
+        "m_flVelocityModifier": 10004,
+        "m_flHitHeading": 10008,
+        "m_nHitBodyPart": 10012,
+        "m_bWaitForNoAttack": 10016,
+        "m_ignoreLadderJumpTime": 10020,
+        "m_bKilledByHeadshot": 10025,
+        "m_ArmorValue": 10028,
+        "m_unCurrentEquipmentValue": 10032,
+        "m_unRoundStartEquipmentValue": 10034,
+        "m_unFreezetimeEndEquipmentValue": 10036,
+        "m_nLastKillerIndex": 10040,
+        "m_bOldIsScoped": 10044,
+        "m_bHasDeathInfo": 10045,
+        "m_flDeathInfoTime": 10048,
+        "m_vecDeathInfoOrigin": 10052,
+        "m_grenadeParameterStashTime": 10068,
+        "m_bGrenadeParametersStashed": 10072,
+        "m_angStashedShootAngles": 10076,
+        "m_vecStashedGrenadeThrowPosition": 10088,
+        "m_vecStashedVelocity": 10100,
+        "m_angShootAngleHistory": 10112,
+        "m_vecThrowPositionHistory": 10136,
+        "m_vecVelocityHistory": 10160,
+        "m_PredictedDamageTags": 10184,
+        "m_nPrevHighestReceivedDamageTagTick": 10288,
+        "m_nHighestAppliedDamageTagTick": 10292,
+        "m_bShouldAutobuyDMWeapons": 15724,
+        "m_fImmuneToGunGameDamageTime": 15728,
+        "m_bGunGameImmunity": 15732,
+        "m_fImmuneToGunGameDamageTimeLast": 15736,
+        "m_fMolotovDamageTime": 15740,
+        "m_vecLastAliveLocalVelocity": 15748,
+        "m_fRenderingClipPlane": 15760,
+        "m_nLastClipPlaneSetupFrame": 15776,
+        "m_vecLastClipCameraPos": 15780,
+        "m_vecLastClipCameraForward": 15792,
+        "m_bClipHitStaticWorld": 15804,
+        "m_bCachedPlaneIsValid": 15805,
+        "m_pClippingWeapon": 15808,
+        "m_nPlayerInfernoBodyFx": 15816,
+        "m_angEyeAngles": 15824,
+        "m_arrOldEyeAnglesTimes": 15968,
+        "m_arrOldEyeAngles": 15984,
+        "m_angEyeAnglesVelocity": 16032,
+        "m_iIDEntIndex": 16044,
+        "m_delayTargetIDTimer": 16048,
+        "m_iTargetItemEntIdx": 16072,
+        "m_iOldIDEntIndex": 16076,
+        "m_holdTargetIDTimer": 16080
+      }
+    },
+    "C_CSGO_TeamIntroTerroristPosition": {
+      "size": 5032,
+      "fields": {
+      }
+    },
+    "CPulseCell_WaitForCursorsWithTagBase": {
+      "size": 152,
+      "fields": {
+        "m_nCursorsAllowedToWait": 72,
+        "m_WaitComplete": 80
+      }
+    },
+    "C_Hostage": {
+      "size": 5288,
+      "fields": {
+        "m_entitySpottedState": 5080,
+        "m_leader": 5104,
+        "m_reuseTimer": 5112,
+        "m_vel": 5136,
+        "m_isRescued": 5148,
+        "m_jumpedThisFrame": 5149,
+        "m_nHostageState": 5152,
+        "m_bHandsHaveBeenCut": 5156,
+        "m_hHostageGrabber": 5160,
+        "m_fLastGrabTime": 5164,
+        "m_vecGrabbedPos": 5168,
+        "m_flRescueStartTime": 5180,
+        "m_flGrabSuccessTime": 5184,
+        "m_flDropStartTime": 5188,
+        "m_flDeadOrRescuedTime": 5192,
+        "m_blinkTimer": 5200,
+        "m_lookAt": 5224,
+        "m_lookAroundTimer": 5240,
+        "m_isInit": 5264,
+        "m_eyeAttachment": 5265,
+        "m_chestAttachment": 5266,
+        "m_pPredictionOwner": 5272,
+        "m_fNewestAlphaThinkTime": 5280
+      }
+    },
+    "C_fogplayerparams_t": {
+      "size": 64,
+      "fields": {
+        "m_hCtrl": 8,
+        "m_flTransitionTime": 12,
+        "m_OldColor": 16,
+        "m_flOldStart": 20,
+        "m_flOldEnd": 24,
+        "m_flOldMaxDensity": 28,
+        "m_flOldHDRColorScale": 32,
+        "m_flOldFarZ": 36,
+        "m_NewColor": 40,
+        "m_flNewStart": 44,
+        "m_flNewEnd": 48,
+        "m_flNewMaxDensity": 52,
+        "m_flNewHDRColorScale": 56,
+        "m_flNewFarZ": 60
+      }
+    },
+    "CGameSceneNode": {
+      "size": 336,
+      "fields": {
+        "m_nodeToWorld": 16,
+        "m_pOwner": 48,
+        "m_pParent": 56,
+        "m_pChild": 64,
+        "m_pNextSibling": 72,
+        "m_hParent": 120,
+        "m_vecOrigin": 136,
+        "m_angRotation": 192,
+        "m_flScale": 204,
+        "m_vecAbsOrigin": 208,
+        "m_angAbsRotation": 220,
+        "m_flAbsScale": 232,
+        "m_vecWrappedLocalOrigin": 236,
+        "m_angWrappedLocalRotation": 248,
+        "m_flWrappedScale": 260,
+        "m_nParentAttachmentOrBone": 264,
+        "m_bDebugAbsOriginChanges": 266,
+        "m_bDormant": 267,
+        "m_bForceParentToBeNetworked": 268,
+        "m_bDirtyHierarchy": 0,
+        "m_bDirtyBoneMergeInfo": 0,
+        "m_bNetworkedPositionChanged": 0,
+        "m_bNetworkedAnglesChanged": 0,
+        "m_bNetworkedScaleChanged": 0,
+        "m_bWillBeCallingPostDataUpdate": 0,
+        "m_bBoneMergeFlex": 0,
+        "m_nLatchAbsOrigin": 0,
+        "m_bDirtyBoneMergeBoneToRoot": 0,
+        "m_nHierarchicalDepth": 271,
+        "m_nHierarchyType": 272,
+        "m_nDoNotSetAnimTimeInInvalidatePhysicsCount": 273,
+        "m_name": 276,
+        "m_hierarchyAttachName": 296,
+        "m_flZOffset": 300,
+        "m_flClientLocalScale": 304,
+        "m_vRenderOrigin": 308
+      }
+    },
+    "CPlayer_ObserverServices": {
+      "size": 96,
+      "fields": {
+        "m_iObserverMode": 72,
+        "m_hObserverTarget": 76,
+        "m_iObserverLastMode": 80,
+        "m_bForcedObserverMode": 84,
+        "m_flObserverChaseDistance": 88,
+        "m_flObserverChaseDistanceCalcTime": 92
+      }
+    },
+    "C_SoundAreaEntityBase": {
+      "size": 1584,
+      "fields": {
+        "m_bDisabled": 1544,
+        "m_bWasEnabled": 1552,
+        "m_iszSoundAreaType": 1560,
+        "m_vPos": 1568
+      }
+    },
+    "C_PlayerVisibility": {
+      "size": 1592,
+      "fields": {
+        "m_flVisibilityStrength": 1544,
+        "m_flFogDistanceMultiplier": 1548,
+        "m_flFogMaxDensityMultiplier": 1552,
+        "m_flFadeTime": 1556,
+        "m_bStartDisabled": 1560,
+        "m_bIsEnabled": 1561
+      }
+    },
+    "CAttributeManager::cached_attribute_float_t": {
+      "size": 24,
+      "fields": {
+        "flIn": 0,
+        "iAttribHook": 8,
+        "flOut": 16
+      }
+    },
+    "C_BasePlayerWeapon": {
+      "size": 6392,
+      "fields": {
+        "m_nNextPrimaryAttackTick": 6336,
+        "m_flNextPrimaryAttackTickRatio": 6340,
+        "m_nNextSecondaryAttackTick": 6344,
+        "m_flNextSecondaryAttackTickRatio": 6348,
+        "m_iClip1": 6352,
+        "m_iClip2": 6356,
+        "m_pReserveAmmo": 6360
+      }
+    },
+    "CRagdollManager": {
+      "size": 1552,
+      "fields": {
+        "m_iCurrentMaxRagdollCount": 1544
+      }
+    },
+    "C_HEGrenade": {
+      "size": 8192,
+      "fields": {
+      }
+    },
+    "C_EnvSky": {
+      "size": 3816,
+      "fields": {
+        "m_hSkyMaterial": 3720,
+        "m_hSkyMaterialLightingOnly": 3728,
+        "m_bStartDisabled": 3736,
+        "m_vTintColor": 3737,
+        "m_vTintColorLightingOnly": 3741,
+        "m_flBrightnessScale": 3748,
+        "m_nFogType": 3752,
+        "m_flFogMinStart": 3756,
+        "m_flFogMinEnd": 3760,
+        "m_flFogMaxStart": 3764,
+        "m_flFogMaxEnd": 3768,
+        "m_bEnabled": 3772
+      }
+    },
+    "CPulse_InvokeBinding": {
+      "size": 176,
+      "fields": {
+        "m_RegisterMap": 0,
+        "m_FuncName": 48,
+        "m_nCellIndex": 64,
+        "m_nSrcChunk": 68,
+        "m_nSrcInstruction": 72
+      }
+    },
+    "C_EnvWindController": {
+      "size": 1832,
+      "fields": {
+        "m_EnvWindShared": 1544,
+        "m_fDirectionVariation": 1792,
+        "m_fSpeedVariation": 1796,
+        "m_fTurbulence": 1800,
+        "m_fVolumeHalfExtentXY": 1804,
+        "m_fVolumeHalfExtentZ": 1808,
+        "m_nVolumeResolutionXY": 1812,
+        "m_nVolumeResolutionZ": 1816,
+        "m_nClipmapLevels": 1820,
+        "m_bIsMaster": 1824,
+        "m_bFirstTime": 1825
+      }
+    },
+    "C_GameRules": {
+      "size": 64,
+      "fields": {
+        "__m_pChainEntity": 8,
+        "m_nTotalPausedTicks": 48,
+        "m_nPauseStartTick": 52,
+        "m_bGamePaused": 56
+      }
+    },
+    "C_WeaponMAC10": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_CSGO_MapPreviewCameraPath": {
+      "size": 1680,
+      "fields": {
+        "m_flZFar": 1544,
+        "m_flZNear": 1548,
+        "m_bLoop": 1552,
+        "m_bVerticalFOV": 1553,
+        "m_bConstantSpeed": 1554,
+        "m_flDuration": 1556,
+        "m_flPathLength": 1624,
+        "m_flPathDuration": 1628,
+        "m_bDofEnabled": 1652,
+        "m_flDofNearBlurry": 1656,
+        "m_flDofNearCrisp": 1660,
+        "m_flDofFarCrisp": 1664,
+        "m_flDofFarBlurry": 1668,
+        "m_flDofTiltToGround": 1672
+      }
+    },
+    "C_PointWorldText": {
+      "size": 4448,
+      "fields": {
+        "m_bForceRecreateNextUpdate": 3728,
+        "m_nTextWidthPx": 3752,
+        "m_nTextHeightPx": 3756,
+        "m_messageText": 3760,
+        "m_FontName": 4272,
+        "m_BackgroundMaterialName": 4336,
+        "m_bEnabled": 4400,
+        "m_bFullbright": 4401,
+        "m_flWorldUnitsPerPx": 4404,
+        "m_flFontSize": 4408,
+        "m_flDepthOffset": 4412,
+        "m_bDrawBackground": 4416,
+        "m_flBackgroundBorderWidth": 4420,
+        "m_flBackgroundBorderHeight": 4424,
+        "m_flBackgroundWorldToUV": 4428,
+        "m_Color": 4432,
+        "m_nJustifyHorizontal": 4436,
+        "m_nJustifyVertical": 4440,
+        "m_nReorientMode": 4444
+      }
+    },
+    "C_RopeKeyframe": {
+      "size": 4600,
+      "fields": {
+        "m_LinksTouchingSomething": 3728,
+        "m_nLinksTouchingSomething": 3732,
+        "m_bApplyWind": 3736,
+        "m_fPrevLockedPoints": 3740,
+        "m_iForcePointMoveCounter": 3744,
+        "m_bPrevEndPointPos": 3748,
+        "m_vPrevEndPointPos": 3752,
+        "m_flCurScroll": 3776,
+        "m_flScrollSpeed": 3780,
+        "m_RopeFlags": 3784,
+        "m_iRopeMaterialModelIndex": 3792,
+        "m_nSegments": 4424,
+        "m_hStartPoint": 4428,
+        "m_hEndPoint": 4432,
+        "m_iStartAttachment": 4436,
+        "m_iEndAttachment": 4437,
+        "m_Subdiv": 4438,
+        "m_RopeLength": 4440,
+        "m_Slack": 4442,
+        "m_TextureScale": 4444,
+        "m_fLockedPoints": 4448,
+        "m_nChangeCount": 4449,
+        "m_Width": 4452,
+        "m_PhysicsDelegate": 4456,
+        "m_hMaterial": 4472,
+        "m_TextureHeight": 4480,
+        "m_vecImpulse": 4484,
+        "m_vecPreviousImpulse": 4496,
+        "m_flCurrentGustTimer": 4508,
+        "m_flCurrentGustLifetime": 4512,
+        "m_flTimeToNextGust": 4516,
+        "m_vWindDir": 4520,
+        "m_vColorMod": 4532,
+        "m_vCachedEndPointAttachmentPos": 4544,
+        "m_vCachedEndPointAttachmentAngle": 4568,
+        "m_bConstrainBetweenEndpoints": 4592,
+        "m_bEndPointAttachmentPositionsDirty": 0,
+        "m_bEndPointAttachmentAnglesDirty": 0,
+        "m_bNewDataThisFrame": 0,
+        "m_bPhysicsInitted": 0
+      }
+    },
+    "C_BaseToggle": {
+      "size": 3720,
+      "fields": {
+      }
+    },
+    "C_EnvCubemapBox": {
+      "size": 1776,
+      "fields": {
+      }
+    },
+    "C_RopeKeyframe::CPhysicsDelegate": {
+      "size": 16,
+      "fields": {
+        "m_pKeyframe": 8
+      }
+    },
+    "CInfoDynamicShadowHint": {
+      "size": 1568,
+      "fields": {
+        "m_bDisabled": 1544,
+        "m_flRange": 1548,
+        "m_nImportance": 1552,
+        "m_nLightChoice": 1556,
+        "m_hLight": 1560
+      }
+    },
+    "CPathNode": {
+      "size": 1632,
+      "fields": {
+        "m_vInTangentLocal": 1544,
+        "m_vOutTangentLocal": 1556,
+        "m_strParentPathUniqueID": 1568,
+        "m_strPathNodeParameter": 1576,
+        "m_xWSPrevParent": 1584,
+        "m_hPath": 1616
+      }
+    },
+    "C_FuncMoveLinear": {
+      "size": 3720,
+      "fields": {
+      }
+    },
+    "CServerOnlyModelEntity": {
+      "size": 3720,
+      "fields": {
+      }
+    },
+    "C_CSGO_TeamSelectCamera": {
+      "size": 1688,
+      "fields": {
+      }
+    },
+    "CPulseCell_IntervalTimer": {
+      "size": 216,
+      "fields": {
+        "m_Completed": 72,
+        "m_OnInterval": 144
+      }
+    },
+    "C_WeaponXM1014": {
+      "size": 8000,
+      "fields": {
+      }
+    },
+    "C_WorldModelGloves": {
+      "size": 4464,
+      "fields": {
+      }
+    },
+    "C_PhysicsPropMultiplayer": {
+      "size": 4832,
+      "fields": {
+      }
+    },
+    "C_SoundEventOBBEntity": {
+      "size": 1760,
+      "fields": {
+        "m_vMins": 1720,
+        "m_vMaxs": 1732
+      }
+    },
+    "CPulseTestScriptLib": {
+      "size": 1,
+      "fields": {
+      }
+    },
+    "CPulseCell_BaseLerp": {
+      "size": 144,
+      "fields": {
+        "m_WakeResume": 72
+      }
+    },
+    "C_WeaponAug": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_BasePropDoor": {
+      "size": 5088,
+      "fields": {
+        "m_eDoorState": 5040,
+        "m_modelChanged": 5044,
+        "m_bLocked": 5045,
+        "m_bNoNPCs": 5046,
+        "m_closedPosition": 5048,
+        "m_closedAngles": 5060,
+        "m_hMaster": 5072,
+        "m_vWhereToSetLightingOrigin": 5076
+      }
+    },
+    "CChoreoInfoTarget": {
+      "size": 1544,
+      "fields": {
+      }
+    },
+    "CNetworkedSequenceOperation": {
+      "size": 40,
+      "fields": {
+        "m_hSequence": 8,
+        "m_flPrevCycle": 12,
+        "m_flCycle": 16,
+        "m_flWeight": 20,
+        "m_bSequenceChangeNetworked": 28,
+        "m_bDiscontinuity": 29,
+        "m_flPrevCycleFromDiscontinuity": 32,
+        "m_flPrevCycleForAnimEventDetection": 36
+      }
+    },
+    "C_Item_Healthshot": {
+      "size": 8016,
+      "fields": {
+      }
+    },
+    "CEntityInstance": {
+      "size": 56,
+      "fields": {
+        "m_iszPrivateVScripts": 8,
+        "m_pEntity": 16,
+        "m_CScriptComponent": 48
+      }
+    },
+    "C_BaseModelEntity": {
+      "size": 3720,
+      "fields": {
+        "m_CRenderComponent": 2800,
+        "m_CHitboxComponent": 2808,
+        "m_nDestructiblePartInitialStateDestructed0": 2832,
+        "m_nDestructiblePartInitialStateDestructed1": 2836,
+        "m_nDestructiblePartInitialStateDestructed2": 2840,
+        "m_nDestructiblePartInitialStateDestructed3": 2844,
+        "m_nDestructiblePartInitialStateDestructed4": 2848,
+        "m_nDestructiblePartInitialStateDestructed0_PartIndex": 2852,
+        "m_nDestructiblePartInitialStateDestructed1_PartIndex": 2856,
+        "m_nDestructiblePartInitialStateDestructed2_PartIndex": 2860,
+        "m_nDestructiblePartInitialStateDestructed3_PartIndex": 2864,
+        "m_nDestructiblePartInitialStateDestructed4_PartIndex": 2868,
+        "m_pDestructiblePartsSystemComponent": 2872,
+        "m_bInitModelEffects": 2904,
+        "m_bDoingModelEffects": 2905,
+        "m_bIsStaticProp": 2906,
+        "m_iOldHealth": 2908,
+        "m_nRenderMode": 2912,
+        "m_nRenderFX": 2913,
+        "m_bAllowFadeInView": 2914,
+        "m_clrRender": 2944,
+        "m_vecRenderAttributes": 2952,
+        "m_bRenderToCubemaps": 3080,
+        "m_bNoInterpolate": 3081,
+        "m_Collision": 3088,
+        "m_Glow": 3264,
+        "m_flGlowBackfaceMult": 3352,
+        "m_fadeMinDist": 3356,
+        "m_fadeMaxDist": 3360,
+        "m_flFadeScale": 3364,
+        "m_flShadowStrength": 3368,
+        "m_nObjectCulling": 3372,
+        "m_nRequiredDecalRtEncoding": 3373,
+        "m_vecViewOffset": 3416,
+        "m_pClientAlphaProperty": 3640,
+        "m_ClientOverrideTint": 3648,
+        "m_bUseClientOverrideTint": 3652,
+        "m_bvDisabledHitGroups": 3712
+      }
+    },
+    "CCSPlayer_BulletServices": {
+      "size": 168,
+      "fields": {
+        "m_totalHitsOnServer": 72
+      }
+    },
+    "C_SoundOpvarSetAutoRoomEntity": {
+      "size": 1576,
+      "fields": {
+      }
+    },
+    "C_EnvCombinedLightProbeVolume": {
+      "size": 5968,
+      "fields": {
+        "m_Entity_Color": 5760,
+        "m_Entity_flBrightness": 5764,
+        "m_Entity_hCubemapTexture": 5768,
+        "m_Entity_bCustomCubemapTexture": 5776,
+        "m_Entity_hLightProbeTexture_AmbientCube": 5784,
+        "m_Entity_hLightProbeTexture_SDF": 5792,
+        "m_Entity_hLightProbeTexture_SH2_DC": 5800,
+        "m_Entity_hLightProbeTexture_SH2_R": 5808,
+        "m_Entity_hLightProbeTexture_SH2_G": 5816,
+        "m_Entity_hLightProbeTexture_SH2_B": 5824,
+        "m_Entity_hLightProbeDirectLightIndicesTexture": 5832,
+        "m_Entity_hLightProbeDirectLightScalarsTexture": 5840,
+        "m_Entity_hLightProbeDirectLightShadowsTexture": 5848,
+        "m_Entity_vBoxMins": 5856,
+        "m_Entity_vBoxMaxs": 5868,
+        "m_Entity_bMoveable": 5880,
+        "m_Entity_nHandshake": 5884,
+        "m_Entity_nEnvCubeMapArrayIndex": 5888,
+        "m_Entity_nPriority": 5892,
+        "m_Entity_bStartDisabled": 5896,
+        "m_Entity_flEdgeFadeDist": 5900,
+        "m_Entity_vEdgeFadeDists": 5904,
+        "m_Entity_nLightProbeSizeX": 5916,
+        "m_Entity_nLightProbeSizeY": 5920,
+        "m_Entity_nLightProbeSizeZ": 5924,
+        "m_Entity_nLightProbeAtlasX": 5928,
+        "m_Entity_nLightProbeAtlasY": 5932,
+        "m_Entity_nLightProbeAtlasZ": 5936,
+        "m_Entity_bEnabled": 5961
+      }
+    },
+    "C_MultiplayRules": {
+      "size": 64,
+      "fields": {
+      }
+    },
+    "CPlayer_AutoaimServices": {
+      "size": 72,
+      "fields": {
+      }
+    },
+    "C_LightDirectionalEntity": {
+      "size": 3728,
+      "fields": {
+      }
+    },
+    "C_BaseEntity": {
+      "size": 1544,
+      "fields": {
+        "m_CBodyComponent": 56,
+        "m_NetworkTransmitComponent": 64,
+        "m_nLastThinkTick": 816,
+        "m_pGameSceneNode": 824,
+        "m_pRenderComponent": 832,
+        "m_pCollision": 840,
+        "m_iMaxHealth": 848,
+        "m_iHealth": 852,
+        "m_flDamageAccumulator": 856,
+        "m_lifeState": 860,
+        "m_bTakesDamage": 861,
+        "m_nTakeDamageFlags": 864,
+        "m_nPlatformType": 872,
+        "m_ubInterpolationFrame": 873,
+        "m_hSceneObjectController": 876,
+        "m_nNoInterpolationTick": 880,
+        "m_nVisibilityNoInterpolationTick": 884,
+        "m_flProxyRandomValue": 888,
+        "m_iEFlags": 892,
+        "m_nWaterType": 896,
+        "m_bInterpolateEvenWithNoModel": 897,
+        "m_bPredictionEligible": 898,
+        "m_bApplyLayerMatchIDToModel": 899,
+        "m_tokLayerMatchID": 900,
+        "m_nSubclassID": 904,
+        "m_nSimulationTick": 920,
+        "m_iCurrentThinkContext": 924,
+        "m_aThinkFunctions": 928,
+        "m_bDisabledContextThinks": 952,
+        "m_flAnimTime": 956,
+        "m_flSimulationTime": 960,
+        "m_nSceneObjectOverrideFlags": 964,
+        "m_bHasSuccessfullyInterpolated": 965,
+        "m_bHasAddedVarsToInterpolation": 966,
+        "m_bRenderEvenWhenNotSuccessfullyInterpolated": 967,
+        "m_nInterpolationLatchDirtyFlags": 968,
+        "m_ListEntry": 976,
+        "m_flCreateTime": 1000,
+        "m_flSpeed": 1004,
+        "m_EntClientFlags": 1008,
+        "m_bClientSideRagdoll": 1010,
+        "m_iTeamNum": 1011,
+        "m_spawnflags": 1012,
+        "m_nNextThinkTick": 1016,
+        "m_fFlags": 1024,
+        "m_vecAbsVelocity": 1028,
+        "m_vecServerVelocity": 1040,
+        "m_vecVelocity": 1080,
+        "m_vecBaseVelocity": 1304,
+        "m_hEffectEntity": 1316,
+        "m_hOwnerEntity": 1320,
+        "m_MoveCollide": 1324,
+        "m_MoveType": 1325,
+        "m_nActualMoveType": 1326,
+        "m_flWaterLevel": 1328,
+        "m_fEffects": 1332,
+        "m_hGroundEntity": 1336,
+        "m_nGroundBodyIndex": 1340,
+        "m_flFriction": 1344,
+        "m_flElasticity": 1348,
+        "m_flGravityScale": 1352,
+        "m_flTimeScale": 1356,
+        "m_bAnimatedEveryTick": 1360,
+        "m_bGravityDisabled": 1361,
+        "m_flNavIgnoreUntilTime": 1364,
+        "m_hThink": 1368,
+        "m_fBBoxVisFlags": 1384,
+        "m_flActualGravityScale": 1388,
+        "m_bGravityActuallyDisabled": 1392,
+        "m_bPredictable": 1393,
+        "m_bRenderWithViewModels": 1394,
+        "m_nFirstPredictableCommand": 1396,
+        "m_nLastPredictableCommand": 1400,
+        "m_hOldMoveParent": 1404,
+        "m_Particles": 1408,
+        "m_vecAngVelocity": 1456,
+        "m_DataChangeEventRef": 1468,
+        "m_dependencies": 1472,
+        "m_nCreationTick": 1496,
+        "m_bAnimTimeChanged": 1513,
+        "m_bSimulationTimeChanged": 1514,
+        "m_sUniqueHammerID": 1528,
+        "m_nBloodType": 1536
+      }
+    },
+    "ActiveModelConfig_t": {
+      "size": 112,
+      "fields": {
+        "m_Handle": 48,
+        "m_Name": 56,
+        "m_AssociatedEntities": 64,
+        "m_AssociatedEntityNames": 88
+      }
+    },
+    "C_WeaponSSG08": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "CPulseCell_Value_Curve": {
+      "size": 136,
+      "fields": {
+        "m_Curve": 72
+      }
+    },
+    "C_BasePlayerPawn": {
+      "size": 5552,
+      "fields": {
+        "m_pWeaponServices": 5080,
+        "m_pItemServices": 5088,
+        "m_pAutoaimServices": 5096,
+        "m_pObserverServices": 5104,
+        "m_pWaterServices": 5112,
+        "m_pUseServices": 5120,
+        "m_pFlashlightServices": 5128,
+        "m_pCameraServices": 5136,
+        "m_pMovementServices": 5144,
+        "m_ServerViewAngleChanges": 5160,
+        "v_angle": 5264,
+        "v_anglePrevious": 5276,
+        "m_iHideHUD": 5288,
+        "m_skybox3d": 5296,
+        "m_flDeathTime": 5440,
+        "m_vecPredictionError": 5444,
+        "m_flPredictionErrorTime": 5456,
+        "m_vecLastCameraSetupLocalOrigin": 5488,
+        "m_flLastCameraSetupTime": 5500,
+        "m_flFOVSensitivityAdjust": 5504,
+        "m_flMouseSensitivity": 5508,
+        "m_vOldOrigin": 5512,
+        "m_flOldSimulationTime": 5524,
+        "m_nLastExecutedCommandNumber": 5528,
+        "m_nLastExecutedCommandTick": 5532,
+        "m_hController": 5536,
+        "m_hDefaultController": 5540,
+        "m_bIsSwappingToPredictableController": 5544
+      }
+    },
+    "C_Chicken": {
+      "size": 6304,
+      "fields": {
+        "m_hHolidayHatAddon": 5032,
+        "m_jumpedThisFrame": 5036,
+        "m_leader": 5040,
+        "m_AttributeManager": 5048,
+        "m_bAttributesInitialized": 6280,
+        "m_hWaterWakeParticles": 6284,
+        "m_bIsPreviewModel": 6288
+      }
+    },
+    "C_SoundOpvarSetAABBEntity": {
+      "size": 1576,
+      "fields": {
+      }
+    },
+    "C_WeaponBizon": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_StattrakModule": {
+      "size": 4472,
+      "fields": {
+        "m_bKnife": 4464
+      }
+    },
+    "CCSObserver_CameraServices": {
+      "size": 680,
+      "fields": {
+      }
+    },
+    "CTakeDamageInfoAPI": {
+      "size": 8,
+      "fields": {
+      }
+    },
+    "CEnvSoundscapeProxy": {
+      "size": 1696,
+      "fields": {
+        "m_MainSoundscapeName": 1688
+      }
+    },
+    "C_SoundEventEntity": {
+      "size": 1720,
+      "fields": {
+        "m_bStartOnSpawn": 1544,
+        "m_bToLocalPlayer": 1545,
+        "m_bStopOnNew": 1546,
+        "m_bSaveRestore": 1547,
+        "m_bSavedIsPlaying": 1548,
+        "m_flSavedElapsedTime": 1552,
+        "m_iszSourceEntityName": 1560,
+        "m_iszAttachmentName": 1568,
+        "m_onGUIDChanged": 1576,
+        "m_onSoundFinished": 1608,
+        "m_flClientCullRadius": 1632,
+        "m_iszSoundName": 1680,
+        "m_hSource": 1708,
+        "m_nEntityIndexSelection": 1712,
+        "m_bClientSideOnly": 0
+      }
+    },
+    "CPulseCell_Inflow_EventHandler": {
+      "size": 144,
+      "fields": {
+        "m_EventName": 128
+      }
+    },
+    "C_LightOrthoEntity": {
+      "size": 3728,
+      "fields": {
+      }
+    },
+    "CPulseCell_BaseFlow": {
+      "size": 72,
+      "fields": {
+      }
+    },
+    "CBombTarget": {
+      "size": 3936,
+      "fields": {
+        "m_bBombPlantedHere": 3928
+      }
+    },
+    "C_Knife": {
+      "size": 8016,
+      "fields": {
+        "m_bFirstAttack": 8000
+      }
+    },
+    "C_CSGO_TerroristWingmanIntroCamera": {
+      "size": 1688,
+      "fields": {
+      }
+    },
+    "CSkeletonInstance": {
+      "size": 1232,
+      "fields": {
+        "m_modelState": 352,
+        "m_bIsAnimationEnabled": 1072,
+        "m_bUseParentRenderBounds": 1073,
+        "m_bDisableSolidCollisionsForHierarchy": 1074,
+        "m_bDirtyMotionType": 0,
+        "m_bIsGeneratingLatchedParentSpaceState": 0,
+        "m_materialGroup": 1076,
+        "m_nHitboxSet": 1080
+      }
+    },
+    "CEntityComponent": {
+      "size": 8,
+      "fields": {
+      }
+    },
+    "C_ItemDogtags": {
+      "size": 6600,
+      "fields": {
+        "m_OwningPlayer": 6592,
+        "m_KillingPlayer": 6596
+      }
+    },
+    "C_LateUpdatedAnimating": {
+      "size": 4608,
+      "fields": {
+      }
+    },
+    "CPulseCell_Outflow_CycleShuffled::InstanceState_t": {
+      "size": 40,
+      "fields": {
+        "m_Shuffle": 0,
+        "m_nNextShuffle": 32
+      }
+    },
+    "CPulseCell_BaseLerp::CursorState_t": {
+      "size": 8,
+      "fields": {
+        "m_StartTime": 0,
+        "m_EndTime": 4
+      }
+    },
+    "CPulseAnimFuncs": {
+      "size": 8,
+      "fields": {
+      }
+    },
+    "C_BaseClientUIEntity": {
+      "size": 3768,
+      "fields": {
+        "m_bEnabled": 3728,
+        "m_DialogXMLName": 3736,
+        "m_PanelClassName": 3744,
+        "m_PanelID": 3752
+      }
+    },
+    "CPulseCell_WaitForCursorsWithTagBase::CursorState_t": {
+      "size": 48,
+      "fields": {
+        "m_TagName": 0
+      }
+    },
+    "CPulseArraylib": {
+      "size": 1,
+      "fields": {
+      }
+    },
+    "C_WeaponUSPSilencer": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_MolotovProjectile": {
+      "size": 5216,
+      "fields": {
+        "m_bIsIncGrenade": 5176
+      }
+    },
+    "C_TriggerLerpObject": {
+      "size": 3928,
+      "fields": {
+      }
+    },
+    "CPointTemplateAPI": {
+      "size": 8,
+      "fields": {
+      }
+    },
+    "C_WeaponRevolver": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_WeaponElite": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_DynamicPropAlias_cable_dynamic": {
+      "size": 5024,
+      "fields": {
+      }
+    },
+    "CBaseProp": {
+      "size": 4512,
+      "fields": {
+        "m_bModelOverrodeBlockLOS": 4456,
+        "m_iShapeType": 4460,
+        "m_bConformToCollisionBounds": 4464,
+        "m_mPreferredCatchTransform": 4480
+      }
+    },
+    "CInfoOffscreenPanoramaTexture": {
+      "size": 2064,
+      "fields": {
+        "m_bDisabled": 1544,
+        "m_nResolutionX": 1548,
+        "m_nResolutionY": 1552,
+        "m_szPanelType": 1560,
+        "m_szLayoutFileName": 1568,
+        "m_RenderAttrName": 1576,
+        "m_TargetEntities": 1584,
+        "m_nTargetChangeCount": 1608,
+        "m_vecCSSClasses": 1616,
+        "m_szTargetsName": 1640,
+        "m_AdditionalTargetEntities": 1648,
+        "m_bCheckCSSClasses": 2024
+      }
+    },
+    "CCSWeaponBaseVData": {
+      "size": 1984,
+      "fields": {
+        "m_WeaponType": 1088,
+        "m_WeaponCategory": 1092,
+        "m_szAnimSkeleton": 1096,
+        "m_vecMuzzlePos0": 1320,
+        "m_vecMuzzlePos1": 1332,
+        "m_szTracerParticle": 1344,
+        "m_GearSlot": 1568,
+        "m_GearSlotPosition": 1572,
+        "m_DefaultLoadoutSlot": 1576,
+        "m_nPrice": 1580,
+        "m_nKillAward": 1584,
+        "m_nPrimaryReserveAmmoMax": 1588,
+        "m_nSecondaryReserveAmmoMax": 1592,
+        "m_bMeleeWeapon": 1596,
+        "m_bHasBurstMode": 1597,
+        "m_bIsRevolver": 1598,
+        "m_bCannotShootUnderwater": 1599,
+        "m_szName": 1600,
+        "m_eSilencerType": 1608,
+        "m_nCrosshairMinDistance": 1612,
+        "m_nCrosshairDeltaDistance": 1616,
+        "m_bIsFullAuto": 1620,
+        "m_nNumBullets": 1624,
+        "m_bReloadsSingleShells": 1628,
+        "m_flCycleTime": 1632,
+        "m_flMaxSpeed": 1640,
+        "m_flSpread": 1648,
+        "m_flInaccuracyCrouch": 1656,
+        "m_flInaccuracyStand": 1664,
+        "m_flInaccuracyJump": 1672,
+        "m_flInaccuracyLand": 1680,
+        "m_flInaccuracyLadder": 1688,
+        "m_flInaccuracyFire": 1696,
+        "m_flInaccuracyMove": 1704,
+        "m_flRecoilAngle": 1712,
+        "m_flRecoilAngleVariance": 1720,
+        "m_flRecoilMagnitude": 1728,
+        "m_flRecoilMagnitudeVariance": 1736,
+        "m_nTracerFrequency": 1744,
+        "m_flInaccuracyJumpInitial": 1752,
+        "m_flInaccuracyJumpApex": 1756,
+        "m_flInaccuracyReload": 1760,
+        "m_flDeployDuration": 1764,
+        "m_flDisallowAttackAfterReloadStartDuration": 1768,
+        "m_nBurstShotCount": 1772,
+        "m_bAllowBurstHolster": 1776,
+        "m_nRecoilSeed": 1780,
+        "m_nSpreadSeed": 1784,
+        "m_flAttackMovespeedFactor": 1788,
+        "m_flInaccuracyPitchShift": 1792,
+        "m_flInaccuracyAltSoundThreshold": 1796,
+        "m_szUseRadioSubtitle": 1800,
+        "m_bUnzoomsAfterShot": 1808,
+        "m_bHideViewModelWhenZoomed": 1809,
+        "m_nZoomLevels": 1812,
+        "m_nZoomFOV1": 1816,
+        "m_nZoomFOV2": 1820,
+        "m_flZoomTime0": 1824,
+        "m_flZoomTime1": 1828,
+        "m_flZoomTime2": 1832,
+        "m_flIronSightPullUpSpeed": 1836,
+        "m_flIronSightPutDownSpeed": 1840,
+        "m_flIronSightFOV": 1844,
+        "m_flIronSightPivotForward": 1848,
+        "m_flIronSightLooseness": 1852,
+        "m_nDamage": 1856,
+        "m_flHeadshotMultiplier": 1860,
+        "m_flArmorRatio": 1864,
+        "m_flPenetration": 1868,
+        "m_flRange": 1872,
+        "m_flRangeModifier": 1876,
+        "m_flFlinchVelocityModifierLarge": 1880,
+        "m_flFlinchVelocityModifierSmall": 1884,
+        "m_flRecoveryTimeCrouch": 1888,
+        "m_flRecoveryTimeStand": 1892,
+        "m_flRecoveryTimeCrouchFinal": 1896,
+        "m_flRecoveryTimeStandFinal": 1900,
+        "m_nRecoveryTransitionStartBullet": 1904,
+        "m_nRecoveryTransitionEndBullet": 1908,
+        "m_flThrowVelocity": 1912,
+        "m_vSmokeColor": 1916,
+        "m_szAnimClass": 1928
+      }
+    },
+    "CAttributeManager": {
+      "size": 80,
+      "fields": {
+        "m_Providers": 8,
+        "m_iReapplyProvisionParity": 32,
+        "m_hOuter": 36,
+        "m_bPreventLoopback": 40,
+        "m_ProviderType": 44,
+        "m_CachedResults": 48
+      }
+    },
+    "SignatureOutflow_Continue": {
+      "size": 72,
+      "fields": {
+      }
+    },
+    "CInfoTarget": {
+      "size": 1544,
+      "fields": {
+      }
+    },
+    "CPlayer_CameraServices": {
+      "size": 656,
+      "fields": {
+        "m_vecCsViewPunchAngle": 72,
+        "m_nCsViewPunchAngleTick": 84,
+        "m_flCsViewPunchAngleTickRatio": 88,
+        "m_PlayerFog": 96,
+        "m_hColorCorrectionCtrl": 160,
+        "m_hViewEntity": 164,
+        "m_hTonemapController": 168,
+        "m_audio": 176,
+        "m_PostProcessingVolumes": 296,
+        "m_flOldPlayerZ": 320,
+        "m_flOldPlayerViewOffsetZ": 324,
+        "m_CurrentFog": 328,
+        "m_hOldFogController": 432,
+        "m_bOverrideFogColor": 436,
+        "m_OverrideFogColor": 441,
+        "m_bOverrideFogStartEnd": 461,
+        "m_fOverrideFogStart": 468,
+        "m_fOverrideFogEnd": 488,
+        "m_hActivePostProcessingVolume": 508,
+        "m_angDemoViewAngles": 512
+      }
+    },
+    "CPulseCell_Timeline": {
+      "size": 248,
+      "fields": {
+        "m_TimelineEvents": 72,
+        "m_bWaitForChildOutflows": 96,
+        "m_OnFinished": 104,
+        "m_OnCanceled": 176
+      }
+    },
+    "CPulseCell_Inflow_EntOutputHandler": {
+      "size": 184,
+      "fields": {
+        "m_SourceEntity": 128,
+        "m_SourceOutput": 144,
+        "m_ExpectedParamType": 160
+      }
+    },
+    "C_BaseCSGrenade": {
+      "size": 8192,
+      "fields": {
+        "m_bClientPredictDelete": 8000,
+        "m_bRedraw": 8001,
+        "m_bIsHeldByPlayer": 8002,
+        "m_bPinPulled": 8003,
+        "m_bJumpThrow": 8004,
+        "m_bThrowAnimating": 8005,
+        "m_fThrowTime": 8008,
+        "m_flThrowStrength": 8016,
+        "m_fDropTime": 8136,
+        "m_fPinPullTime": 8140,
+        "m_bJustPulledPin": 8144,
+        "m_nNextHoldTick": 8148,
+        "m_flNextHoldFrac": 8152,
+        "m_hSwitchToWeaponAfterThrow": 8156
+      }
+    },
+    "CFilterAttributeInt": {
+      "size": 1608,
+      "fields": {
+        "m_sAttributeName": 1600
+      }
+    },
+    "CPointTemplate": {
+      "size": 1648,
+      "fields": {
+        "m_iszWorldName": 1544,
+        "m_iszSource2EntityLumpName": 1552,
+        "m_iszEntityFilterName": 1560,
+        "m_flTimeoutInterval": 1568,
+        "m_bAsynchronouslySpawnEntities": 1572,
+        "m_clientOnlyEntityBehavior": 1576,
+        "m_ownerSpawnGroupType": 1580,
+        "m_createdSpawnGroupHandles": 1584,
+        "m_SpawnedEntityHandles": 1608,
+        "m_ScriptSpawnCallback": 1632,
+        "m_ScriptCallbackScope": 1640
+      }
+    },
+    "CPlayer_FlashlightServices": {
+      "size": 72,
+      "fields": {
+      }
+    },
+    "CCSPlayerController": {
+      "size": 2392,
+      "fields": {
+        "m_pInGameMoneyServices": 2056,
+        "m_pInventoryServices": 2064,
+        "m_pActionTrackingServices": 2072,
+        "m_pDamageServices": 2080,
+        "m_iPing": 2088,
+        "m_bHasCommunicationAbuseMute": 2092,
+        "m_uiCommunicationMuteFlags": 2096,
+        "m_szCrosshairCodes": 2104,
+        "m_iPendingTeamNum": 2112,
+        "m_flForceTeamTime": 2116,
+        "m_iCompTeammateColor": 2120,
+        "m_bEverPlayedOnTeam": 2124,
+        "m_flPreviousForceJoinTeamTime": 2128,
+        "m_szClan": 2136,
+        "m_sSanitizedPlayerName": 2144,
+        "m_iCoachingTeam": 2152,
+        "m_nPlayerDominated": 2160,
+        "m_nPlayerDominatingMe": 2168,
+        "m_iCompetitiveRanking": 2176,
+        "m_iCompetitiveWins": 2180,
+        "m_iCompetitiveRankType": 2184,
+        "m_iCompetitiveRankingPredicted_Win": 2188,
+        "m_iCompetitiveRankingPredicted_Loss": 2192,
+        "m_iCompetitiveRankingPredicted_Tie": 2196,
+        "m_nEndMatchNextMapVote": 2200,
+        "m_unActiveQuestId": 2204,
+        "m_rtActiveMissionPeriod": 2208,
+        "m_nQuestProgressReason": 2212,
+        "m_unPlayerTvControlFlags": 2216,
+        "m_iDraftIndex": 2264,
+        "m_msQueuedModeDisconnectionTimestamp": 2268,
+        "m_uiAbandonRecordedReason": 2272,
+        "m_eNetworkDisconnectionReason": 2276,
+        "m_bCannotBeKicked": 2280,
+        "m_bEverFullyConnected": 2281,
+        "m_bAbandonAllowsSurrender": 2282,
+        "m_bAbandonOffersInstantSurrender": 2283,
+        "m_bDisconnection1MinWarningPrinted": 2284,
+        "m_bScoreReported": 2285,
+        "m_nDisconnectionTick": 2288,
+        "m_bControllingBot": 2304,
+        "m_bHasControlledBotThisRound": 2305,
+        "m_bHasBeenControlledByPlayerThisRound": 2306,
+        "m_nBotsControlledThisRound": 2308,
+        "m_bCanControlObservedBot": 2312,
+        "m_hPlayerPawn": 2316,
+        "m_hObserverPawn": 2320,
+        "m_bPawnIsAlive": 2324,
+        "m_iPawnHealth": 2328,
+        "m_iPawnArmor": 2332,
+        "m_bPawnHasDefuser": 2336,
+        "m_bPawnHasHelmet": 2337,
+        "m_nPawnCharacterDefIndex": 2338,
+        "m_iPawnLifetimeStart": 2340,
+        "m_iPawnLifetimeEnd": 2344,
+        "m_iPawnBotDifficulty": 2348,
+        "m_hOriginalControllerOfCurrentPawn": 2352,
+        "m_iScore": 2356,
+        "m_recentKillQueue": 2360,
+        "m_nFirstKill": 2368,
+        "m_nKillCount": 2369,
+        "m_bMvpNoMusic": 2370,
+        "m_eMvpReason": 2372,
+        "m_iMusicKitID": 2376,
+        "m_iMusicKitMVPs": 2380,
+        "m_iMVPs": 2384,
+        "m_bIsPlayerNameDirty": 2388,
+        "m_bFireBulletsSeedSynchronized": 2389
+      }
+    },
+    "C_CSGO_TeamIntroCounterTerroristPosition": {
+      "size": 5032,
+      "fields": {
+      }
+    },
+    "C_CSGO_PreviewModel": {
+      "size": 6240,
+      "fields": {
+        "m_defaultAnim": 4944,
+        "m_nDefaultAnimLoopMode": 4952,
+        "m_flInitialModelScale": 4956,
+        "m_sInitialWeaponState": 4960
+      }
+    },
+    "C_CSGO_TeamSelectCharacterPosition": {
+      "size": 5032,
+      "fields": {
+      }
+    },
+    "CPulseCell_Outflow_CycleOrdered::InstanceState_t": {
+      "size": 4,
+      "fields": {
+        "m_nNextIndex": 0
+      }
+    },
+    "C_SoundEventAABBEntity": {
+      "size": 1744,
+      "fields": {
+        "m_vMins": 1720,
+        "m_vMaxs": 1732
+      }
+    },
+    "CCSPlayer_MovementServices": {
+      "size": 3672,
+      "fields": {
+        "m_vecLadderNormal": 624,
+        "m_nLadderSurfacePropIndex": 636,
+        "m_bDucked": 640,
+        "m_flDuckAmount": 644,
+        "m_flDuckSpeed": 648,
+        "m_bDuckOverride": 652,
+        "m_bDesiresDuck": 653,
+        "m_bDucking": 654,
+        "m_flDuckOffset": 656,
+        "m_nDuckTimeMsecs": 660,
+        "m_nDuckJumpTimeMsecs": 664,
+        "m_nJumpTimeMsecs": 668,
+        "m_flLastDuckTime": 672,
+        "m_vecLastPositionAtFullCrouchSpeed": 688,
+        "m_duckUntilOnGround": 696,
+        "m_bHasWalkMovedSinceLastJump": 697,
+        "m_bInStuckTest": 698,
+        "m_nTraceCount": 1224,
+        "m_StuckLast": 1228,
+        "m_bSpeedCropped": 1232,
+        "m_nOldWaterLevel": 1236,
+        "m_flWaterEntryTime": 1240,
+        "m_vecForward": 1244,
+        "m_vecLeft": 1256,
+        "m_vecUp": 1268,
+        "m_nGameCodeHasMovedPlayerAfterCommand": 1280,
+        "m_fStashGrenadeParameterWhen": 1284,
+        "m_nButtonDownMaskPrev": 1288,
+        "m_flOffsetTickCompleteTime": 1296,
+        "m_flOffsetTickStashedSpeed": 1300,
+        "m_flStamina": 1304,
+        "m_flHeightAtJumpStart": 1308,
+        "m_flMaxJumpHeightThisJump": 1312,
+        "m_flMaxJumpHeightLastJump": 1316,
+        "m_flStaminaAtJumpStart": 1320,
+        "m_flVelMulAtJumpStart": 1324,
+        "m_flAccumulatedJumpError": 1328,
+        "m_LegacyJump": 1336,
+        "m_ModernJump": 1360,
+        "m_nLastJumpTick": 1416,
+        "m_flLastJumpFrac": 1420,
+        "m_flLastJumpVelocityZ": 1424,
+        "m_bJumpApexPending": 1428,
+        "m_flTicksSinceLastSurfingDetected": 1432,
+        "m_bWasSurfing": 1436,
+        "m_vecInputRotated": 1580
+      }
+    },
+    "SellbackPurchaseEntry_t": {
+      "size": 72,
+      "fields": {
+        "m_unDefIdx": 48,
+        "m_nCost": 52,
+        "m_nPrevArmor": 56,
+        "m_bPrevHelmet": 60,
+        "m_hItem": 64
+      }
+    },
+    "C_TintController": {
+      "size": 1568,
+      "fields": {
+      }
+    },
+    "C_WeaponBaseItem": {
+      "size": 8016,
+      "fields": {
+        "m_bSequenceInProgress": 8000,
+        "m_bRedraw": 8001
+      }
+    },
+    "CWaterSplasher": {
+      "size": 3720,
+      "fields": {
+      }
+    },
+    "C_FuncBrush": {
+      "size": 3720,
+      "fields": {
+      }
+    },
+    "PhysicsRagdollPose_t": {
+      "size": 72,
+      "fields": {
+        "m_Transforms": 8,
+        "m_hOwner": 32,
+        "m_bSetFromDebugHistory": 36
+      }
+    },
+    "CPropDataComponent": {
+      "size": 64,
+      "fields": {
+        "m_flDmgModBullet": 16,
+        "m_flDmgModClub": 20,
+        "m_flDmgModExplosive": 24,
+        "m_flDmgModFire": 28,
+        "m_iszPhysicsDamageTableName": 32,
+        "m_iszBasePropData": 40,
+        "m_nInteractions": 48,
+        "m_bSpawnMotionDisabled": 52,
+        "m_nDisableTakePhysicsDamageSpawnFlag": 56,
+        "m_nMotionDisabledSpawnFlag": 60
+      }
+    },
+    "CPulseCell_LimitCount::InstanceState_t": {
+      "size": 4,
+      "fields": {
+        "m_nCurrentCount": 0
+      }
+    },
+    "C_WeaponCZ75a": {
+      "size": 8064,
+      "fields": {
+        "m_bMagazineRemoved": 8048
+      }
+    },
+    "C_DynamicLight": {
+      "size": 3760,
+      "fields": {
+        "m_Flags": 3720,
+        "m_LightStyle": 3721,
+        "m_Radius": 3724,
+        "m_Exponent": 3728,
+        "m_InnerAngle": 3732,
+        "m_OuterAngle": 3736,
+        "m_SpotRadius": 3740
+      }
+    },
+    "EngineCountdownTimer": {
+      "size": 24,
+      "fields": {
+        "m_duration": 8,
+        "m_timestamp": 12,
+        "m_timescale": 16
+      }
+    },
+    "C_SoundEventSphereEntity": {
+      "size": 1728,
+      "fields": {
+        "m_flRadius": 1720
+      }
+    },
+    "CCSPlayerController_DamageServices": {
+      "size": 176,
+      "fields": {
+        "m_nSendUpdate": 64,
+        "m_DamageList": 72
+      }
+    },
+    "C_CSGO_TeamPreviewModel": {
+      "size": 16288,
+      "fields": {
+      }
+    },
+    "C_TonemapController2Alias_env_tonemap_controller2": {
+      "size": 1568,
+      "fields": {
+      }
+    },
+    "C_Inferno": {
+      "size": 33936,
+      "fields": {
+        "m_nfxFireDamageEffect": 3784,
+        "m_hInfernoPointsSnapshot": 3792,
+        "m_hInfernoFillerPointsSnapshot": 3800,
+        "m_hInfernoOutlinePointsSnapshot": 3808,
+        "m_hInfernoClimbingOutlinePointsSnapshot": 3816,
+        "m_hInfernoDecalsSnapshot": 3824,
+        "m_firePositions": 3832,
+        "m_fireParentPositions": 4600,
+        "m_bFireIsBurning": 5368,
+        "m_BurnNormal": 5432,
+        "m_fireCount": 6200,
+        "m_nInfernoType": 6204,
+        "m_nFireLifetime": 6208,
+        "m_bInPostEffectTime": 6212,
+        "m_lastFireCount": 6216,
+        "m_nFireEffectTickBegin": 6220,
+        "m_drawableCount": 33872,
+        "m_blosCheck": 33876,
+        "m_nlosperiod": 33880,
+        "m_maxFireHalfWidth": 33884,
+        "m_maxFireHeight": 33888,
+        "m_minBounds": 33892,
+        "m_maxBounds": 33904,
+        "m_flLastGrassBurnThink": 33916
+      }
+    },
+    "CFilterLOS": {
+      "size": 1600,
+      "fields": {
+      }
+    },
+    "CPointOrient": {
+      "size": 1576,
+      "fields": {
+        "m_iszSpawnTargetName": 1544,
+        "m_hTarget": 1552,
+        "m_bActive": 1556,
+        "m_nGoalDirection": 1560,
+        "m_nConstraint": 1564,
+        "m_flMaxTurnRate": 1568,
+        "m_flLastGameTime": 1572
+      }
+    },
+    "C_GlobalLight": {
+      "size": 2816,
+      "fields": {
+        "m_WindClothForceHandle": 2768
+      }
+    },
+    "C_EnvWindClientside": {
+      "size": 1792,
+      "fields": {
+        "m_EnvWindShared": 1544
+      }
+    },
+    "sky3dparams_t": {
+      "size": 144,
+      "fields": {
+        "scale": 8,
+        "origin": 12,
+        "bClip3DSkyBoxNearToWorldFar": 24,
+        "flClip3DSkyBoxNearToWorldFarOffset": 28,
+        "fog": 32,
+        "m_nWorldGroupID": 136
+      }
+    },
+    "C_FlashbangProjectile": {
+      "size": 5176,
+      "fields": {
+      }
+    },
+    "C_SoundEventConeEntity": {
+      "size": 1744,
+      "fields": {
+        "m_flEmitterAngle": 1720,
+        "m_flSweetSpotAngle": 1724,
+        "m_flAttenMin": 1728,
+        "m_flAttenMax": 1732,
+        "m_iszParameterName": 1736
+      }
+    },
+    "CDestructiblePartsComponent": {
+      "size": 112,
+      "fields": {
+        "__m_pChainEntity": 0,
+        "m_vecDamageTakenByHitGroup": 72,
+        "m_hOwner": 96
+      }
+    },
+    "C_WeaponP90": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_EnvWind": {
+      "size": 1792,
+      "fields": {
+        "m_EnvWindShared": 1544
+      }
+    },
+    "C_CSGO_TerroristTeamIntroCamera": {
+      "size": 1688,
+      "fields": {
+      }
+    },
+    "CPulseCell_Step_DebugLog": {
+      "size": 72,
+      "fields": {
+      }
+    },
+    "CCSPlayerController_ActionTrackingServices": {
+      "size": 312,
+      "fields": {
+        "m_perRoundStats": 64,
+        "m_matchStats": 168,
+        "m_iNumRoundKills": 296,
+        "m_iNumRoundKillsHeadshots": 300,
+        "m_flTotalRoundDamageDealt": 304
+      }
+    },
+    "CBodyComponentBaseAnimGraph": {
+      "size": 8336,
+      "fields": {
+        "m_animationController": 1360
+      }
+    },
+    "C_CSGO_PreviewModelAlias_csgo_item_previewmodel": {
+      "size": 6240,
+      "fields": {
+      }
+    },
+    "C_InfoInstructorHintHostageRescueZone": {
+      "size": 1544,
+      "fields": {
+      }
+    },
+    "CPulseCell_BaseYieldingInflow": {
+      "size": 72,
+      "fields": {
+      }
+    },
+    "PulseNodeDynamicOutflows_t": {
+      "size": 24,
+      "fields": {
+        "m_Outflows": 0
+      }
+    },
+    "C_TriggerBuoyancy": {
+      "size": 4216,
+      "fields": {
+        "m_BuoyancyHelper": 3928,
+        "m_flFluidDensity": 4208
+      }
+    },
+    "CPlayer_MovementServices_Humanoid": {
+      "size": 624,
+      "fields": {
+        "m_flStepSoundTime": 576,
+        "m_flFallVelocity": 580,
+        "m_groundNormal": 584,
+        "m_flSurfaceFriction": 596,
+        "m_surfaceProps": 600,
+        "m_nStepside": 616
+      }
+    },
+    "CPulseCell_IsRequirementValid::Criteria_t": {
+      "size": 1,
+      "fields": {
+        "m_bIsValid": 0
+      }
+    },
+    "C_WeaponTec9": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_PhysPropClientside": {
+      "size": 4864,
+      "fields": {
+        "m_flTouchDelta": 4816,
+        "m_fDeathTime": 4820,
+        "m_vecDamagePosition": 4824,
+        "m_vecDamageDirection": 4836,
+        "m_nDamageType": 4848
+      }
+    },
+    "C_BaseDoor": {
+      "size": 3728,
+      "fields": {
+        "m_bIsUsable": 3720
+      }
+    },
+    "CSMatchStats_t": {
+      "size": 128,
+      "fields": {
+        "m_iEnemy5Ks": 104,
+        "m_iEnemy4Ks": 108,
+        "m_iEnemy3Ks": 112,
+        "m_iEnemyKnifeKills": 116,
+        "m_iEnemyTaserKills": 120
+      }
+    },
+    "EntityRenderAttribute_t": {
+      "size": 72,
+      "fields": {
+        "m_ID": 48,
+        "m_Values": 52
+      }
+    },
+    "CPulseCell_Inflow_ObservableVariableListener": {
+      "size": 136,
+      "fields": {
+        "m_nBlackboardReference": 128,
+        "m_bSelfReference": 130
+      }
+    },
+    "CFilterMultipleAPI": {
+      "size": 8,
+      "fields": {
+      }
+    },
+    "CHostageRescueZone": {
+      "size": 3952,
+      "fields": {
+      }
+    },
+    "CModelState": {
+      "size": 720,
+      "fields": {
+        "m_hModel": 160,
+        "m_ModelName": 168,
+        "m_bClientClothCreationSuppressed": 377,
+        "m_MeshGroupMask": 544,
+        "m_nBodyGroupChoices": 624,
+        "m_nIdealMotionType": 698,
+        "m_nForceLOD": 699,
+        "m_nClothUpdateFlags": 700
+      }
+    },
+    "CPulseCell_LerpCameraSettings::CursorState_t": {
+      "size": 44,
+      "fields": {
+        "m_hCamera": 8,
+        "m_OverlaidStart": 12,
+        "m_OverlaidEnd": 28
+      }
+    },
+    "CPulseCell_Outflow_CycleOrdered": {
+      "size": 96,
+      "fields": {
+        "m_Outputs": 72
+      }
+    },
+    "C_CSWeaponBaseGun": {
+      "size": 8048,
+      "fields": {
+        "m_zoomLevel": 8000,
+        "m_iBurstShotsRemaining": 8004,
+        "m_iSilencerBodygroup": 8008,
+        "m_silencedModelIndex": 8024,
+        "m_inPrecache": 8028,
+        "m_bNeedsBoltAction": 8029,
+        "m_nRevolverCylinderIdx": 8032
+      }
+    },
+    "C_CSGameRulesProxy": {
+      "size": 1552,
+      "fields": {
+        "m_pGameRules": 1544
+      }
+    },
+    "CCollisionProperty": {
+      "size": 176,
+      "fields": {
+        "m_collisionAttribute": 16,
+        "m_vecMins": 64,
+        "m_vecMaxs": 76,
+        "m_usSolidFlags": 90,
+        "m_nSolidType": 91,
+        "m_triggerBloat": 92,
+        "m_nSurroundType": 93,
+        "m_CollisionGroup": 94,
+        "m_nEnablePhysics": 95,
+        "m_flBoundingRadius": 96,
+        "m_vecSpecifiedSurroundingMins": 100,
+        "m_vecSpecifiedSurroundingMaxs": 112,
+        "m_vecSurroundingMaxs": 124,
+        "m_vecSurroundingMins": 136,
+        "m_vCapsuleCenter1": 148,
+        "m_vCapsuleCenter2": 160,
+        "m_flCapsuleRadius": 172
+      }
+    },
+    "C_WeaponP250": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_ShatterGlassShardPhysics": {
+      "size": 4976,
+      "fields": {
+        "m_ShardDesc": 4840
+      }
+    },
+    "CFilterMassGreater": {
+      "size": 1608,
+      "fields": {
+        "m_fFilterMass": 1600
+      }
+    },
+    "C_EntityDissolve": {
+      "size": 3792,
+      "fields": {
+        "m_flStartTime": 3728,
+        "m_flFadeInStart": 3732,
+        "m_flFadeInLength": 3736,
+        "m_flFadeOutModelStart": 3740,
+        "m_flFadeOutModelLength": 3744,
+        "m_flFadeOutStart": 3748,
+        "m_flFadeOutLength": 3752,
+        "m_flNextSparkTime": 3756,
+        "m_nDissolveType": 3760,
+        "m_vDissolverOrigin": 3764,
+        "m_nMagnitude": 3776,
+        "m_bCoreExplode": 3780,
+        "m_bLinkedToServerEnt": 3781
+      }
+    },
+    "C_SoundOpvarSetOBBEntity": {
+      "size": 1576,
+      "fields": {
+      }
+    },
+    "CCSGameModeRules_ArmsRace": {
+      "size": 72,
+      "fields": {
+        "m_WeaponSequence": 48
+      }
+    },
+    "C_FuncMonitor": {
+      "size": 4864,
+      "fields": {
+        "m_targetCamera": 3720,
+        "m_nResolutionEnum": 3728,
+        "m_bRenderShadows": 3732,
+        "m_bUseUniqueColorTarget": 3733,
+        "m_brushModelName": 3736,
+        "m_hTargetCamera": 3744,
+        "m_bEnabled": 3748,
+        "m_bDraw3DSkybox": 3749
+      }
+    },
+    "C_ClientRagdoll": {
+      "size": 4608,
+      "fields": {
+        "m_bFadeOut": 4456,
+        "m_bImportant": 4457,
+        "m_flEffectTime": 4460,
+        "m_gibDespawnTime": 4464,
+        "m_iCurrentFriction": 4468,
+        "m_iMinFriction": 4472,
+        "m_iMaxFriction": 4476,
+        "m_iFrictionAnimState": 4480,
+        "m_bReleaseRagdoll": 4484,
+        "m_iEyeAttachment": 4485,
+        "m_bFadingOut": 4486,
+        "m_flScaleEnd": 4488,
+        "m_flScaleTimeStart": 4528,
+        "m_flScaleTimeEnd": 4568
+      }
+    },
+    "PulseSelectorOutflowList_t": {
+      "size": 24,
+      "fields": {
+        "m_Outflows": 0
+      }
+    },
+    "CPulseCell_PlaySequence::CursorState_t": {
+      "size": 4,
+      "fields": {
+        "m_hTarget": 0
+      }
+    },
+    "CBodyComponentSkeletonInstance": {
+      "size": 1360,
+      "fields": {
+        "m_skeletonInstance": 128
+      }
+    },
+    "C_CS2WeaponModuleBase": {
+      "size": 4464,
+      "fields": {
+      }
+    },
+    "C_CSGO_TeamPreviewCharacterPosition": {
+      "size": 5032,
+      "fields": {
+        "m_nVariant": 1544,
+        "m_nRandom": 1548,
+        "m_nOrdinal": 1552,
+        "m_sWeaponName": 1560,
+        "m_xuid": 1568,
+        "m_agentItem": 1576,
+        "m_glovesItem": 2712,
+        "m_weaponItem": 3848
+      }
+    },
+    "C_SmokeGrenadeProjectile": {
+      "size": 5616,
+      "fields": {
+        "m_nSmokeEffectTickBegin": 5200,
+        "m_bDidSmokeEffect": 5204,
+        "m_nRandomSeed": 5208,
+        "m_vSmokeColor": 5212,
+        "m_vSmokeDetonationPos": 5224,
+        "m_VoxelFrameData": 5240,
+        "m_nVoxelFrameDataSize": 5264,
+        "m_nVoxelUpdate": 5268,
+        "m_bSmokeVolumeDataReceived": 5272,
+        "m_bSmokeEffectSpawned": 5273
+      }
+    },
+    "CScriptComponent": {
+      "size": 56,
+      "fields": {
+        "m_scriptClassName": 48
+      }
+    },
+    "CCSPlayer_BuyServices": {
+      "size": 176,
+      "fields": {
+        "m_vecSellbackPurchaseEntries": 72
+      }
+    },
+    "C_PortraitWorldCallbackHandler": {
+      "size": 1552,
+      "fields": {
+      }
+    },
+    "C_DynamicProp": {
+      "size": 5024,
+      "fields": {
+        "m_bUseHitboxesForRenderBox": 4816,
+        "m_bUseAnimGraph": 4817,
+        "m_pOutputAnimBegun": 4824,
+        "m_pOutputAnimOver": 4848,
+        "m_pOutputAnimLoopCycleOver": 4872,
+        "m_OnAnimReachedStart": 4896,
+        "m_OnAnimReachedEnd": 4920,
+        "m_iszIdleAnim": 4944,
+        "m_nIdleAnimLoopMode": 4952,
+        "m_bRandomizeCycle": 4956,
+        "m_bStartDisabled": 4957,
+        "m_bFiredStartEndOutput": 4958,
+        "m_bForceNpcExclude": 4959,
+        "m_bCreateNonSolid": 4960,
+        "m_bIsOverrideProp": 4961,
+        "m_iInitialGlowState": 4964,
+        "m_nGlowRange": 4968,
+        "m_nGlowRangeMin": 4972,
+        "m_glowColor": 4976,
+        "m_nGlowTeam": 4980,
+        "m_iCachedFrameCount": 4984,
+        "m_vecCachedRenderMins": 4988,
+        "m_vecCachedRenderMaxs": 5000
+      }
+    },
+    "C_CSTeam": {
+      "size": 2416,
+      "fields": {
+        "m_szTeamMatchStat": 1728,
+        "m_numMapVictories": 2240,
+        "m_bSurrendered": 2244,
+        "m_scoreFirstHalf": 2248,
+        "m_scoreSecondHalf": 2252,
+        "m_scoreOvertime": 2256,
+        "m_szClanTeamname": 2260,
+        "m_iClanID": 2392,
+        "m_szTeamFlagImage": 2396,
+        "m_szTeamLogoImage": 2404
+      }
+    },
+    "C_CS2HudModelWeapon": {
+      "size": 4736,
+      "fields": {
+      }
+    },
+    "C_TextureBasedAnimatable": {
+      "size": 3776,
+      "fields": {
+        "m_bLoop": 3720,
+        "m_flFPS": 3724,
+        "m_hPositionKeys": 3728,
+        "m_hRotationKeys": 3736,
+        "m_vAnimationBoundsMin": 3744,
+        "m_vAnimationBoundsMax": 3756,
+        "m_flStartTime": 3768,
+        "m_flStartFrame": 3772
+      }
+    },
+    "C_LightEnvironmentEntity": {
+      "size": 3728,
+      "fields": {
+      }
+    },
+    "CLogicRelayAPI": {
+      "size": 8,
+      "fields": {
+      }
+    },
+    "C_TriggerPhysics": {
+      "size": 4008,
+      "fields": {
+        "m_gravityScale": 3928,
+        "m_linearLimit": 3932,
+        "m_linearDamping": 3936,
+        "m_angularLimit": 3940,
+        "m_angularDamping": 3944,
+        "m_linearForce": 3948,
+        "m_flFrequency": 3952,
+        "m_flDampingRatio": 3956,
+        "m_vecLinearForcePointAt": 3960,
+        "m_bCollapseToForcePoint": 3972,
+        "m_vecLinearForcePointAtWorld": 3976,
+        "m_vecLinearForceDirection": 3988,
+        "m_bConvertToDebrisWhenPossible": 4000
+      }
+    },
+    "C_PropDoorRotating": {
+      "size": 5088,
+      "fields": {
+      }
+    },
+    "C_HandleTest": {
+      "size": 1552,
+      "fields": {
+        "m_Handle": 1544,
+        "m_bSendHandle": 1548
+      }
+    },
+    "CInfoWorldLayer": {
+      "size": 1600,
+      "fields": {
+        "m_pOutputOnEntitiesSpawned": 1544,
+        "m_worldName": 1568,
+        "m_layerName": 1576,
+        "m_bWorldLayerVisible": 1584,
+        "m_bEntitiesSpawned": 1585,
+        "m_bCreateAsChildSpawnGroup": 1586,
+        "m_hLayerSpawnGroup": 1588,
+        "m_bWorldLayerActuallyVisible": 1592
+      }
+    },
+    "CBodyComponentBaseModelEntity": {
+      "size": 1360,
+      "fields": {
+      }
+    },
+    "C_Multimeter": {
+      "size": 4472,
+      "fields": {
+        "m_hTargetC4": 4464
+      }
+    },
+    "C_BaseTrigger": {
+      "size": 3928,
+      "fields": {
+        "m_OnStartTouch": 3720,
+        "m_OnStartTouchAll": 3744,
+        "m_OnEndTouch": 3768,
+        "m_OnEndTouchAll": 3792,
+        "m_OnTouching": 3816,
+        "m_OnTouchingEachEntity": 3840,
+        "m_OnNotTouching": 3864,
+        "m_hTouchingEntities": 3888,
+        "m_iFilterName": 3912,
+        "m_hFilter": 3920,
+        "m_bDisabled": 3924
+      }
+    },
+    "FilterDamageType": {
+      "size": 1608,
+      "fields": {
+        "m_iDamageType": 1600
+      }
+    },
+    "CAttributeList": {
+      "size": 120,
+      "fields": {
+        "m_Attributes": 8,
+        "m_pManager": 112
+      }
+    },
+    "CPulseCell_Inflow_Wait": {
+      "size": 144,
+      "fields": {
+        "m_WakeResume": 72
+      }
+    },
+    "CFilterProximity": {
+      "size": 1608,
+      "fields": {
+        "m_flRadius": 1600
+      }
+    },
+    "CCS2WeaponGraphController": {
+      "size": 672,
+      "fields": {
+        "m_action": 144,
+        "m_bActionReset": 168,
+        "m_flWeaponActionSpeedScale": 192,
+        "m_weaponCategory": 216,
+        "m_weaponType": 240,
+        "m_weaponExtraInfo": 264,
+        "m_flWeaponAmmo": 288,
+        "m_flWeaponAmmoMax": 312,
+        "m_flWeaponAmmoReserve": 336,
+        "m_bWeaponIsSilenced": 360,
+        "m_flWeaponIronsightAmount": 384,
+        "m_bIsUsingLegacyModel": 408,
+        "m_idleVariation": 432,
+        "m_deployVariation": 456,
+        "m_attackType": 480,
+        "m_attackThrowStrength": 504,
+        "m_flAttackVariation": 528,
+        "m_inspectVariation": 552,
+        "m_inspectExtraInfo": 576,
+        "m_reloadStage": 600
+      }
+    },
+    "CEffectData": {
+      "size": 120,
+      "fields": {
+        "m_vOrigin": 8,
+        "m_vStart": 20,
+        "m_vNormal": 32,
+        "m_vAngles": 44,
+        "m_hEntity": 56,
+        "m_hOtherEntity": 60,
+        "m_flScale": 64,
+        "m_flMagnitude": 68,
+        "m_flRadius": 72,
+        "m_nSurfaceProp": 76,
+        "m_nEffectIndex": 80,
+        "m_nDamageType": 88,
+        "m_nPenetrate": 92,
+        "m_nMaterial": 94,
+        "m_nHitBox": 96,
+        "m_nColor": 98,
+        "m_fFlags": 99,
+        "m_nAttachmentIndex": 100,
+        "m_nAttachmentName": 104,
+        "m_iEffectName": 108,
+        "m_nExplosionType": 110
+      }
+    },
+    "C_ParticleSystem": {
+      "size": 5176,
+      "fields": {
+        "m_szSnapshotFileName": 3720,
+        "m_bActive": 4232,
+        "m_bFrozen": 4233,
+        "m_flFreezeTransitionDuration": 4236,
+        "m_nStopType": 4240,
+        "m_bAnimateDuringGameplayPause": 4244,
+        "m_iEffectIndex": 4248,
+        "m_flStartTime": 4256,
+        "m_flPreSimTime": 4260,
+        "m_vServerControlPoints": 4264,
+        "m_iServerControlPointAssignments": 4312,
+        "m_hControlPointEnts": 4316,
+        "m_bNoSave": 4572,
+        "m_bNoFreeze": 4573,
+        "m_bNoRamp": 4574,
+        "m_bStartActive": 4575,
+        "m_iszEffectName": 4576,
+        "m_iszControlPointNames": 4584,
+        "m_nDataCP": 5096,
+        "m_vecDataCPValue": 5100,
+        "m_nTintCP": 5112,
+        "m_clrTint": 5116,
+        "m_bOldActive": 5152,
+        "m_bOldFrozen": 5153
+      }
+    },
+    "CPulseCell_Outflow_CycleShuffled": {
+      "size": 96,
+      "fields": {
+        "m_Outputs": 72
+      }
+    },
+    "C_WeaponSCAR20": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_BaseFlex": {
+      "size": 4944,
+      "fields": {
+        "m_flexWeight": 4464,
+        "m_vLookTargetPosition": 4488,
+        "m_nLastFlexUpdateFrameCount": 4720,
+        "m_CachedViewTarget": 4724,
+        "m_nNextSceneEventId": 4736,
+        "m_iMouthAttachment": 4740,
+        "m_iEyeAttachment": 4741,
+        "m_bResetFlexWeightsOnModelChange": 4742,
+        "m_nEyeOcclusionRendererBone": 4768,
+        "m_mEyeOcclusionRendererCameraToBoneTransform": 4772,
+        "m_vEyeOcclusionRendererHalfExtent": 4820,
+        "m_PhonemeClasses": 4848
+      }
+    },
+    "C_FuncMover": {
+      "size": 3720,
+      "fields": {
+      }
+    },
+    "CCSPlayerController_InventoryServices::NetworkedLoadoutSlot_t": {
+      "size": 200,
+      "fields": {
+        "pItem": 0,
+        "team": 8,
+        "slot": 10
+      }
+    },
+    "CLightComponent": {
+      "size": 496,
+      "fields": {
+        "__m_pChainEntity": 56,
+        "m_Color": 117,
+        "m_SecondaryColor": 121,
+        "m_flBrightness": 128,
+        "m_flBrightnessScale": 132,
+        "m_flBrightnessMult": 136,
+        "m_flRange": 140,
+        "m_flFalloff": 144,
+        "m_flAttenuation0": 148,
+        "m_flAttenuation1": 152,
+        "m_flAttenuation2": 156,
+        "m_flTheta": 160,
+        "m_flPhi": 164,
+        "m_hLightCookie": 168,
+        "m_nCascades": 176,
+        "m_nCastShadows": 180,
+        "m_nShadowWidth": 184,
+        "m_nShadowHeight": 188,
+        "m_bRenderDiffuse": 192,
+        "m_nRenderSpecular": 196,
+        "m_bRenderTransmissive": 200,
+        "m_flOrthoLightWidth": 204,
+        "m_flOrthoLightHeight": 208,
+        "m_nStyle": 212,
+        "m_Pattern": 216,
+        "m_nCascadeRenderStaticObjects": 224,
+        "m_flShadowCascadeCrossFade": 228,
+        "m_flShadowCascadeDistanceFade": 232,
+        "m_flShadowCascadeDistance0": 236,
+        "m_flShadowCascadeDistance1": 240,
+        "m_flShadowCascadeDistance2": 244,
+        "m_flShadowCascadeDistance3": 248,
+        "m_nShadowCascadeResolution0": 252,
+        "m_nShadowCascadeResolution1": 256,
+        "m_nShadowCascadeResolution2": 260,
+        "m_nShadowCascadeResolution3": 264,
+        "m_bUsesBakedShadowing": 268,
+        "m_nShadowPriority": 272,
+        "m_nBakedShadowIndex": 276,
+        "m_nLightPathUniqueId": 280,
+        "m_nLightMapUniqueId": 284,
+        "m_bRenderToCubemaps": 288,
+        "m_bAllowSSTGeneration": 289,
+        "m_nDirectLight": 292,
+        "m_nIndirectLight": 296,
+        "m_bDynamicBounce": 300,
+        "m_flFadeMinDist": 304,
+        "m_flFadeMaxDist": 308,
+        "m_flShadowFadeMinDist": 312,
+        "m_flShadowFadeMaxDist": 316,
+        "m_bEnabled": 320,
+        "m_bFlicker": 321,
+        "m_bPrecomputedFieldsValid": 322,
+        "m_vPrecomputedBoundsMins": 324,
+        "m_vPrecomputedBoundsMaxs": 336,
+        "m_vPrecomputedOBBOrigin": 348,
+        "m_vPrecomputedOBBAngles": 360,
+        "m_vPrecomputedOBBExtent": 372,
+        "m_flPrecomputedMaxRange": 384,
+        "m_nFogLightingMode": 388,
+        "m_flFogContributionStength": 392,
+        "m_flNearClipPlane": 396,
+        "m_SkyColor": 400,
+        "m_flSkyIntensity": 404,
+        "m_SkyAmbientBounce": 408,
+        "m_bUseSecondaryColor": 412,
+        "m_bMixedShadows": 413,
+        "m_flLightStyleStartTime": 416,
+        "m_flCapsuleLength": 420,
+        "m_flMinRoughness": 424
+      }
+    },
+    "C_DecoyGrenade": {
+      "size": 8192,
+      "fields": {
+      }
+    },
+    "C_WaterBullet": {
+      "size": 4456,
+      "fields": {
+      }
+    },
+    "CCSPlayer_ActionTrackingServices": {
+      "size": 304,
+      "fields": {
+        "m_hLastWeaponBeforeC4AutoSwitch": 72,
+        "m_bIsRescuing": 76,
+        "m_weaponPurchasesThisMatch": 80,
+        "m_weaponPurchasesThisRound": 192
+      }
+    },
+    "C_EnvCubemap": {
+      "size": 1776,
+      "fields": {
+        "m_Entity_hCubemapTexture": 1672,
+        "m_Entity_bCustomCubemapTexture": 1680,
+        "m_Entity_flInfluenceRadius": 1684,
+        "m_Entity_vBoxProjectMins": 1688,
+        "m_Entity_vBoxProjectMaxs": 1700,
+        "m_Entity_bMoveable": 1712,
+        "m_Entity_nHandshake": 1716,
+        "m_Entity_nEnvCubeMapArrayIndex": 1720,
+        "m_Entity_nPriority": 1724,
+        "m_Entity_flEdgeFadeDist": 1728,
+        "m_Entity_vEdgeFadeDists": 1732,
+        "m_Entity_flDiffuseScale": 1744,
+        "m_Entity_bStartDisabled": 1748,
+        "m_Entity_bDefaultEnvMap": 1749,
+        "m_Entity_bDefaultSpecEnvMap": 1750,
+        "m_Entity_bIndoorCubeMap": 1751,
+        "m_Entity_bCopyDiffuseFromDefaultCubemap": 1752,
+        "m_Entity_bEnabled": 1768
+      }
+    },
+    "CCSObserver_MovementServices": {
+      "size": 576,
+      "fields": {
+      }
+    },
+    "CBodyComponent": {
+      "size": 120,
+      "fields": {
+        "m_pSceneNode": 8,
+        "__m_pChainEntity": 72
+      }
+    },
+    "CPulseCell_Inflow_Method": {
+      "size": 200,
+      "fields": {
+        "m_MethodName": 128,
+        "m_Description": 144,
+        "m_bIsPublic": 152,
+        "m_ReturnType": 160,
+        "m_Args": 184
+      }
+    },
+    "C_BaseCombatCharacter": {
+      "size": 5080,
+      "fields": {
+        "m_hMyWearables": 4944,
+        "m_leftFootAttachment": 4968,
+        "m_rightFootAttachment": 4969,
+        "m_nWaterWakeMode": 4972,
+        "m_flWaterWorldZ": 4976,
+        "m_flWaterNextTraceTime": 4980
+      }
+    },
+    "CGlowProperty": {
+      "size": 88,
+      "fields": {
+        "m_fGlowColor": 8,
+        "m_iGlowType": 48,
+        "m_iGlowTeam": 52,
+        "m_nGlowRange": 56,
+        "m_nGlowRangeMin": 60,
+        "m_glowColorOverride": 64,
+        "m_bFlashing": 68,
+        "m_flGlowTime": 72,
+        "m_flGlowStartTime": 76,
+        "m_bEligibleForScreenHighlight": 80,
+        "m_bGlowing": 81
+      }
+    },
+    "C_PointClientUIDialog": {
+      "size": 3776,
+      "fields": {
+        "m_hActivator": 3768,
+        "m_bStartEnabled": 3772
+      }
+    },
+    "CPulseCell_BaseValue": {
+      "size": 72,
+      "fields": {
+      }
+    },
+    "C_WeaponHKP2000": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_FootstepControl": {
+      "size": 3944,
+      "fields": {
+        "m_source": 3928,
+        "m_destination": 3936
+      }
+    },
+    "CCitadelSoundOpvarSetOBB": {
+      "size": 1648,
+      "fields": {
+        "m_iszStackName": 1568,
+        "m_iszOperatorName": 1576,
+        "m_iszOpvarName": 1584,
+        "m_vDistanceInnerMins": 1592,
+        "m_vDistanceInnerMaxs": 1604,
+        "m_vDistanceOuterMins": 1616,
+        "m_vDistanceOuterMaxs": 1628,
+        "m_nAABBDirection": 1640
+      }
+    },
+    "C_CSGO_EndOfMatchLineupStart": {
+      "size": 1544,
+      "fields": {
+      }
+    },
+    "CPlayer_WaterServices": {
+      "size": 72,
+      "fields": {
+      }
+    },
+    "CPulseCell_BooleanSwitchState": {
+      "size": 408,
+      "fields": {
+        "m_Condition": 72,
+        "m_SubGraph": 192,
+        "m_WhenTrue": 264,
+        "m_WhenFalse": 336
+      }
+    },
+    "VPhysicsCollisionAttribute_t": {
+      "size": 48,
+      "fields": {
+        "m_nInteractsAs": 8,
+        "m_nInteractsWith": 16,
+        "m_nInteractsExclude": 24,
+        "m_nEntityId": 32,
+        "m_nOwnerId": 36,
+        "m_nHierarchyId": 40,
+        "m_nDetailLayerMask": 42,
+        "m_nDetailLayerMaskType": 44,
+        "m_nTargetDetailLayer": 45,
+        "m_nCollisionGroup": 46,
+        "m_nCollisionFunctionMask": 47
+      }
+    },
+    "C_DynamicPropAlias_dynamic_prop": {
+      "size": 5024,
+      "fields": {
+      }
+    },
+    "CEnvSoundscapeProxyAlias_snd_soundscape_proxy": {
+      "size": 1696,
+      "fields": {
+      }
+    },
+    "C_OmniLight": {
+      "size": 4520,
+      "fields": {
+        "m_flInnerAngle": 4504,
+        "m_flOuterAngle": 4508,
+        "m_bShowLight": 4512
+      }
+    },
+    "C_SceneEntity": {
+      "size": 1640,
+      "fields": {
+        "m_bIsPlayingBack": 1552,
+        "m_bPaused": 1553,
+        "m_bMultiplayer": 1554,
+        "m_bAutogenerated": 1555,
+        "m_flForceClientTime": 1556,
+        "m_nSceneStringIndex": 1560,
+        "m_bClientOnly": 1562,
+        "m_hOwner": 1564,
+        "m_hActorList": 1568,
+        "m_bWasPlaying": 1592,
+        "m_QueuedEvents": 1608,
+        "m_flCurrentTime": 1632
+      }
+    },
+    "CPulseCell_Inflow_Yield": {
+      "size": 144,
+      "fields": {
+        "m_UnyieldResume": 72
+      }
+    },
+    "CPulseMathlib": {
+      "size": 1,
+      "fields": {
+      }
+    },
+    "C_NametagModule": {
+      "size": 4472,
+      "fields": {
+        "m_strNametagString": 4464
+      }
+    },
+    "C_EconEntity": {
+      "size": 6336,
+      "fields": {
+        "m_flFlexDelayTime": 4960,
+        "m_flFlexDelayedWeight": 4968,
+        "m_bAttributesInitialized": 4976,
+        "m_AttributeManager": 4984,
+        "m_OriginalOwnerXuidLow": 6216,
+        "m_OriginalOwnerXuidHigh": 6220,
+        "m_nFallbackPaintKit": 6224,
+        "m_nFallbackSeed": 6228,
+        "m_flFallbackWear": 6232,
+        "m_nFallbackStatTrak": 6236,
+        "m_bClientside": 6240,
+        "m_bParticleSystemsCreated": 6241,
+        "m_vecAttachedParticles": 6248,
+        "m_hViewmodelAttachment": 6272,
+        "m_iOldTeam": 6276,
+        "m_bAttachmentDirty": 6280,
+        "m_nUnloadedModelIndex": 6284,
+        "m_iNumOwnerValidationRetries": 6288,
+        "m_hOldProvidee": 6304,
+        "m_vecAttachedModels": 6312
+      }
+    },
+    "CPlayer_UseServices": {
+      "size": 72,
+      "fields": {
+      }
+    },
+    "C_PointValueRemapper": {
+      "size": 1664,
+      "fields": {
+        "m_bDisabled": 1544,
+        "m_bDisabledOld": 1545,
+        "m_bUpdateOnClient": 1546,
+        "m_nInputType": 1548,
+        "m_hRemapLineStart": 1552,
+        "m_hRemapLineEnd": 1556,
+        "m_flMaximumChangePerSecond": 1560,
+        "m_flDisengageDistance": 1564,
+        "m_flEngageDistance": 1568,
+        "m_bRequiresUseKey": 1572,
+        "m_nOutputType": 1576,
+        "m_hOutputEntities": 1584,
+        "m_nHapticsType": 1608,
+        "m_nMomentumType": 1612,
+        "m_flMomentumModifier": 1616,
+        "m_flSnapValue": 1620,
+        "m_flCurrentMomentum": 1624,
+        "m_nRatchetType": 1628,
+        "m_flRatchetOffset": 1632,
+        "m_flInputOffset": 1636,
+        "m_bEngaged": 1640,
+        "m_bFirstUpdate": 1641,
+        "m_flPreviousValue": 1644,
+        "m_flPreviousUpdateTickTime": 1648,
+        "m_vecPreviousTestPoint": 1652
+      }
+    },
+    "CGameSceneNodeHandle": {
+      "size": 16,
+      "fields": {
+        "m_hOwner": 8,
+        "m_name": 12
+      }
+    },
+    "CPulseCell_Unknown": {
+      "size": 88,
+      "fields": {
+        "m_UnknownKeys": 72
+      }
+    },
+    "C_WeaponMP7": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "CSPerRoundStats_t": {
+      "size": 104,
+      "fields": {
+        "m_iKills": 48,
+        "m_iDeaths": 52,
+        "m_iAssists": 56,
+        "m_iDamage": 60,
+        "m_iEquipmentValue": 64,
+        "m_iMoneySaved": 68,
+        "m_iKillReward": 72,
+        "m_iLiveTime": 76,
+        "m_iHeadShotKills": 80,
+        "m_iObjective": 84,
+        "m_iCashEarned": 88,
+        "m_iUtilityDamage": 92,
+        "m_iEnemiesFlashed": 96
+      }
+    },
+    "CPulseCell_Outflow_CycleRandom": {
+      "size": 96,
+      "fields": {
+        "m_Outputs": 72
+      }
+    },
+    "CPulseCell_Step_PublicOutput": {
+      "size": 80,
+      "fields": {
+        "m_OutputIndex": 72
+      }
+    },
+    "C_CS2HudModelBase": {
+      "size": 4656,
+      "fields": {
+      }
+    },
+    "C_CSGameRules": {
+      "size": 20320,
+      "fields": {
+        "m_bFreezePeriod": 64,
+        "m_bWarmupPeriod": 65,
+        "m_fWarmupPeriodEnd": 68,
+        "m_fWarmupPeriodStart": 72,
+        "m_bTerroristTimeOutActive": 76,
+        "m_bCTTimeOutActive": 77,
+        "m_flTerroristTimeOutRemaining": 80,
+        "m_flCTTimeOutRemaining": 84,
+        "m_nTerroristTimeOuts": 88,
+        "m_nCTTimeOuts": 92,
+        "m_bTechnicalTimeOut": 96,
+        "m_bMatchWaitingForResume": 97,
+        "m_iFreezeTime": 100,
+        "m_iRoundTime": 104,
+        "m_fMatchStartTime": 108,
+        "m_fRoundStartTime": 112,
+        "m_flRestartRoundTime": 116,
+        "m_bGameRestart": 120,
+        "m_flGameStartTime": 124,
+        "m_timeUntilNextPhaseStarts": 128,
+        "m_gamePhase": 132,
+        "m_totalRoundsPlayed": 136,
+        "m_nRoundsPlayedThisPhase": 140,
+        "m_nOvertimePlaying": 144,
+        "m_iHostagesRemaining": 148,
+        "m_bAnyHostageReached": 152,
+        "m_bMapHasBombTarget": 153,
+        "m_bMapHasRescueZone": 154,
+        "m_bMapHasBuyZone": 155,
+        "m_bIsQueuedMatchmaking": 156,
+        "m_nQueuedMatchmakingMode": 160,
+        "m_bIsValveDS": 164,
+        "m_bLogoMap": 165,
+        "m_bPlayAllStepSoundsOnServer": 166,
+        "m_iSpectatorSlotCount": 168,
+        "m_MatchDevice": 172,
+        "m_bHasMatchStarted": 176,
+        "m_nNextMapInMapgroup": 180,
+        "m_szTournamentEventName": 184,
+        "m_szTournamentEventStage": 696,
+        "m_szMatchStatTxt": 1208,
+        "m_szTournamentPredictionsTxt": 1720,
+        "m_nTournamentPredictionsPct": 2232,
+        "m_flCMMItemDropRevealStartTime": 2236,
+        "m_flCMMItemDropRevealEndTime": 2240,
+        "m_bIsDroppingItems": 2244,
+        "m_bIsQuestEligible": 2245,
+        "m_bIsHltvActive": 2246,
+        "m_bBombPlanted": 2247,
+        "m_arrProhibitedItemIndices": 2248,
+        "m_arrTournamentActiveCasterAccounts": 2448,
+        "m_numBestOfMaps": 2464,
+        "m_nHalloweenMaskListSeed": 2468,
+        "m_bBombDropped": 2472,
+        "m_iRoundWinStatus": 2476,
+        "m_eRoundWinReason": 2480,
+        "m_bTCantBuy": 2484,
+        "m_bCTCantBuy": 2485,
+        "m_iMatchStats_RoundResults": 2488,
+        "m_iMatchStats_PlayersAlive_CT": 2608,
+        "m_iMatchStats_PlayersAlive_T": 2728,
+        "m_TeamRespawnWaveTimes": 2848,
+        "m_flNextRespawnWave": 2976,
+        "m_vMinimapMins": 3104,
+        "m_vMinimapMaxs": 3116,
+        "m_MinimapVerticalSectionHeights": 3128,
+        "m_ullLocalMatchID": 3160,
+        "m_nEndMatchMapGroupVoteTypes": 3168,
+        "m_nEndMatchMapGroupVoteOptions": 3208,
+        "m_nEndMatchMapVoteWinner": 3248,
+        "m_iNumConsecutiveCTLoses": 3252,
+        "m_iNumConsecutiveTerroristLoses": 3256,
+        "m_nMatchAbortedEarlyReason": 3448,
+        "m_bHasTriggeredRoundStartMusic": 3452,
+        "m_bSwitchingTeamsAtRoundReset": 3453,
+        "m_pGameModeRules": 3480,
+        "m_RetakeRules": 3488,
+        "m_nMatchEndCount": 3832,
+        "m_nTTeamIntroVariant": 3836,
+        "m_nCTTeamIntroVariant": 3840,
+        "m_bTeamIntroPeriod": 3844,
+        "m_iRoundEndWinnerTeam": 3848,
+        "m_eRoundEndReason": 3852,
+        "m_bRoundEndShowTimerDefend": 3856,
+        "m_iRoundEndTimerTime": 3860,
+        "m_sRoundEndFunFactToken": 3864,
+        "m_iRoundEndFunFactPlayerSlot": 3872,
+        "m_iRoundEndFunFactData1": 3876,
+        "m_iRoundEndFunFactData2": 3880,
+        "m_iRoundEndFunFactData3": 3884,
+        "m_sRoundEndMessage": 3888,
+        "m_iRoundEndPlayerCount": 3896,
+        "m_bRoundEndNoMusic": 3900,
+        "m_iRoundEndLegacy": 3904,
+        "m_nRoundEndCount": 3908,
+        "m_iRoundStartRoundNumber": 3912,
+        "m_nRoundStartCount": 3916,
+        "m_flLastPerfSampleTime": 20312
+      }
+    },
+    "CGrenadeTracer": {
+      "size": 4896,
+      "fields": {
+        "m_flTracerDuration": 3744,
+        "m_nType": 3748
+      }
+    },
+    "CCSGameModeRules_Noop": {
+      "size": 48,
+      "fields": {
+      }
+    },
+    "CPulse_BlackboardReference": {
+      "size": 40,
+      "fields": {
+        "m_hBlackboardResource": 0,
+        "m_BlackboardResource": 8,
+        "m_nNodeID": 24,
+        "m_NodeName": 32
+      }
+    },
+    "C_BaseCSGrenadeProjectile": {
+      "size": 5176,
+      "fields": {
+        "m_vInitialPosition": 5024,
+        "m_vInitialVelocity": 5036,
+        "m_nBounces": 5048,
+        "m_nExplodeEffectIndex": 5056,
+        "m_nExplodeEffectTickBegin": 5064,
+        "m_vecExplodeEffectOrigin": 5068,
+        "m_flSpawnTime": 5080,
+        "vecLastTrailLinePos": 5084,
+        "flNextTrailLineTime": 5096,
+        "m_bExplodeEffectBegan": 5100,
+        "m_bCanCreateGrenadeTrail": 5101,
+        "m_nSnapshotTrajectoryEffectIndex": 5104,
+        "m_hSnapshotTrajectoryParticleSnapshot": 5112,
+        "m_arrTrajectoryTrailPoints": 5120,
+        "m_arrTrajectoryTrailPointCreationTimes": 5144,
+        "m_flTrajectoryTrailEffectCreationTime": 5168
+      }
+    },
+    "C_GradientFog": {
+      "size": 1696,
+      "fields": {
+        "m_hGradientFogTexture": 1544,
+        "m_flFogStartDistance": 1552,
+        "m_flFogEndDistance": 1556,
+        "m_bHeightFogEnabled": 1560,
+        "m_flFogStartHeight": 1564,
+        "m_flFogEndHeight": 1568,
+        "m_flFarZ": 1572,
+        "m_flFogMaxOpacity": 1576,
+        "m_flFogFalloffExponent": 1580,
+        "m_flFogVerticalExponent": 1584,
+        "m_fogColor": 1588,
+        "m_flFogStrength": 1592,
+        "m_flFadeTime": 1596,
+        "m_bStartDisabled": 1600,
+        "m_bIsEnabled": 1601,
+        "m_bGradientFogNeedsTextures": 1602
+      }
+    },
+    "CCSPlayerController_InGameMoneyServices": {
+      "size": 80,
+      "fields": {
+        "m_iAccount": 64,
+        "m_iStartAccount": 68,
+        "m_iTotalCashSpent": 72,
+        "m_iCashSpentThisRound": 76
+      }
+    },
+    "C_HEGrenadeProjectile": {
+      "size": 5176,
+      "fields": {
+      }
+    },
+    "CAnimGraphNetworkedVariables": {
+      "size": 5264,
+      "fields": {
+        "m_PredNetBoolVariables": 8,
+        "m_PredNetByteVariables": 32,
+        "m_PredNetUInt16Variables": 56,
+        "m_PredNetIntVariables": 80,
+        "m_PredNetUInt32Variables": 104,
+        "m_PredNetUInt64Variables": 128,
+        "m_PredNetFloatVariables": 152,
+        "m_PredNetVectorVariables": 176,
+        "m_PredNetQuaternionVariables": 200,
+        "m_PredNetGlobalSymbolVariables": 224,
+        "m_OwnerOnlyPredNetBoolVariables": 248,
+        "m_OwnerOnlyPredNetByteVariables": 272,
+        "m_OwnerOnlyPredNetUInt16Variables": 296,
+        "m_OwnerOnlyPredNetIntVariables": 320,
+        "m_OwnerOnlyPredNetUInt32Variables": 344,
+        "m_OwnerOnlyPredNetUInt64Variables": 368,
+        "m_OwnerOnlyPredNetFloatVariables": 392,
+        "m_OwnerOnlyPredNetVectorVariables": 416,
+        "m_OwnerOnlyPredNetQuaternionVariables": 440,
+        "m_OwnerOnlyPredNetGlobalSymbolVariables": 464,
+        "m_nBoolVariablesCount": 488,
+        "m_nOwnerOnlyBoolVariablesCount": 492,
+        "m_nRandomSeedOffset": 496,
+        "m_flLastTeleportTime": 500
+      }
+    },
+    "CFilterModel": {
+      "size": 1608,
+      "fields": {
+        "m_iFilterModel": 1600
+      }
+    },
+    "C_SoundAreaEntityOrientedBox": {
+      "size": 1608,
+      "fields": {
+        "m_vMin": 1584,
+        "m_vMax": 1596
+      }
+    },
+    "C_SoundOpvarSetPointEntity": {
+      "size": 1576,
+      "fields": {
+      }
+    },
+    "CPulseGameBlackboard": {
+      "size": 1568,
+      "fields": {
+        "m_strGraphName": 1552,
+        "m_strStateBlob": 1560
+      }
+    },
+    "CPulseCell_Value_RandomInt": {
+      "size": 72,
+      "fields": {
+      }
+    },
+    "C_CSWeaponBaseShotgun": {
+      "size": 8000,
+      "fields": {
+      }
+    },
+    "C_RagdollPropAttached": {
+      "size": 4656,
+      "fields": {
+        "m_boneIndexAttached": 4600,
+        "m_ragdollAttachedObjectIndex": 4604,
+        "m_attachmentPointBoneSpace": 4608,
+        "m_attachmentPointRagdollSpace": 4620,
+        "m_vecOffset": 4632,
+        "m_parentTime": 4644,
+        "m_bHasParent": 4648
+      }
+    },
+    "C_ModelPointEntity": {
+      "size": 3720,
+      "fields": {
+      }
+    },
+    "C_CSGO_PreviewPlayer": {
+      "size": 16288,
+      "fields": {
+        "m_animgraphCharacterModeString": 16112,
+        "m_flInitialModelScale": 16120
+      }
+    },
+    "C_RectLight": {
+      "size": 4512,
+      "fields": {
+        "m_bShowLight": 4504
+      }
+    },
+    "CPathSimple": {
+      "size": 1808,
+      "fields": {
+        "m_CPathQueryComponent": 1552,
+        "m_pathString": 1792,
+        "m_bClosedLoop": 1800
+      }
+    },
+    "C_FuncTrackTrain": {
+      "size": 3736,
+      "fields": {
+        "m_nLongAxis": 3720,
+        "m_flRadius": 3724,
+        "m_flLineLength": 3728
+      }
+    },
+    "C_EconWearable": {
+      "size": 6344,
+      "fields": {
+        "m_nForceSkin": 6336,
+        "m_bAlwaysAllow": 6340
+      }
+    },
+    "C_EnvDecal": {
+      "size": 3776,
+      "fields": {
+        "m_hDecalMaterial": 3720,
+        "m_flWidth": 3728,
+        "m_flHeight": 3732,
+        "m_flDepth": 3736,
+        "m_nRenderOrder": 3740,
+        "m_bProjectOnWorld": 3744,
+        "m_bProjectOnCharacters": 3745,
+        "m_bProjectOnWater": 3746,
+        "m_flDepthSortBias": 3748
+      }
+    },
+    "EntitySpottedState_t": {
+      "size": 24,
+      "fields": {
+        "m_bSpotted": 8,
+        "m_bSpottedByMask": 12
+      }
+    },
+    "fogparams_t": {
+      "size": 104,
+      "fields": {
+        "dirPrimary": 8,
+        "colorPrimary": 20,
+        "colorSecondary": 24,
+        "colorPrimaryLerpTo": 28,
+        "colorSecondaryLerpTo": 32,
+        "start": 36,
+        "end": 40,
+        "farz": 44,
+        "maxdensity": 48,
+        "exponent": 52,
+        "HDRColorScale": 56,
+        "skyboxFogFactor": 60,
+        "skyboxFogFactorLerpTo": 64,
+        "startLerpTo": 68,
+        "endLerpTo": 72,
+        "maxdensityLerpTo": 76,
+        "lerptime": 80,
+        "duration": 84,
+        "blendtobackground": 88,
+        "scattering": 92,
+        "locallightscale": 96,
+        "enable": 100,
+        "blend": 101,
+        "m_bPadding2": 102,
+        "m_bPadding": 103
+      }
+    },
+    "C_WeaponM4A1": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_Item": {
+      "size": 6592,
+      "fields": {
+        "m_pReticleHintTextName": 6336
+      }
+    },
+    "C_CSPetPlacement": {
+      "size": 1544,
+      "fields": {
+      }
+    },
+    "C_Beam": {
+      "size": 3912,
+      "fields": {
+        "m_flFrameRate": 3720,
+        "m_flHDRColorScale": 3724,
+        "m_flFireTime": 3728,
+        "m_flDamage": 3732,
+        "m_nNumBeamEnts": 3736,
+        "m_queryHandleHalo": 3740,
+        "m_hBaseMaterial": 3776,
+        "m_nHaloIndex": 3784,
+        "m_nBeamType": 3792,
+        "m_nBeamFlags": 3796,
+        "m_hAttachEntity": 3800,
+        "m_nAttachIndex": 3840,
+        "m_fWidth": 3852,
+        "m_fEndWidth": 3856,
+        "m_fFadeLength": 3860,
+        "m_fHaloScale": 3864,
+        "m_fAmplitude": 3868,
+        "m_fStartFrame": 3872,
+        "m_fSpeed": 3876,
+        "m_flFrame": 3880,
+        "m_nClipStyle": 3884,
+        "m_bTurnedOff": 3888,
+        "m_vecEndPos": 3892,
+        "m_hEndEntity": 3904
+      }
+    },
+    "C_EnvLightProbeVolume": {
+      "size": 5784,
+      "fields": {
+        "m_Entity_hLightProbeTexture_AmbientCube": 5632,
+        "m_Entity_hLightProbeTexture_SDF": 5640,
+        "m_Entity_hLightProbeTexture_SH2_DC": 5648,
+        "m_Entity_hLightProbeTexture_SH2_R": 5656,
+        "m_Entity_hLightProbeTexture_SH2_G": 5664,
+        "m_Entity_hLightProbeTexture_SH2_B": 5672,
+        "m_Entity_hLightProbeDirectLightIndicesTexture": 5680,
+        "m_Entity_hLightProbeDirectLightScalarsTexture": 5688,
+        "m_Entity_hLightProbeDirectLightShadowsTexture": 5696,
+        "m_Entity_vBoxMins": 5704,
+        "m_Entity_vBoxMaxs": 5716,
+        "m_Entity_bMoveable": 5728,
+        "m_Entity_nHandshake": 5732,
+        "m_Entity_nPriority": 5736,
+        "m_Entity_bStartDisabled": 5740,
+        "m_Entity_nLightProbeSizeX": 5744,
+        "m_Entity_nLightProbeSizeY": 5748,
+        "m_Entity_nLightProbeSizeZ": 5752,
+        "m_Entity_nLightProbeAtlasX": 5756,
+        "m_Entity_nLightProbeAtlasY": 5760,
+        "m_Entity_nLightProbeAtlasZ": 5764,
+        "m_Entity_bEnabled": 5777
+      }
+    },
+    "C_FuncConveyor": {
+      "size": 3792,
+      "fields": {
+        "m_vecMoveDirEntitySpace": 3728,
+        "m_flTargetSpeed": 3740,
+        "m_nTransitionStartTick": 3744,
+        "m_nTransitionDurationTicks": 3748,
+        "m_flTransitionStartSpeed": 3752,
+        "m_hConveyorModels": 3760,
+        "m_flCurrentConveyorOffset": 3784,
+        "m_flCurrentConveyorSpeed": 3788
+      }
+    },
+    "CCSPlayer_WeaponServices": {
+      "size": 5584,
+      "fields": {
+        "m_flNextAttack": 208,
+        "m_bIsLookingAtWeapon": 212,
+        "m_bIsHoldingLookAtWeapon": 213,
+        "m_nOldTotalShootPositionHistoryCount": 216,
+        "m_nOldTotalInputHistoryCount": 880,
+        "m_networkAnimTiming": 5512,
+        "m_bBlockInspectUntilNextGraphUpdate": 5536
+      }
+    },
+    "C_PhysMagnet": {
+      "size": 4504,
+      "fields": {
+        "m_aAttachedObjectsFromServer": 4456,
+        "m_aAttachedObjects": 4480
+      }
+    },
+    "CEnvSoundscapeTriggerableAlias_snd_soundscape_triggerable": {
+      "size": 1688,
+      "fields": {
+      }
+    },
+    "C_Breakable": {
+      "size": 3720,
+      "fields": {
+      }
+    },
+    "C_PlantedC4": {
+      "size": 5856,
+      "fields": {
+        "m_bBombTicking": 4464,
+        "m_nBombSite": 4468,
+        "m_nSourceSoundscapeHash": 4472,
+        "m_entitySpottedState": 4480,
+        "m_flNextGlow": 4504,
+        "m_flNextBeep": 4508,
+        "m_flC4Blow": 4512,
+        "m_bCannotBeDefused": 4516,
+        "m_bHasExploded": 4517,
+        "m_flTimerLength": 4520,
+        "m_bBeingDefused": 4524,
+        "m_bTriggerWarning": 4528,
+        "m_bExplodeWarning": 4532,
+        "m_bC4Activated": 4536,
+        "m_bTenSecWarning": 4537,
+        "m_flDefuseLength": 4540,
+        "m_flDefuseCountDown": 4544,
+        "m_bBombDefused": 4548,
+        "m_hBombDefuser": 4552,
+        "m_AttributeManager": 4560,
+        "m_hDefuserMultimeter": 5792,
+        "m_flNextRadarFlashTime": 5796,
+        "m_bRadarFlash": 5800,
+        "m_pBombDefuser": 5804,
+        "m_fLastDefuseTime": 5808,
+        "m_pPredictionOwner": 5816,
+        "m_vecC4ExplodeSpectatePos": 5824,
+        "m_vecC4ExplodeSpectateAng": 5836,
+        "m_flC4ExplodeSpectateDuration": 5848
+      }
+    },
+    "CCSGO_WingmanIntroCharacterPosition": {
+      "size": 5032,
+      "fields": {
+      }
+    },
+    "CFilterName": {
+      "size": 1608,
+      "fields": {
+        "m_iFilterName": 1600
+      }
+    },
+    "C_RagdollProp": {
+      "size": 4600,
+      "fields": {
+        "m_ragEnabled": 4464,
+        "m_ragPos": 4488,
+        "m_ragAngles": 4512,
+        "m_flBlendWeight": 4536,
+        "m_hRagdollSource": 4540,
+        "m_iEyeAttachment": 4544,
+        "m_flBlendWeightCurrent": 4548,
+        "m_parentPhysicsBoneIndices": 4552,
+        "m_worldSpaceBoneComputationOrder": 4576
+      }
+    },
+    "CPulse_CallInfo": {
+      "size": 88,
+      "fields": {
+        "m_PortName": 0,
+        "m_nEditorNodeID": 16,
+        "m_RegisterMap": 24,
+        "m_CallMethodID": 72,
+        "m_nSrcChunk": 76,
+        "m_nSrcInstruction": 80
+      }
+    },
+    "C_MapPreviewParticleSystem": {
+      "size": 5176,
+      "fields": {
+      }
+    },
+    "CBaseAnimGraph": {
+      "size": 4456,
+      "fields": {
+        "m_graphControllerManager": 3720,
+        "m_pMainGraphController": 3896,
+        "m_bInitiallyPopulateInterpHistory": 3904,
+        "m_bSuppressAnimEventSounds": 3906,
+        "m_bAnimGraphUpdateEnabled": 3920,
+        "m_flMaxSlopeDistance": 3924,
+        "m_vLastSlopeCheckPos": 3928,
+        "m_nAnimGraphUpdateId": 3940,
+        "m_bAnimationUpdateScheduled": 3944,
+        "m_vecForce": 3948,
+        "m_nForceBone": 3960,
+        "m_pClientsideRagdoll": 3968,
+        "m_bBuiltRagdoll": 3976,
+        "m_RagdollPose": 4000,
+        "m_bRagdollEnabled": 4072,
+        "m_bRagdollClientSide": 4073,
+        "m_bHasAnimatedMaterialAttributes": 4088
+      }
+    },
+    "CPulseCell_InlineNodeSkipSelector": {
+      "size": 176,
+      "fields": {
+        "m_nFlowNodeID": 72,
+        "m_bAnd": 76,
+        "m_PassOutflow": 80,
+        "m_FailOutflow": 104
+      }
+    },
+    "C_LightEntity": {
+      "size": 3728,
+      "fields": {
+        "m_CLightComponent": 3720
+      }
+    },
+    "C_WeaponM249": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_LocalTempEntity": {
+      "size": 4624,
+      "fields": {
+        "flags": 4456,
+        "die": 4460,
+        "m_flFrameMax": 4464,
+        "x": 4468,
+        "y": 4472,
+        "fadeSpeed": 4476,
+        "bounceFactor": 4480,
+        "hitSound": 4484,
+        "priority": 4488,
+        "tentOffset": 4492,
+        "m_vecTempEntAngVelocity": 4504,
+        "tempent_renderamt": 4516,
+        "m_vecNormal": 4520,
+        "m_flSpriteScale": 4532,
+        "m_nFlickerFrame": 4536,
+        "m_flFrameRate": 4540,
+        "m_flFrame": 4544,
+        "m_pszImpactEffect": 4552,
+        "m_pszParticleEffect": 4560,
+        "m_bParticleCollision": 4568,
+        "m_iLastCollisionFrame": 4572,
+        "m_vLastCollisionOrigin": 4576,
+        "m_vecTempEntVelocity": 4588,
+        "m_vecPrevAbsOrigin": 4600,
+        "m_vecTempEntAcceleration": 4612
+      }
+    },
+    "C_WeaponTaser": {
+      "size": 8064,
+      "fields": {
+        "m_fFireTime": 8048,
+        "m_nLastAttackTick": 8052
+      }
+    },
+    "C_PointEntity": {
+      "size": 1544,
+      "fields": {
+      }
+    },
+    "C_SingleplayRules": {
+      "size": 64,
+      "fields": {
+      }
+    },
+    "CLogicalEntity": {
+      "size": 1544,
+      "fields": {
+      }
+    },
+    "C_PrecipitationBlocker": {
+      "size": 3720,
+      "fields": {
+      }
+    },
+    "C_CSGO_CounterTerroristTeamIntroCamera": {
+      "size": 1688,
+      "fields": {
+      }
+    },
+    "C_SoundOpvarSetPathCornerEntity": {
+      "size": 1576,
+      "fields": {
+      }
+    },
+    "CPlayer_WeaponServices": {
+      "size": 168,
+      "fields": {
+        "m_hMyWeapons": 72,
+        "m_hActiveWeapon": 96,
+        "m_hLastWeapon": 100,
+        "m_iAmmo": 104
+      }
+    },
+    "C_WeaponNegev": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_WeaponFiveSeven": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_WeaponSawedoff": {
+      "size": 8000,
+      "fields": {
+      }
+    },
+    "C_TriggerVolume": {
+      "size": 3720,
+      "fields": {
+      }
+    },
+    "CPulseCell_LimitCount": {
+      "size": 80,
+      "fields": {
+        "m_nLimitCount": 72
+      }
+    },
+    "CPulseCell_Step_CallExternalMethod": {
+      "size": 200,
+      "fields": {
+        "m_MethodName": 72,
+        "m_GameBlackboard": 88,
+        "m_ExpectedArgs": 104,
+        "m_nAsyncCallMode": 120,
+        "m_OnFinished": 128
+      }
+    },
+    "C_WeaponMP9": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_DynamicPropAlias_prop_dynamic_override": {
+      "size": 5024,
+      "fields": {
+      }
+    },
+    "CEnvSoundscapeTriggerable": {
+      "size": 1688,
+      "fields": {
+      }
+    },
+    "C_PlayerPing": {
+      "size": 1624,
+      "fields": {
+        "m_hPlayer": 1592,
+        "m_hPingedEntity": 1596,
+        "m_iType": 1600,
+        "m_bUrgent": 1604,
+        "m_szPlaceName": 1605
+      }
+    },
+    "C_AK47": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_CSGO_MapPreviewCameraPathNode": {
+      "size": 1624,
+      "fields": {
+        "m_szParentPathUniqueID": 1544,
+        "m_nPathIndex": 1552,
+        "m_vInTangentLocal": 1556,
+        "m_vOutTangentLocal": 1568,
+        "m_flFOV": 1580,
+        "m_flCameraSpeed": 1584,
+        "m_flEaseIn": 1588,
+        "m_flEaseOut": 1592,
+        "m_vInTangentWorld": 1596,
+        "m_vOutTangentWorld": 1608
+      }
+    },
+    "C_CSPlayerResource": {
+      "size": 1696,
+      "fields": {
+        "m_bHostageAlive": 1544,
+        "m_isHostageFollowingSomeone": 1556,
+        "m_iHostageEntityIDs": 1568,
+        "m_bombsiteCenterA": 1616,
+        "m_bombsiteCenterB": 1628,
+        "m_hostageRescueX": 1640,
+        "m_hostageRescueY": 1656,
+        "m_hostageRescueZ": 1672,
+        "m_bEndMatchNextMapAllVoted": 1688,
+        "m_foundGoalPositions": 1689
+      }
+    },
+    "CSkyboxReference": {
+      "size": 1552,
+      "fields": {
+        "m_worldGroupId": 1544,
+        "m_hSkyCamera": 1548
+      }
+    },
+    "C_IncendiaryGrenade": {
+      "size": 8192,
+      "fields": {
+      }
+    },
+    "CFilterClass": {
+      "size": 1608,
+      "fields": {
+        "m_iFilterClass": 1600
+      }
+    },
+    "C_PointCameraVFOV": {
+      "size": 1648,
+      "fields": {
+        "m_flVerticalFOV": 1640
+      }
+    },
+    "C_PointCamera": {
+      "size": 1640,
+      "fields": {
+        "m_FOV": 1544,
+        "m_Resolution": 1548,
+        "m_bFogEnable": 1552,
+        "m_FogColor": 1553,
+        "m_flFogStart": 1560,
+        "m_flFogEnd": 1564,
+        "m_flFogMaxDensity": 1568,
+        "m_bActive": 1572,
+        "m_bUseScreenAspectRatio": 1573,
+        "m_flAspectRatio": 1576,
+        "m_bNoSky": 1580,
+        "m_fBrightness": 1584,
+        "m_flZFar": 1588,
+        "m_flZNear": 1592,
+        "m_bCanHLTVUse": 1596,
+        "m_bAlignWithParent": 1597,
+        "m_bDofEnabled": 1598,
+        "m_flDofNearBlurry": 1600,
+        "m_flDofNearCrisp": 1604,
+        "m_flDofFarCrisp": 1608,
+        "m_flDofFarBlurry": 1612,
+        "m_flDofTiltToGround": 1616,
+        "m_TargetFOV": 1620,
+        "m_DegreesPerSecond": 1624,
+        "m_bIsOn": 1628,
+        "m_pNext": 1632
+      }
+    },
+    "CPathWithDynamicNodes": {
+      "size": 1872,
+      "fields": {
+        "m_vecPathNodes": 1808,
+        "m_xInitialPathWorldToLocal": 1840
+      }
+    },
+    "CBaseFilter": {
+      "size": 1600,
+      "fields": {
+        "m_bNegated": 1544,
+        "m_OnPass": 1552,
+        "m_OnFail": 1576
+      }
+    },
+    "WeaponPurchaseTracker_t": {
+      "size": 112,
+      "fields": {
+        "m_weaponPurchases": 8
+      }
+    },
+    "PulseObservableBoolExpression_t": {
+      "size": 120,
+      "fields": {
+        "m_EvaluateConnection": 0,
+        "m_DependentObservableVars": 72,
+        "m_DependentObservableBlackboardReferences": 96
+      }
+    },
+    "CMapInfo": {
+      "size": 1592,
+      "fields": {
+        "m_iBuyingStatus": 1544,
+        "m_flBombRadius": 1548,
+        "m_iPetPopulation": 1552,
+        "m_bUseNormalSpawnsForDM": 1556,
+        "m_bDisableAutoGeneratedDMSpawns": 1557,
+        "m_flBotMaxVisionDistance": 1560,
+        "m_iHostageCount": 1564,
+        "m_bFadePlayerVisibilityFarZ": 1568,
+        "m_bRainTraceToSkyEnabled": 1569,
+        "m_flEnvRainStrength": 1572,
+        "m_flEnvPuddleRippleStrength": 1576,
+        "m_flEnvPuddleRippleDirection": 1580,
+        "m_flEnvWetnessCoverage": 1584,
+        "m_flEnvWetnessDryingAmount": 1588
+      }
+    },
+    "C_CSGO_EndOfMatchCamera": {
+      "size": 1688,
+      "fields": {
+      }
+    },
+    "C_BaseGrenade": {
+      "size": 5024,
+      "fields": {
+        "m_bHasWarnedAI": 4944,
+        "m_bIsSmokeGrenade": 4945,
+        "m_bIsLive": 4946,
+        "m_DmgRadius": 4948,
+        "m_flDetonateTime": 4952,
+        "m_flWarnAITime": 4956,
+        "m_flDamage": 4960,
+        "m_iszBounceSound": 4968,
+        "m_ExplosionSound": 4976,
+        "m_hThrower": 4988,
+        "m_flNextAttack": 5012,
+        "m_hOriginalThrower": 5016
+      }
+    },
+    "C_PlayerSprayDecal": {
+      "size": 3992,
+      "fields": {
+        "m_nUniqueID": 3720,
+        "m_unAccountID": 3724,
+        "m_unTraceID": 3728,
+        "m_rtGcTime": 3732,
+        "m_vecEndPos": 3736,
+        "m_vecStart": 3748,
+        "m_vecLeft": 3760,
+        "m_vecNormal": 3772,
+        "m_nPlayer": 3784,
+        "m_nEntity": 3788,
+        "m_nHitbox": 3792,
+        "m_flCreationTime": 3796,
+        "m_nTintID": 3800,
+        "m_nVersion": 3804,
+        "m_ubSignature": 3805,
+        "m_SprayRenderHelper": 3944
+      }
+    },
+    "CEntityIdentity": {
+      "size": 112,
+      "fields": {
+        "m_nameStringableIndex": 20,
+        "m_name": 24,
+        "m_designerName": 32,
+        "m_flags": 48,
+        "m_worldGroupId": 56,
+        "m_fDataObjectTypes": 60,
+        "m_PathIndex": 64,
+        "m_pAttributes": 72,
+        "m_pPrev": 80,
+        "m_pNext": 88,
+        "m_pPrevByClass": 96,
+        "m_pNextByClass": 104
+      }
+    },
+    "CPulseCell_LimitCount::Criteria_t": {
+      "size": 1,
+      "fields": {
+        "m_bLimitCountPasses": 0
+      }
+    },
+    "C_CS2HudModelArms": {
+      "size": 4928,
+      "fields": {
+      }
+    },
+    "CBasePlayerVData": {
+      "size": 376,
+      "fields": {
+        "m_sModelName": 40,
+        "m_flHeadDamageMultiplier": 264,
+        "m_flChestDamageMultiplier": 280,
+        "m_flStomachDamageMultiplier": 296,
+        "m_flArmDamageMultiplier": 312,
+        "m_flLegDamageMultiplier": 328,
+        "m_flHoldBreathTime": 344,
+        "m_flDrowningDamageInterval": 348,
+        "m_nDrowningDamageInitial": 352,
+        "m_nDrowningDamageMax": 356,
+        "m_nWaterSpeed": 360,
+        "m_flUseRange": 364,
+        "m_flUseAngleTolerance": 368,
+        "m_flCrouchTime": 372
+      }
+    },
+    "C_LightSpotEntity": {
+      "size": 3728,
+      "fields": {
+      }
+    },
+    "CCSGameModeRules_Deathmatch": {
+      "size": 64,
+      "fields": {
+        "m_flDMBonusStartTime": 48,
+        "m_flDMBonusTimeLength": 52,
+        "m_sDMBonusWeapon": 56
+      }
+    },
+    "CPulseCell_CursorQueue": {
+      "size": 160,
+      "fields": {
+        "m_nCursorsAllowedToRunParallel": 152
+      }
+    },
+    "CPulseCell_Value_RandomFloat": {
+      "size": 72,
+      "fields": {
+      }
+    },
+    "CPulseExecCursor": {
+      "size": 208,
+      "fields": {
+      }
+    },
+    "C_Sprite": {
+      "size": 3840,
+      "fields": {
+        "m_hSpriteMaterial": 3720,
+        "m_hAttachedToEntity": 3728,
+        "m_nAttachment": 3732,
+        "m_flSpriteFramerate": 3736,
+        "m_flFrame": 3740,
+        "m_flDieTime": 3744,
+        "m_nBrightness": 3760,
+        "m_flBrightnessDuration": 3764,
+        "m_flSpriteScale": 3768,
+        "m_flScaleDuration": 3772,
+        "m_bWorldSpaceScale": 3776,
+        "m_flGlowProxySize": 3780,
+        "m_flHDRColorScale": 3784,
+        "m_flLastTime": 3788,
+        "m_flMaxFrame": 3792,
+        "m_flStartScale": 3796,
+        "m_flDestScale": 3800,
+        "m_flScaleTimeStart": 3804,
+        "m_nStartBrightness": 3808,
+        "m_nDestBrightness": 3812,
+        "m_flBrightnessTimeStart": 3816,
+        "m_nSpriteWidth": 3832,
+        "m_nSpriteHeight": 3836
+      }
+    },
+    "C_CsmFovOverride": {
+      "size": 1560,
+      "fields": {
+        "m_cameraName": 1544,
+        "m_flCsmFovOverrideValue": 1552
+      }
+    },
+    "C_WeaponGlock": {
+      "size": 8048,
+      "fields": {
+      }
+    },
+    "C_PhysicsProp": {
+      "size": 4832,
+      "fields": {
+        "m_bAwake": 4816
+      }
+    },
+    "CFilterTeam": {
+      "size": 1608,
+      "fields": {
+        "m_iFilterTeam": 1600
+      }
+    },
+    "CInfoInteraction": {
+      "size": 1624,
+      "fields": {
+        "m_strSlotEntityName": 1544,
+        "m_strInteractVData": 1608,
+        "m_flInteractRadius": 1616
+      }
+    },
+    "CBasePlayerWeaponVData": {
+      "size": 1088,
+      "fields": {
+        "m_szWorldModel": 40,
+        "m_sToolsOnlyOwnerModelName": 264,
+        "m_bBuiltRightHanded": 488,
+        "m_bAllowFlipping": 489,
+        "m_sMuzzleAttachment": 496,
+        "m_szMuzzleFlashParticle": 528,
+        "m_szMuzzleFlashParticleConfig": 752,
+        "m_szBarrelSmokeParticle": 760,
+        "m_nMuzzleSmokeShotThreshold": 984,
+        "m_flMuzzleSmokeTimeout": 988,
+        "m_flMuzzleSmokeDecrementRate": 992,
+        "m_bGenerateMuzzleLight": 996,
+        "m_bLinkedCooldowns": 997,
+        "m_iFlags": 998,
+        "m_iWeight": 1000,
+        "m_bAutoSwitchTo": 1004,
+        "m_bAutoSwitchFrom": 1005,
+        "m_nPrimaryAmmoType": 1006,
+        "m_nSecondaryAmmoType": 1007,
+        "m_iMaxClip1": 1008,
+        "m_iMaxClip2": 1012,
+        "m_iDefaultClip1": 1016,
+        "m_iDefaultClip2": 1020,
+        "m_bReserveAmmoAsClips": 1024,
+        "m_bTreatAsSingleClip": 1025,
+        "m_bKeepLoadedAmmo": 1026,
+        "m_iRumbleEffect": 1028,
+        "m_flDropSpeed": 1032,
+        "m_iSlot": 1036,
+        "m_iPosition": 1040,
+        "m_aShootSounds": 1048
+      }
+    },
+    "C_CSGO_EndOfMatchLineupEnd": {
+      "size": 1544,
+      "fields": {
+      }
+    },
+    "C_CSGO_PreviewPlayerAlias_csgo_player_previewmodel": {
+      "size": 16288,
+      "fields": {
+      }
+    },
+    "C_SmokeGrenade": {
+      "size": 8192,
+      "fields": {
+      }
+    },
+    "CInfoParticleTarget": {
+      "size": 1544,
+      "fields": {
+      }
+    },
+    "CCSPlayer_DamageReactServices": {
+      "size": 80,
+      "fields": {
+      }
+    },
+    "C_PointClientUIWorldPanel": {
+      "size": 4320,
+      "fields": {
+        "m_bForceRecreateNextUpdate": 3776,
+        "m_bMoveViewToPlayerNextThink": 3777,
+        "m_bCheckCSSClasses": 3778,
+        "m_anchorDeltaTransform": 3792,
+        "m_pOffScreenIndicator": 4192,
+        "m_bIgnoreInput": 4232,
+        "m_bLit": 4233,
+        "m_bFollowPlayerAcrossTeleport": 4234,
+        "m_flWidth": 4236,
+        "m_flHeight": 4240,
+        "m_flDPI": 4244,
+        "m_flInteractDistance": 4248,
+        "m_flDepthOffset": 4252,
+        "m_unOwnerContext": 4256,
+        "m_unHorizontalAlign": 4260,
+        "m_unVerticalAlign": 4264,
+        "m_unOrientation": 4268,
+        "m_bAllowInteractionFromAllSceneWorlds": 4272,
+        "m_vecCSSClasses": 4280,
+        "m_bOpaque": 4304,
+        "m_bNoDepth": 4305,
+        "m_bVisibleWhenParentNoDraw": 4306,
+        "m_bRenderBackface": 4307,
+        "m_bUseOffScreenIndicator": 4308,
+        "m_bExcludeFromSaveGames": 4309,
+        "m_bGrabbable": 4310,
+        "m_bOnlyRenderToTexture": 4311,
+        "m_bDisableMipGen": 4312,
+        "m_nExplicitImageLayout": 4316
+      }
+    },
+    "C_EntityFlame": {
+      "size": 1616,
+      "fields": {
+        "m_hEntAttached": 1544,
+        "m_hOldAttached": 1584,
+        "m_bCheapEffect": 1588
+      }
+    },
+    "CBasePlayerController": {
+      "size": 2040,
+      "fields": {
+        "m_CommandContext": 1552,
+        "m_nInButtonsWhichAreToggles": 1720,
+        "m_nTickBase": 1728,
+        "m_hPawn": 1732,
+        "m_bKnownTeamMismatch": 1736,
+        "m_hPredictedPawn": 1740,
+        "m_nSplitScreenSlot": 1744,
+        "m_hSplitOwner": 1748,
+        "m_hSplitScreenPlayers": 1752,
+        "m_bIsHLTV": 1776,
+        "m_iConnected": 1780,
+        "m_iszPlayerName": 1784,
+        "m_steamID": 1920,
+        "m_bIsLocalPlayerController": 1928,
+        "m_bNoClipEnabled": 1929,
+        "m_iDesiredFOV": 1932
+      }
+    },
+    "C_CSGO_EndOfMatchLineupEndpoint": {
+      "size": 1544,
+      "fields": {
+      }
+    }
+  }
+}

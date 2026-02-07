@@ -1,0 +1,45 @@
+{
+  "client.dll": {
+    "dwCSGOInput": "48 89 05 ? ? ? ? 0F 57 C0 0F 11 05",
+    "dwEntityList": "48 89 35 ? ? ? ? 48 85 F6",
+    "dwGameEntitySystem": "48 8B 3D ? ? ? ? 48 89 3D",
+    "dwGameRules": "48 89 1D ? ? ? ? FF 15 ? ? ? ? 84 C0",
+    "dwGlobalVars": "48 89 15 ? ? ? ? 48 89 42",
+    "dwGlowManager": "48 8B 05 ? ? ? ? C3 CC CC CC CC CC CC CC CC 8B 41",
+    "dwLocalPlayerController": "48 8B 05 ? ? ? ? 41 89 BE",
+    "dwPlantedC4": "48 8B 15 ? ? ? ? 41 FF C0",
+    "dwPrediction": "48 8D 05 ? ? ? ? C3 CC CC CC CC CC CC CC CC 40 53 56 41 54",
+    "dwSensitivity": "48 8D 0D ? ? ? ? 66 0F 6E CD",
+    "dwViewMatrix": "48 8D 0D ? ? ? ? 48 C1 E0 06",
+    "dwViewRender": "48 89 05 ? ? ? ? 48 8B C8 48 85 C0",
+    "dwWeaponC4": "48 89 05 ? ? ? ? F7 C1 ? ? ? ? 74",
+    "dwGameEntitySystem_highestEntityIndex": "FF 81 ? ? ? ? 48 85 D2",
+    "dwInputSystem": "48 89 05 ? ? ? ? 48 8B 01 FF 50 08",
+    "dwPlayerResource": "48 8B 0D ? ? ? ? 48 8B 01 FF 90 ? ? ? ? 48 8B",
+    "dwSignOnState": "44 8B 05 ? ? ? ? 83 F8 02",
+    "dwHostMaps": "48 8B 0D ? ? ? ? 48 85 C9 74 ? 48 8B 01 48 FF 60 30"
+  },
+  "engine2.dll": {
+    "dwBuildNumber": "89 05 ? ? ? ? 48 8D 0D ? ? ? ? FF 15",
+    "dwNetworkGameClient": "48 89 3D ? ? ? ? FF 87 28 02 00 00",
+    "dwWindowHeight": "8B 05 ? ? ? ? 89 03",
+    "dwWindowWidth": "8B 05 ? ? ? ? 89 07",
+    "dwNetworkGameClient_deltaTick": "4C 8D B7 ? ? ? ? 4C 89 7C 24",
+    "dwNetworkGameClient_signOnState": "44 8B 81 ? ? ? ? 48 8D 0D",
+    "dwNetworkGameClient_isBackgroundMap": "0F B6 81 ? ? ? ? C3 CC CC CC CC CC CC CC CC 0F B6 81",
+    "dwNetworkGameClient_localPlayer": "42 8B 94 D3 ? ? ? ? 5B 49 FF E3"
+  },
+  "inputsystem.dll": {
+    "dwInputSystem": "48 89 05 ? ? ? ? 33 C0"
+  },
+  "matchmaking.dll": {
+    "dwGameTypes": "48 8D 0D ? ? ? ? FF 90"
+  },
+  "soundsystem.dll": {
+    "dwSoundSystem": "48 8D 05 ? ? ? ? C3 CC CC CC CC CC CC CC CC 48 89 15",
+    "dwSoundSystem_engineViewData": "0F 11 47 ? 0F 10 4B ? 0F 11 8F"
+  },
+  "tier0.dll": {
+    "dwCommandLine": "48 8B 05 ? ? ? ? 48 85 C0 74 ? 48 8D 0D"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "dwCSGOInput": 36794496,
+  "dwEntityList": 35426032,
+  "dwGameRules": 36744272,
+  "dwGlobalVars": 33928752,
+  "dwGlowManager": 36731472,
+  "dwLocalPlayerController": 36638648,
+  "dwPlantedC4": 36182768,
+  "dwPrediction": 33974768,
+  "dwSensitivity": 36734304,
+  "dwViewMatrix": 36752528,
+  "dwViewRender": 36753560,
+  "dwWeaponC4": 35301456,
+  "dwGameEntitySystem_highestEntityIndex": 9898051,
+  "dwPlayerResource": 36727520,
+  "dwHostMaps": 36744272,
+  "dwSensitivity_sensitivity": 80,
+  "dwViewAngles_offset": 17696,
+  "dwLocalPlayerPawn_offset": 224,
+  "dwGameEntitySystem_highestEntityIndex_offset": 8432,
+  "dwViewAngles": 36812192,
+  "dwLocalPlayerPawn": 33974992
+}

@@ -1,0 +1,17 @@
+{
+  "vtables": [
+    {"class":"VTable_177656","address":"0x7ff6830db5f8","functions":5,"module":"cs2.exe"},
+    {"class":"VTable_183080","address":"0x7ff6830dcb28","functions":5,"module":"cs2.exe"},
+    {"class":"VTable_250056","address":"0x7ff6830ed0c8","functions":3,"module":"cs2.exe"},
+    {"class":"VTable_773152","address":"0x7ff68316cc20","functions":8,"module":"cs2.exe"},
+    {"class":"VTable_773160","address":"0x7ff68316cc28","functions":7,"module":"cs2.exe"},
+    {"class":"VTable_773168","address":"0x7ff68316cc30","functions":6,"module":"cs2.exe"},
+    {"class":"VTable_773176","address":"0x7ff68316cc38","functions":5,"module":"cs2.exe"},
+    {"class":"VTable_773184","address":"0x7ff68316cc40","functions":4,"module":"cs2.exe"},
+    {"class":"VTable_773192","address":"0x7ff68316cc48","functions":3,"module":"cs2.exe"},
+    {"class":"VTable_773240","address":"0x7ff68316cc78","functions":6,"module":"cs2.exe"},
+    {"class":"VTable_773248","address":"0x7ff68316cc80","functions":5,"module":"cs2.exe"},
+    {"class":"VTable_773256","address":"0x7ff68316cc88","functions":4,"module":"cs2.exe"},
+    {"class":"VTable_773264","address":"0x7ff68316cc90","functions":3,"module":"cs2.exe"}
+  ]
+}

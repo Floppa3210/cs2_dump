@@ -1,0 +1,53 @@
+// Auto-generated - a2x-like combined offsets
+pub mod client_dll {
+    pub const DWCSGOINPUT: usize = 0x2317080;
+    pub const DWENTITYLIST: usize = 0x21C8EF0;
+    pub const DWGAMERULES: usize = 0x230AC50;
+    pub const DWGLOBALVARS: usize = 0x205B630;
+    pub const DWGLOWMANAGER: usize = 0x2307A50;
+    pub const DWLOCALPLAYERCONTROLLER: usize = 0x22F0FB8;
+    pub const DWPLANTEDC4: usize = 0x2281AF0;
+    pub const DWPREDICTION: usize = 0x20669F0;
+    pub const DWSENSITIVITY: usize = 0x2308560;
+    pub const DWVIEWMATRIX: usize = 0x230CC90;
+    pub const DWVIEWRENDER: usize = 0x230D098;
+    pub const DWWEAPONC4: usize = 0x21AA850;
+    pub const DWGAMEENTITYSYSTEM_HIGHESTENTITYINDEX: usize = 0x970843;
+    pub const DWPLAYERRESOURCE: usize = 0x2306AE0;
+    pub const DWHOSTMAPS: usize = 0x230AC50;
+    pub const DWSENSITIVITY_SENSITIVITY: usize = 0x50;
+    pub const DWVIEWANGLES_OFFSET: usize = 0x4520;
+    pub const DWLOCALPLAYERPAWN_OFFSET: usize = 0xE0;
+    pub const DWGAMEENTITYSYSTEM_HIGHESTENTITYINDEX_OFFSET: usize = 0x20F0;
+    pub const DWVIEWANGLES: usize = 0x231B5A0;
+    pub const DWLOCALPLAYERPAWN: usize = 0x2066AD0;
+}
+pub mod engine2_dll {
+    pub const DWBUILDNUMBER: usize = 0x60A504;
+    pub const DWWINDOWHEIGHT: usize = 0x9096C4;
+    pub const DWWINDOWWIDTH: usize = 0x9096C0;
+    pub const DWNETWORKGAMECLIENT_DELTATICK: usize = 0x8C13B;
+    pub const DWNETWORKGAMECLIENT_SIGNONSTATE: usize = 0x85105;
+    pub const DWNETWORKGAMECLIENT_ISBACKGROUNDMAP: usize = 0x31110;
+    pub const DWNETWORKGAMECLIENT_LOCALPLAYER: usize = 0x90358;
+    pub const DWNETWORKGAMECLIENT_CLIENTTICKCOUNT: usize = 0x390;
+    pub const DWNETWORKGAMECLIENT_SERVERTICKCOUNT: usize = 0x394;
+    pub const DWNETWORKGAMECLIENT_DELTATICK_OFFSET: usize = 0x23C;
+    pub const DWNETWORKGAMECLIENT_MAXCLIENTS: usize = 0x230;
+    pub const DWNETWORKGAMECLIENT_SIGNONSTATE_OFFSET: usize = 0x220;
+    pub const DWNETWORKGAMECLIENT_ISBACKGROUNDMAP_OFFSET: usize = 0x2C1467;
+    pub const DWNETWORKGAMECLIENT_LOCALPLAYER_OFFSET: usize = 0xE8;
+}
+pub mod inputsystem_dll {
+    pub const DWINPUTSYSTEM: usize = 0x45AD0;
+}
+pub mod matchmaking_dll {
+    pub const DWGAMETYPES: usize = 0x1B8000;
+}
+pub mod soundsystem_dll {
+    pub const DWSOUNDSYSTEM: usize = 0x4F3490;
+    pub const DWSOUNDSYSTEM_ENGINEVIEWDATA: usize = 0x7C;
+}
+pub mod tier0_dll {
+    pub const DWCOMMANDLINE: usize = 0x3D1C58;
+}

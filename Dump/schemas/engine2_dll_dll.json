@@ -1,0 +1,113 @@
+{
+  "module": "engine2.dll.dll",
+  "classes": {
+    "CEntityInstance": {
+      "size": 56,
+      "alignOf": 1,
+      "hasBaseClass": false,
+      "fields": {
+        "m_iszPrivateVScripts": {
+          "offset": 8,
+          "type": "CUtlSymbolLarge",
+          "category": "internal"
+        },
+        "m_pEntity": {
+          "offset": 16,
+          "type": "CEntityIdentity*",
+          "category": "internal"
+        },
+        "m_CScriptComponent": {
+          "offset": 48,
+          "type": "CScriptComponent*",
+          "category": "internal"
+        }
+      }
+    },
+    "CEntityComponent": {
+      "size": 8,
+      "alignOf": 1,
+      "hasBaseClass": false,
+      "fields": {
+      }
+    },
+    "CScriptComponent": {
+      "size": 56,
+      "alignOf": 2,
+      "hasBaseClass": false,
+      "fields": {
+        "m_scriptClassName": {
+          "offset": 48,
+          "type": "CUtlSymbolLarge",
+          "category": "identity"
+        }
+      }
+    },
+    "CEntityIdentity": {
+      "size": 112,
+      "alignOf": 1,
+      "hasBaseClass": false,
+      "fields": {
+        "m_nameStringableIndex": {
+          "offset": 20,
+          "type": "int32",
+          "category": "identity"
+        },
+        "m_name": {
+          "offset": 24,
+          "type": "CUtlSymbolLarge",
+          "category": "internal"
+        },
+        "m_designerName": {
+          "offset": 32,
+          "type": "CUtlSymbolLarge",
+          "category": "identity"
+        },
+        "m_flags": {
+          "offset": 48,
+          "type": "uint32",
+          "category": "internal"
+        },
+        "m_worldGroupId": {
+          "offset": 56,
+          "type": "WorldGroupId_t",
+          "category": "identity"
+        },
+        "m_fDataObjectTypes": {
+          "offset": 60,
+          "type": "uint32",
+          "category": "internal"
+        },
+        "m_PathIndex": {
+          "offset": 64,
+          "type": "ChangeAccessorFieldPathIndex_t",
+          "category": "identity"
+        },
+        "m_pAttributes": {
+          "offset": 72,
+          "type": "CEntityAttributeTable*",
+          "category": "internal"
+        },
+        "m_pPrev": {
+          "offset": 80,
+          "type": "CEntityIdentity*",
+          "category": "internal"
+        },
+        "m_pNext": {
+          "offset": 88,
+          "type": "CEntityIdentity*",
+          "category": "internal"
+        },
+        "m_pPrevByClass": {
+          "offset": 96,
+          "type": "CEntityIdentity*",
+          "category": "internal"
+        },
+        "m_pNextByClass": {
+          "offset": 104,
+          "type": "CEntityIdentity*",
+          "category": "internal"
+        }
+      }
+    }
+  }
+}

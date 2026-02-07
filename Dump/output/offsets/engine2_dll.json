@@ -1,0 +1,16 @@
+{
+  "dwBuildNumber": 6333700,
+  "dwWindowHeight": 9475780,
+  "dwWindowWidth": 9475776,
+  "dwNetworkGameClient_deltaTick": 573755,
+  "dwNetworkGameClient_signOnState": 545029,
+  "dwNetworkGameClient_isBackgroundMap": 200976,
+  "dwNetworkGameClient_localPlayer": 590680,
+  "dwNetworkGameClient_clientTickCount": 912,
+  "dwNetworkGameClient_serverTickCount": 916,
+  "dwNetworkGameClient_deltaTick_offset": 572,
+  "dwNetworkGameClient_maxClients": 560,
+  "dwNetworkGameClient_signOnState_offset": 544,
+  "dwNetworkGameClient_isBackgroundMap_offset": 2888807,
+  "dwNetworkGameClient_localPlayer_offset": 232
+}
