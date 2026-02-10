@@ -1,4 +1,4 @@
-// Auto-generated - a2x-like schemas
+// Auto-generated schemas
 #pragma once
 
 #include <cstddef>

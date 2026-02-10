@@ -4,14 +4,14 @@
     "AnimationSystem_001": 549776
   },
   "client.dll": {
-    "LegacyGameUI001": 13396624,
-    "Source2ClientUI001": 13300656,
-    "Source2ClientPrediction001": 11931856,
-    "ClientToolsInfo_001": 11504160,
-    "Source2Client002": 11504192,
-    "GameClientExports001": 11504176,
-    "EmptyWorldService001_Client": 7558752,
-    "Source2ClientConfig001": 7417760
+    "LegacyGameUI001": 13388288,
+    "Source2ClientUI001": 13272880,
+    "Source2ClientPrediction001": 11932368,
+    "ClientToolsInfo_001": 11504672,
+    "Source2Client002": 11504704,
+    "GameClientExports001": 11504688,
+    "EmptyWorldService001_Client": 7558592,
+    "Source2ClientConfig001": 7417600
   },
   "engine2.dll": {
     "SimpleEngineLoopService_001": 2340592,
@@ -61,12 +61,15 @@
     "GameModelInfo001": 87664,
     "DebugDrawQueueManager001": 86256
   },
+  "imemanager.dll": {
+    "IMEManager001": 51168
+  },
   "inputsystem.dll": {
     "InputSystemVersion001": 10704,
     "InputStackSystemVersion001": 6080
   },
   "localize.dll": {
-    "Localize_001": 126704
+    "Localize_001": 128320
   },
   "matchmaking.dll": {
     "GameTypes001": 225152,
@@ -79,6 +82,12 @@
     "FontManager_001": 298000,
     "VMaterialSystem2_001": 221104
   },
+  "meshsystem.dll": {
+    "MeshSystem001": 42656
+  },
+  "navsystem.dll": {
+    "NavSystem001": 47456
+  },
   "networksystem.dll": {
     "SerializedEntitiesVersion001": 1097072,
     "NetworkSystemVersion001": 987312,
@@ -88,8 +97,17 @@
   "panorama.dll": {
     "PanoramaUIEngine001": 381792
   },
+  "panorama_text_pango.dll": {
+    "PanoramaTextServices001": 368688
+  },
+  "panoramauiclient.dll": {
+    "PanoramaUIClient001": 90192
+  },
   "particles.dll": {
     "ParticleSystemMgr003": 569920
+  },
+  "pulse_system.dll": {
+    "IPulseSystem_001": 39216
   },
   "rendersystemdx11.dll": {
     "RenderUtils_001": 410624,
@@ -99,13 +117,29 @@
   "resourcesystem.dll": {
     "ResourceSystem013": 82528
   },
+  "scenefilecache.dll": {
+    "SceneFileCache002": 49456,
+    "ResponseRulesCache001": 33968
+  },
   "scenesystem.dll": {
-    "SceneUtils_001": 1553184,
-    "SceneSystem_002": 892224,
+    "SceneUtils_001": 1553088,
+    "SceneSystem_002": 892208,
     "RenderingPipelines_001": 709824
   },
   "schemasystem.dll": {
     "SchemaSystem_001": 55408
+  },
+  "server.dll": {
+    "NavGameTest001": 16011792,
+    "ServerToolsInfo_001": 13370496,
+    "Source2GameClients001": 13370512,
+    "Source2GameEntities001": 13370528,
+    "Source2Server001": 13370544,
+    "EmptyWorldService001_Server": 9254656,
+    "Source2ServerConfig001": 9153200,
+    "EntitySubclassUtilsV001": 5349152,
+    "customnavsystem001": 3691824,
+    "Source2GameDirector001": 2043920
   },
   "soundsystem.dll": {
     "SoundOpSystem001": 1779120,
@@ -113,14 +147,54 @@
     "VMixEditTool001": 600784,
     "SoundSystem001": 392960
   },
+  "steamaudio.dll": {
+    "SteamAudio001": 394096
+  },
+  "steamclient64.dll": {
+    "IVALIDATE001": 9725328,
+    "CLIENTENGINE_INTERFACE_VERSION005": 9710768,
+    "SteamClient023": 7288416,
+    "SteamClient022": 7288400,
+    "SteamClient021": 7288384,
+    "SteamClient020": 7288368,
+    "SteamClient019": 7288352,
+    "SteamClient018": 7288336,
+    "SteamClient017": 7288320,
+    "SteamClient016": 7288304,
+    "SteamClient015": 7288288,
+    "SteamClient014": 7288272,
+    "SteamClient013": 7288256,
+    "SteamClient012": 7288240,
+    "SteamClient011": 7288224,
+    "SteamClient010": 7288208,
+    "SteamClient009": 7288192,
+    "SteamClient008": 7288176,
+    "SteamClient007": 7288160,
+    "SteamClient006": 7288144,
+    "p2pvoice002": 890176,
+    "p2pvoicesingleton002": 874528
+  },
   "tier0.dll": {
     "VStringTokenSystem001": 1692112,
     "TestScriptMgr001": 1474592,
     "VProcessUtils002": 1400800,
     "VEngineCvar007": 423232
   },
+  "v8system.dll": {
+    "Source2V8System001": 6480
+  },
   "vphysics2.dll": {
     "VPhysics2_Handle_Interface_001": 435984,
     "VPhysics2_Interface_001": 413952
+  },
+  "vscript.dll": {
+    "VScriptManager010": 255472
+  },
+  "vstdlib_s64.dll": {
+    "IVALIDATE001": 159232,
+    "VEngineCvar002": 24400
+  },
+  "worldrenderer.dll": {
+    "WorldRendererMgr001": 151376
   }
 }

@@ -193,7 +193,7 @@ inline std::string GetBuildNumber() {
     return std::to_string(build);
 }
 
-inline void SaveVersionedDump() {
+inline std::string SaveVersionedDump() {
     const std::string version = GetBuildNumber();
     const std::string versionsPath = g_OutputPath + "/versions";
     std::filesystem::create_directories(versionsPath);
@@ -214,7 +214,14 @@ inline void SaveVersionedDump() {
         out << "  }\n";
         out << "}\n";
     }
+
+    std::ofstream buildMarker(g_OutputPath + "/meta/current_build.txt");
+    if (buildMarker.is_open()) {
+        buildMarker << version << "\n";
+    }
+
     g_Logger.Success("Versioning", "Versioned dump snapshot created: " + version);
+    return version;
 }
 
 inline void GenerateHTMLDocumentation() {

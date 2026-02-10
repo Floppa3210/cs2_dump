@@ -1,0 +1,10 @@
+{
+  "modules": [
+    {"module":"client.dll","tier":"high","overall":0.892308,"structural":1.000000,"pattern":0.807692,"semantic":0.750000,"counts":{"structural_total":27,"pattern_total":26,"semantic_total":8}},
+    {"module":"soundsystem.dll","tier":"high","overall":0.900000,"structural":1.000000,"pattern":0.666667,"semantic":1.000000,"counts":{"structural_total":2,"pattern_total":3,"semantic_total":0}},
+    {"module":"engine2.dll","tier":"high","overall":0.920000,"structural":1.000000,"pattern":0.733333,"semantic":1.000000,"counts":{"structural_total":24,"pattern_total":15,"semantic_total":4}},
+    {"module":"inputsystem.dll","tier":"high","overall":1.000000,"structural":1.000000,"pattern":1.000000,"semantic":1.000000,"counts":{"structural_total":1,"pattern_total":1,"semantic_total":0}},
+    {"module":"matchmaking.dll","tier":"high","overall":1.000000,"structural":1.000000,"pattern":1.000000,"semantic":1.000000,"counts":{"structural_total":1,"pattern_total":1,"semantic_total":0}},
+    {"module":"tier0.dll","tier":"high","overall":1.000000,"structural":1.000000,"pattern":1.000000,"semantic":1.000000,"counts":{"structural_total":1,"pattern_total":1,"semantic_total":0}}
+  ]
+}

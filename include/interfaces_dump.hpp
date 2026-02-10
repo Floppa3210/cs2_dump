@@ -9,6 +9,7 @@
 //=============================================================================
 
 ModuleInfo* FindModule(const std::string& name);
+extern std::vector<ModuleInfo> g_Modules;
 
 using InstantiateInterfaceFn = void* (*)();
 
@@ -105,4 +106,22 @@ inline void DumpInterfaces(const std::string& moduleName) {
             }
         }
     }
+}
+
+inline std::vector<std::string> DiscoverCreateInterfaceModules() {
+    std::vector<std::string> modules;
+    modules.reserve(g_Modules.size());
+
+    for (const auto& mod : g_Modules) {
+        if (!mod.base || mod.size == 0) {
+            continue;
+        }
+        if (GetExportAddress(mod.base, "CreateInterface")) {
+            modules.push_back(mod.name);
+        }
+    }
+
+    std::sort(modules.begin(), modules.end());
+    modules.erase(std::unique(modules.begin(), modules.end()), modules.end());
+    return modules;
 }

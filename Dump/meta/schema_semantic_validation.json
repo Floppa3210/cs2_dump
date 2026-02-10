@@ -1,0 +1,16 @@
+{
+  "checks": [
+    {"class":"C_BaseEntity","field":"m_iHealth","valid":true,"class_found":true,"field_found":true,"rationale":"core_health_tracking"},
+    {"class":"C_BaseEntity","field":"m_iTeamNum","valid":true,"class_found":true,"field_found":true,"rationale":"team_state"},
+    {"class":"C_BaseEntity","field":"m_pGameSceneNode","valid":true,"class_found":true,"field_found":true,"rationale":"scene_node_pointer"},
+    {"class":"CGameSceneNode","field":"m_vecAbsOrigin","valid":true,"class_found":true,"field_found":true,"rationale":"world_position"},
+    {"class":"CBasePlayerController","field":"m_hPawn","valid":true,"class_found":true,"field_found":true,"rationale":"controller_to_pawn_link"},
+    {"class":"CBasePlayerController","field":"m_iszPlayerName","valid":true,"class_found":true,"field_found":true,"rationale":"player_identity"},
+    {"class":"C_BasePlayerPawn","field":"m_vOldOrigin","valid":true,"class_found":true,"field_found":true,"rationale":"pawn_origin_history"},
+    {"class":"CPlayer_WeaponServices","field":"m_hActiveWeapon","valid":true,"class_found":true,"field_found":true,"rationale":"active_weapon_handle"},
+    {"class":"C_CSPlayerPawn","field":"m_iShotsFired","valid":true,"class_found":true,"field_found":true,"rationale":"combat_activity"},
+    {"class":"C_CSPlayerPawn","field":"m_aimPunchAngle","valid":true,"class_found":true,"field_found":true,"rationale":"recoil_tracking"},
+    {"class":"CCSPlayerController","field":"m_iPing","valid":true,"class_found":true,"field_found":true,"rationale":"player_network_quality"}
+  ],
+  "summary": {"total": 11,"valid": 11,"invalid": 0}
+}

@@ -11,7 +11,7 @@
 #include "vtable_dump.hpp"
 
 //=============================================================================
-// OUTPUT GENERATION - Formatted like a2x (modularized)
+// OUTPUT GENERATION - Multi-language structured output (modularized)
 //=============================================================================
 
 extern std::string g_OutputPath;
@@ -70,7 +70,7 @@ inline void WritePatternsHpp() {
     if (!out.is_open()) return;
 
     out << "// Generated using CS2 Complete Dumper\n";
-    out << "// Based on a2x/cs2-dumper patterns\n";
+    out << "// Pattern-based output\n";
     out << "// " << GetCurrentTimestamp() << "\n\n";
     out << "#pragma once\n\n";
     out << "#include <cstddef>\n\n";
@@ -107,7 +107,7 @@ inline void WriteOffsetsHpp() {
     if (!out.is_open()) return;
 
     out << "// Generated using CS2 Complete Dumper\n";
-    out << "// Based on a2x/cs2-dumper patterns\n";
+    out << "// Pattern-based output\n";
     out << "// " << GetCurrentTimestamp() << "\n\n";
     out << "#pragma once\n\n";
     out << "#include <cstddef>\n\n";
@@ -172,7 +172,7 @@ inline void WriteButtonsHpp() {
     if (!out.is_open()) return;
 
     out << "// Generated using CS2 Complete Dumper\n";
-    out << "// Based on a2x/cs2-dumper patterns\n";
+    out << "// Pattern-based output\n";
     out << "// " << GetCurrentTimestamp() << "\n\n";
     out << "#pragma once\n\n";
     out << "#include <cstddef>\n\n";
@@ -212,7 +212,7 @@ inline void WriteInterfacesHpp() {
     if (!out.is_open()) return;
 
     out << "// Generated using CS2 Complete Dumper\n";
-    out << "// Based on a2x/cs2-dumper patterns\n";
+    out << "// Pattern-based output\n";
     out << "// " << GetCurrentTimestamp() << "\n\n";
     out << "#pragma once\n\n";
     out << "#include <cstddef>\n\n";
@@ -277,7 +277,7 @@ inline void WriteModulesJson() {
     g_Logger.Success("Output", "meta/modules.json written");
 }
 
-inline void WriteA2XLikeOffsetsByModule(const std::string& outputRoot) {
+inline void WriteOffsetsByModuleOutput(const std::string& outputRoot) {
     std::map<std::string, std::vector<const FoundOffset*>> byModule;
     for (const auto& off : g_FoundOffsets) {
         byModule[off.module].push_back(&off);
@@ -301,7 +301,7 @@ inline void WriteA2XLikeOffsetsByModule(const std::string& outputRoot) {
 
         std::ofstream hppOut(outputRoot + "/" + fileBase + ".hpp");
         if (hppOut.is_open()) {
-            hppOut << "// Auto-generated - a2x-like module offsets\n";
+            hppOut << "// Auto-generated module offsets\n";
             hppOut << "#pragma once\n\n#include <cstddef>\n\n";
             hppOut << "namespace cs2_dumper {\n";
             hppOut << "    namespace " << fileBase << " {\n";
@@ -314,7 +314,7 @@ inline void WriteA2XLikeOffsetsByModule(const std::string& outputRoot) {
 
         std::ofstream csOut(outputRoot + "/" + fileBase + ".cs");
         if (csOut.is_open()) {
-            csOut << "// Auto-generated - a2x-like module offsets\n";
+            csOut << "// Auto-generated module offsets\n";
             csOut << "namespace cs2_dumper {\n";
             csOut << "    public static class " << fileBase << " {\n";
             for (const auto* off : offsets) {
@@ -326,7 +326,7 @@ inline void WriteA2XLikeOffsetsByModule(const std::string& outputRoot) {
 
         std::ofstream rsOut(outputRoot + "/" + fileBase + ".rs");
         if (rsOut.is_open()) {
-            rsOut << "// Auto-generated - a2x-like module offsets\n";
+            rsOut << "// Auto-generated module offsets\n";
             for (const auto* off : offsets) {
                 rsOut << "pub const " << ToRustConstName(off->name)
                       << ": usize = " << ToHexLiteral(off->offset) << ";\n";
@@ -335,7 +335,7 @@ inline void WriteA2XLikeOffsetsByModule(const std::string& outputRoot) {
     }
 }
 
-inline void WriteA2XLikeOffsetsCombined(const std::string& outputRoot) {
+inline void WriteOffsetsCombinedOutput(const std::string& outputRoot) {
     std::map<std::string, std::vector<const FoundOffset*>> byModule;
     for (const auto& off : g_FoundOffsets) {
         byModule[off.module].push_back(&off);
@@ -359,7 +359,7 @@ inline void WriteA2XLikeOffsetsCombined(const std::string& outputRoot) {
 
     std::ofstream hppOut(outputRoot + "/offsets.hpp");
     if (hppOut.is_open()) {
-        hppOut << "// Auto-generated - a2x-like combined offsets\n";
+        hppOut << "// Auto-generated combined offsets\n";
         hppOut << "#pragma once\n\n#include <cstddef>\n\nnamespace cs2_dumper {\n";
         hppOut << "    namespace offsets {\n";
         for (const auto& [mod, offsets] : byModule) {
@@ -375,7 +375,7 @@ inline void WriteA2XLikeOffsetsCombined(const std::string& outputRoot) {
 
     std::ofstream csOut(outputRoot + "/offsets.cs");
     if (csOut.is_open()) {
-        csOut << "// Auto-generated - a2x-like combined offsets\n";
+        csOut << "// Auto-generated combined offsets\n";
         csOut << "namespace cs2_dumper {\n";
         for (const auto& [mod, offsets] : byModule) {
             csOut << "    public static class " << MakeCppIdentifier(mod) << " {\n";
@@ -390,7 +390,7 @@ inline void WriteA2XLikeOffsetsCombined(const std::string& outputRoot) {
 
     std::ofstream rsOut(outputRoot + "/offsets.rs");
     if (rsOut.is_open()) {
-        rsOut << "// Auto-generated - a2x-like combined offsets\n";
+        rsOut << "// Auto-generated combined offsets\n";
         for (const auto& [mod, offsets] : byModule) {
             rsOut << "pub mod " << MakeCppIdentifier(mod) << " {\n";
             for (const auto* off : offsets) {
@@ -402,7 +402,7 @@ inline void WriteA2XLikeOffsetsCombined(const std::string& outputRoot) {
     }
 }
 
-inline void WriteA2XLikeInterfaces(const std::string& outputRoot) {
+inline void WriteInterfacesOutputStructured(const std::string& outputRoot) {
     std::ofstream jsonOut(outputRoot + "/interfaces.json");
     if (jsonOut.is_open()) {
         jsonOut << "{\n";
@@ -420,7 +420,7 @@ inline void WriteA2XLikeInterfaces(const std::string& outputRoot) {
 
     std::ofstream hppOut(outputRoot + "/interfaces.hpp");
     if (hppOut.is_open()) {
-        hppOut << "// Auto-generated - a2x-like interfaces\n";
+        hppOut << "// Auto-generated interfaces\n";
         hppOut << "#pragma once\n\n#include <cstddef>\n\nnamespace cs2_dumper {\n";
         hppOut << "    namespace interfaces {\n";
         for (const auto& [mod, ifaces] : g_Interfaces) {
@@ -436,7 +436,7 @@ inline void WriteA2XLikeInterfaces(const std::string& outputRoot) {
 
     std::ofstream csOut(outputRoot + "/interfaces.cs");
     if (csOut.is_open()) {
-        csOut << "// Auto-generated - a2x-like interfaces\n";
+        csOut << "// Auto-generated interfaces\n";
         csOut << "namespace cs2_dumper {\n";
         for (const auto& [mod, ifaces] : g_Interfaces) {
             csOut << "    public static class " << MakeCppIdentifier(mod) << " {\n";
@@ -451,7 +451,7 @@ inline void WriteA2XLikeInterfaces(const std::string& outputRoot) {
 
     std::ofstream rsOut(outputRoot + "/interfaces.rs");
     if (rsOut.is_open()) {
-        rsOut << "// Auto-generated - a2x-like interfaces\n";
+        rsOut << "// Auto-generated interfaces\n";
         for (const auto& [mod, ifaces] : g_Interfaces) {
             rsOut << "pub mod " << MakeCppIdentifier(mod) << " {\n";
             for (const auto& iface : ifaces) {
@@ -463,7 +463,7 @@ inline void WriteA2XLikeInterfaces(const std::string& outputRoot) {
     }
 }
 
-inline void WriteA2XLikeButtons(const std::string& outputRoot) {
+inline void WriteButtonsOutputStructured(const std::string& outputRoot) {
     std::ofstream jsonOut(outputRoot + "/buttons.json");
     if (jsonOut.is_open()) {
         jsonOut << "{\n";
@@ -477,7 +477,7 @@ inline void WriteA2XLikeButtons(const std::string& outputRoot) {
 
     std::ofstream hppOut(outputRoot + "/buttons.hpp");
     if (hppOut.is_open()) {
-        hppOut << "// Auto-generated - a2x-like buttons\n";
+        hppOut << "// Auto-generated buttons\n";
         hppOut << "#pragma once\n\n#include <cstddef>\n\nnamespace cs2_dumper {\n";
         hppOut << "    namespace buttons {\n";
         for (const auto& btn : g_FoundButtons) {
@@ -489,7 +489,7 @@ inline void WriteA2XLikeButtons(const std::string& outputRoot) {
 
     std::ofstream csOut(outputRoot + "/buttons.cs");
     if (csOut.is_open()) {
-        csOut << "// Auto-generated - a2x-like buttons\n";
+        csOut << "// Auto-generated buttons\n";
         csOut << "namespace cs2_dumper {\n";
         csOut << "    public static class buttons {\n";
         for (const auto& btn : g_FoundButtons) {
@@ -501,7 +501,7 @@ inline void WriteA2XLikeButtons(const std::string& outputRoot) {
 
     std::ofstream rsOut(outputRoot + "/buttons.rs");
     if (rsOut.is_open()) {
-        rsOut << "// Auto-generated - a2x-like buttons\n";
+        rsOut << "// Auto-generated buttons\n";
         for (const auto& btn : g_FoundButtons) {
             rsOut << "pub const " << ToRustConstName(btn.name)
                   << ": usize = " << ToHexLiteral(btn.offset) << ";\n";
@@ -509,7 +509,7 @@ inline void WriteA2XLikeButtons(const std::string& outputRoot) {
     }
 }
 
-inline void WriteA2XLikePatterns(const std::string& outputRoot) {
+inline void WritePatternsOutputStructured(const std::string& outputRoot) {
     struct PatternEntry {
         std::string module;
         std::string name;
@@ -558,7 +558,7 @@ inline void WriteA2XLikePatterns(const std::string& outputRoot) {
 
     std::ofstream hppOut(outputRoot + "/patterns.hpp");
     if (hppOut.is_open()) {
-        hppOut << "// Auto-generated - a2x-like patterns\n";
+        hppOut << "// Auto-generated patterns\n";
         hppOut << "#pragma once\n\nnamespace cs2_dumper {\n";
         hppOut << "    namespace patterns {\n";
         std::map<std::string, std::vector<const PatternEntry*>> byModule;
@@ -576,7 +576,7 @@ inline void WriteA2XLikePatterns(const std::string& outputRoot) {
 
     std::ofstream csOut(outputRoot + "/patterns.cs");
     if (csOut.is_open()) {
-        csOut << "// Auto-generated - a2x-like patterns\n";
+        csOut << "// Auto-generated patterns\n";
         csOut << "namespace cs2_dumper {\n";
         std::map<std::string, std::vector<const PatternEntry*>> byModule;
         for (const auto& e : entries) byModule[e.module].push_back(&e);
@@ -593,7 +593,7 @@ inline void WriteA2XLikePatterns(const std::string& outputRoot) {
 
     std::ofstream rsOut(outputRoot + "/patterns.rs");
     if (rsOut.is_open()) {
-        rsOut << "// Auto-generated - a2x-like patterns\n";
+        rsOut << "// Auto-generated patterns\n";
         std::map<std::string, std::vector<const PatternEntry*>> byModule;
         for (const auto& e : entries) byModule[e.module].push_back(&e);
         for (const auto& [mod, pats] : byModule) {
@@ -607,7 +607,7 @@ inline void WriteA2XLikePatterns(const std::string& outputRoot) {
     }
 }
 
-inline void WriteA2XLikeInfo(const std::string& outputRoot) {
+inline void WriteOutputInfo(const std::string& outputRoot) {
     std::ofstream out(outputRoot + "/info.json");
     if (!out.is_open()) return;
 
@@ -632,7 +632,7 @@ inline void WriteA2XLikeInfo(const std::string& outputRoot) {
     out << "}\n";
 }
 
-inline void WriteA2XLikeSchemas(const std::string& outputRoot) {
+inline void WriteSchemasOutputStructured(const std::string& outputRoot) {
     std::filesystem::create_directories(outputRoot);
     for (const auto& [scope, classes] : g_SchemaClasses) {
         std::string fileBase = scope;
@@ -663,7 +663,7 @@ inline void WriteA2XLikeSchemas(const std::string& outputRoot) {
 
         std::ofstream hppOut(outputRoot + "/" + fileBase + ".hpp");
         if (hppOut.is_open()) {
-            hppOut << "// Auto-generated - a2x-like schemas\n";
+            hppOut << "// Auto-generated schemas\n";
             hppOut << "#pragma once\n\n#include <cstddef>\n\nnamespace cs2_dumper {\n";
             hppOut << "    namespace schemas {\n";
             hppOut << "        namespace " << fileBase << " {\n";
@@ -680,7 +680,7 @@ inline void WriteA2XLikeSchemas(const std::string& outputRoot) {
     }
 }
 
-inline void WriteA2XLikeOutput() {
+inline void WriteStructuredOutput() {
     const std::string outputRoot = g_OutputPath + "/output";
     const std::string metaRoot = outputRoot + "/meta";
     const std::string offsetsRoot = outputRoot + "/offsets";
@@ -696,13 +696,14 @@ inline void WriteA2XLikeOutput() {
     std::filesystem::create_directories(buttonsRoot);
     std::filesystem::create_directories(schemasRoot);
 
-    WriteA2XLikeInfo(metaRoot);
-    WriteA2XLikeOffsetsCombined(offsetsRoot);
-    WriteA2XLikeOffsetsByModule(offsetsRoot);
-    WriteA2XLikePatterns(patternsRoot);
-    WriteA2XLikeInterfaces(interfacesRoot);
-    WriteA2XLikeButtons(buttonsRoot);
-    WriteA2XLikeSchemas(schemasRoot);
+    WriteOutputInfo(metaRoot);
+    WriteOffsetsCombinedOutput(offsetsRoot);
+    WriteOffsetsByModuleOutput(offsetsRoot);
+    WritePatternsOutputStructured(patternsRoot);
+    WriteInterfacesOutputStructured(interfacesRoot);
+    WriteButtonsOutputStructured(buttonsRoot);
+    WriteSchemasOutputStructured(schemasRoot);
 
-    g_Logger.Success("Output", "a2x-like output written to output/{offsets,patterns,interfaces,buttons,schemas,meta}");
+    g_Logger.Success("Output", "output written to output/{offsets,patterns,interfaces,buttons,schemas,meta}");
 }
+

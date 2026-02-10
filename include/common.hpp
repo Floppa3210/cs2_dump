@@ -11,8 +11,7 @@
 // - ConVar extraction
 // - Output in JSON, HPP formats
 //
-// Based on: a2x/cs2-dumper, CS2_POC, and other community resources
-// Improved with: Memory safety, error handling, multi-threading
+// Built with: Memory safety, error handling, multi-threading
 //=============================================================================
 
 #pragma once
@@ -40,9 +39,11 @@
 #include <queue>
 #include <functional>
 #include <memory>
+#include <array>
 #include <regex>
 #include <cstring>
 #include <cctype>
+#include <cmath>
 
 namespace fs = std::filesystem;
 

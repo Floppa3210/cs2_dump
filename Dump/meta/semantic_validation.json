@@ -1,0 +1,21 @@
+{
+  "summary": {
+    "total": 12,
+    "valid": 10,
+    "invalid": 2
+  },
+  "entries": [
+    {"module":"client.dll","name":"dwEntityList","valid":true,"reason":"ok","details":"0x40971286800"},
+    {"module":"client.dll","name":"dwGameEntitySystem","valid":true,"reason":"ok","details":"0x40971286800"},
+    {"module":"client.dll","name":"dwLocalPlayerController","valid":true,"reason":"ok","details":"0x409FD09D200"},
+    {"module":"client.dll","name":"dwLocalPlayerPawn","valid":false,"reason":"pointer_null","details":""},
+    {"module":"client.dll","name":"dwPlantedC4","valid":false,"reason":"pointer_null","details":""},
+    {"module":"client.dll","name":"dwGameRules","valid":true,"reason":"ok","details":"0x409F06EC000"},
+    {"module":"client.dll","name":"dwGlobalVars","valid":true,"reason":"ok","details":"0x409F0B90090"},
+    {"module":"engine2.dll","name":"dwNetworkGameClient","valid":true,"reason":"ok","details":"0x409F0B90000"},
+    {"module":"client.dll","name":"dwViewMatrix","valid":true,"reason":"ok","details":"finite=16"},
+    {"module":"engine2.dll","name":"dwWindowWidth","valid":true,"reason":"ok","details":"1920"},
+    {"module":"engine2.dll","name":"dwWindowHeight","valid":true,"reason":"ok","details":"1080"},
+    {"module":"engine2.dll","name":"dwBuildNumber","valid":true,"reason":"ok","details":"14135"}
+  ]
+}

@@ -1,0 +1,2144 @@
+{
+  "entities": [
+    {
+      "class": "CBasePulseGraphInstance",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_TeamIntroCharacterPosition",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_FireCrackerBlast",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_SceneEntity::QueuedEvents_t",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBaseTriggerAPI",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_EnvWindShared",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_SkyCamera",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_FuncRotating",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_SoundOpvarSetPointBase",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_EnvCubemapFog",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_TeamSelectTerroristPosition",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_BaseFlex::Emphasized_Phoneme",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_EnvParticleGlow",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CCSPlayerController_InventoryServices",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "C_EconEntity::AttachedModelData_t",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_HostageCarriableProp",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_BulletHitModel",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_FuncElectrifiedVolume",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_MapVetoPickController",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "C_EnvVolumetricFogVolume",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_EndOfMatchCharacterPosition",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_BaseEntityAPI",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_BarnLight",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PostProcessingVolume",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_CounterTerroristWingmanIntroCamera",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_VoteController",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "C_CSPlayerPawnBase",
+      "role": "pawn",
+      "components": []
+    },
+    {
+      "class": "C_C4",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_BreakableProp",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_RetakeGameRules",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_SoundAreaEntitySphere",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponAWP",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_BaseButton",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSMinimapBoundary",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_Precipitation",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponUMP45",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponG3SG1",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_SpotlightEnd",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_Fish",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponFamas",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_EnvVolumetricFogController",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "C_EnvDetailController",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "C_EnvWindVolume",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBasePlayerControllerAPI",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "C_GameRulesProxy",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_Team",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PathParticleRopeAlias_path_particle_rope_clientside",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponNOVA",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_DEagle",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CS2HudModelAddon",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_TriggerMultiple",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_TeamPreviewCamera",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_ColorCorrectionVolume",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBaseAnimGraphController",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "C_ColorCorrection",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PhysBox",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_SoundEventEntityAlias_snd_event_point",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_FogController",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "C_SoundOpvarSetOBBWindEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_MolotovGrenade",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_NetTestBaseCombatCharacter",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBodyComponentPoint",
+      "role": "other",
+      "components": ["CGameSceneNode"]
+    },
+    {
+      "class": "C_WeaponM4A1Silencer",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_EconItemView",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_SoundEventPathCornerEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_InfoVisibilityBox",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "IntervalTimer",
+      "role": "interface",
+      "components": []
+    },
+    {
+      "class": "C_PathParticleRope",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_DecoyProjectile",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_AttributeContainer",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSWeaponBase",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_TonemapController2",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "C_WeaponMag7",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBasePulseGraphInstance",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PointClientUIHUD",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_InfoLadderDismount",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PointCommentaryNode",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_KeychainModule",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_Flashbang",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PointClientUIWorldTextPanel",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSObserverPawn",
+      "role": "pawn",
+      "components": []
+    },
+    {
+      "class": "C_FuncLadder",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponMP5SD",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_World",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_TeamSelectCounterTerroristPosition",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponGalilAR",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_TeamplayRules",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponSG556",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSPlayerPawn",
+      "role": "pawn",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_TeamIntroTerroristPosition",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_Hostage",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_fogplayerparams_t",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CGameSceneNode",
+      "role": "other",
+      "components": ["CGameSceneNode"]
+    },
+    {
+      "class": "C_SoundAreaEntityBase",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PlayerVisibility",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_BasePlayerWeapon",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_HEGrenade",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_EnvSky",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_EnvWindController",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "C_GameRules",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponMAC10",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_MapPreviewCameraPath",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PointWorldText",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_RopeKeyframe",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_BaseToggle",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_EnvCubemapBox",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_RopeKeyframe::CPhysicsDelegate",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_FuncMoveLinear",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CServerOnlyModelEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_TeamSelectCamera",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponXM1014",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WorldModelGloves",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PhysicsPropMultiplayer",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_SoundEventOBBEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponAug",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_BasePropDoor",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_Item_Healthshot",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CEntityInstance",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_BaseModelEntity",
+      "role": "entity",
+      "components": ["CCollisionProperty","CHitboxComponent","CRenderComponent"]
+    },
+    {
+      "class": "C_SoundOpvarSetAutoRoomEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_EnvCombinedLightProbeVolume",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_MultiplayRules",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_LightDirectionalEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_BaseEntity",
+      "role": "entity",
+      "components": ["CBodyComponent","CCollisionProperty","CGameSceneNode","CNetworkTransmitComponent","CRenderComponent"]
+    },
+    {
+      "class": "C_WeaponSSG08",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_BasePlayerPawn",
+      "role": "pawn",
+      "components": []
+    },
+    {
+      "class": "C_Chicken",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_SoundOpvarSetAABBEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponBizon",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_StattrakModule",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_SoundEventEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_LightOrthoEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_Knife",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_TerroristWingmanIntroCamera",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CSkeletonInstance",
+      "role": "other",
+      "components": ["CModelState"]
+    },
+    {
+      "class": "CEntityComponent",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_ItemDogtags",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_LateUpdatedAnimating",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_BaseClientUIEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponUSPSilencer",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_MolotovProjectile",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_TriggerLerpObject",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponRevolver",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponElite",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_DynamicPropAlias_cable_dynamic",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBaseProp",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_BaseCSGrenade",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CCSPlayerController",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_TeamIntroCounterTerroristPosition",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_PreviewModel",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_TeamSelectCharacterPosition",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_SoundEventAABBEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_TintController",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "C_WeaponBaseItem",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_FuncBrush",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponCZ75a",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_DynamicLight",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_SoundEventSphereEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CCSPlayerController_DamageServices",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_TeamPreviewModel",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_TonemapController2Alias_env_tonemap_controller2",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "C_Inferno",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_GlobalLight",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_EnvWindClientside",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_FlashbangProjectile",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_SoundEventConeEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponP90",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_EnvWind",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_TerroristTeamIntroCamera",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CCSPlayerController_ActionTrackingServices",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_PreviewModelAlias_csgo_item_previewmodel",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_InfoInstructorHintHostageRescueZone",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_TriggerBuoyancy",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponTec9",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PhysPropClientside",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_BaseDoor",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "EntityRenderAttribute_t",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSWeaponBaseGun",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSGameRulesProxy",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CCollisionProperty",
+      "role": "other",
+      "components": ["CCollisionProperty"]
+    },
+    {
+      "class": "C_WeaponP250",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_ShatterGlassShardPhysics",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_EntityDissolve",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_SoundOpvarSetOBBEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_FuncMonitor",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_ClientRagdoll",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBodyComponentSkeletonInstance",
+      "role": "other",
+      "components": ["CSkeletonInstance"]
+    },
+    {
+      "class": "C_CS2WeaponModuleBase",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_TeamPreviewCharacterPosition",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_SmokeGrenadeProjectile",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PortraitWorldCallbackHandler",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_DynamicProp",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSTeam",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CS2HudModelWeapon",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_TextureBasedAnimatable",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_LightEnvironmentEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_TriggerPhysics",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PropDoorRotating",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_HandleTest",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBodyComponentBaseModelEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_Multimeter",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_BaseTrigger",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CCS2WeaponGraphController",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "C_ParticleSystem",
+      "role": "system",
+      "components": []
+    },
+    {
+      "class": "C_WeaponSCAR20",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_BaseFlex",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_FuncMover",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CCSPlayerController_InventoryServices::NetworkedLoadoutSlot_t",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "C_DecoyGrenade",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WaterBullet",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_EnvCubemap",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBodyComponent",
+      "role": "other",
+      "components": ["CGameSceneNode"]
+    },
+    {
+      "class": "C_BaseCombatCharacter",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PointClientUIDialog",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponHKP2000",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_FootstepControl",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_EndOfMatchLineupStart",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_DynamicPropAlias_dynamic_prop",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_OmniLight",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_SceneEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_NametagModule",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_EconEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PointValueRemapper",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponMP7",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CS2HudModelBase",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSGameRules",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_BaseCSGrenadeProjectile",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_GradientFog",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CCSPlayerController_InGameMoneyServices",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "C_HEGrenadeProjectile",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_SoundAreaEntityOrientedBox",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_SoundOpvarSetPointEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSWeaponBaseShotgun",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_RagdollPropAttached",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_ModelPointEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_PreviewPlayer",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_RectLight",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_FuncTrackTrain",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_EconWearable",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_EnvDecal",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "EntitySpottedState_t",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponM4A1",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_Item",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSPetPlacement",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_Beam",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_EnvLightProbeVolume",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_FuncConveyor",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PhysMagnet",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_Breakable",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PlantedC4",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_RagdollProp",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_MapPreviewParticleSystem",
+      "role": "system",
+      "components": []
+    },
+    {
+      "class": "CBaseAnimGraph",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_LightEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponM249",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_LocalTempEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponTaser",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PointEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_SingleplayRules",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CLogicalEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PrecipitationBlocker",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_CounterTerroristTeamIntroCamera",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_SoundOpvarSetPathCornerEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponNegev",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponFiveSeven",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponSawedoff",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_TriggerVolume",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponMP9",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_DynamicPropAlias_prop_dynamic_override",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PlayerPing",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_AK47",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_MapPreviewCameraPathNode",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSPlayerResource",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_IncendiaryGrenade",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PointCameraVFOV",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PointCamera",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBaseFilter",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_EndOfMatchCamera",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_BaseGrenade",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PlayerSprayDecal",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CEntityIdentity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CS2HudModelArms",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBasePlayerVData",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_LightSpotEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_Sprite",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CsmFovOverride",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_WeaponGlock",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PhysicsProp",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBasePlayerWeaponVData",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_EndOfMatchLineupEnd",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_PreviewPlayerAlias_csgo_player_previewmodel",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_SmokeGrenade",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_PointClientUIWorldPanel",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "C_EntityFlame",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBasePlayerController",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "C_CSGO_EndOfMatchLineupEndpoint",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CEntityInstance",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CEntityComponent",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CEntityIdentity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBasePulseGraphInstance",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CPulseCell_Step_TestDomainDestroyFakeEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CPulseGraphInstance_TestDomain_FakeEntityOwner",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBasePulseGraphInstance",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "FakeEntity_tAPI",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CPulseCell_Val_TestDomainGetEntityName",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "FakeEntityDerivedB_tAPI",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CPulseCell_Val_TestDomainFindEntityByName",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "FakeEntityDerivedA_tAPI",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CPulseCell_Step_TestDomainCreateFakeEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CEnvEntityMaker",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CPointEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBaseTriggerAPI",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CTonemapController2Alias_env_tonemap_controller2",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "CCSPlayerController_InventoryServices",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "CBaseFlex",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBaseToggle",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBaseTrigger",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBaseCombatCharacter",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CPointEntityFinder",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBasePlayerControllerAPI",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "CLightEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBaseAnimGraphController",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "CModelPointEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBodyComponentPoint",
+      "role": "other",
+      "components": ["CGameSceneNode"]
+    },
+    {
+      "class": "CSoundEventAABBEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CParticleSystem",
+      "role": "system",
+      "components": []
+    },
+    {
+      "class": "IntervalTimer",
+      "role": "interface",
+      "components": []
+    },
+    {
+      "class": "CSoundAreaEntityBase",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBasePlayerPawn",
+      "role": "pawn",
+      "components": []
+    },
+    {
+      "class": "CBasePulseGraphInstance",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CEntityBlocker",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CCSObserverPawn",
+      "role": "pawn",
+      "components": []
+    },
+    {
+      "class": "CEconEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CSoundEventPathCornerEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CCSPlayerPawn",
+      "role": "pawn",
+      "components": []
+    },
+    {
+      "class": "CGameSceneNode",
+      "role": "other",
+      "components": ["CGameSceneNode"]
+    },
+    {
+      "class": "CPulseGraphInstance_ServerEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CSceneEntityAlias_logic_choreographed_scene",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBaseCSGrenade",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CServerOnlyModelEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CSceneEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CTonemapController2",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "CEntityInstance",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CPulseCell_Outflow_ListenForEntityOutput::CursorState_t",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBaseFlexAlias_funCBaseFlex",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CEnvDetailController",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "CCSPlayerPawnBase",
+      "role": "pawn",
+      "components": []
+    },
+    {
+      "class": "CCSPointScriptEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CRuleEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CEntityFlame",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CSkeletonInstance",
+      "role": "other",
+      "components": ["CModelState"]
+    },
+    {
+      "class": "CEntityComponent",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBasePlatTrain",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CMessageEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CEnvEntityIgniter",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CFogController",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "CBaseProp",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CPulseCell_Step_FollowEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBasePlayerWeapon",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CEnvVolumetricFogController",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "CCSPlayerController",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "CLightSpotEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CSoundOpvarSetAutoRoomEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CPulseCell_Outflow_ListenForEntityOutput",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CPhysicsEntitySolver",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CSoundOpvarSetOBBWindEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CLightOrthoEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBaseModelEntityAPI",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CCSPlayerController_DamageServices",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "CBaseButton",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBaseGrenade",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CCSPlayerController_ActionTrackingServices",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "CTimerEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBaseEntityAPI",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "EntityRenderAttribute_t",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CSoundEventConeEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CSoundOpvarSetOBBEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CSoundOpvarSetPathCornerEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CPathMoverEntitySpawner",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CCollisionProperty",
+      "role": "other",
+      "components": ["CCollisionProperty"]
+    },
+    {
+      "class": "CLightEnvironmentEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CServerOnlyEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBodyComponentSkeletonInstance",
+      "role": "other",
+      "components": ["CSkeletonInstance"]
+    },
+    {
+      "class": "CBodyComponentBaseModelEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CCS2WeaponGraphController",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "CEntityDissolve",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBaseCSGrenadeProjectile",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CCSPlayerController_InventoryServices::NetworkedLoadoutSlot_t",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "CLogicLineToEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CSoundAreaEntitySphere",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CSoundAreaEntityOrientedBox",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBodyComponent",
+      "role": "other",
+      "components": ["CGameSceneNode"]
+    },
+    {
+      "class": "CBaseDMStart",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBaseModelEntity",
+      "role": "entity",
+      "components": ["CCollisionProperty","CHitboxComponent","CRenderComponent"]
+    },
+    {
+      "class": "CInstancedSceneEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CVoteController",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "CBaseEntity",
+      "role": "entity",
+      "components": ["CBodyComponent","CCollisionProperty","CNetworkTransmitComponent"]
+    },
+    {
+      "class": "CEnvWindController",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "CSoundOpvarSetEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CSoundEventSphereEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CCSPlayerController_InGameMoneyServices",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "CRuleBrushEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CMapVetoPickController",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "CSoundEventEntityAlias_snd_event_point",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBaseMoveBehavior",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "EntitySpottedState_t",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CSoundEventOBBEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CRulePointEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBaseAnimGraph",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBaseDoor",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CServerOnlyPointEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CNullEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CLogicalEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CInstructorEventEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CLightDirectionalEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBaseClientUIEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBaseFilter",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CSoundOpvarSetAABBEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CEntityIdentity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CSoundEventEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBasePlayerVData",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBasePropDoor",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBasePlayerWeaponVData",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CSoundOpvarSetPointEntity",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CBasePlayerController",
+      "role": "controller",
+      "components": []
+    },
+    {
+      "class": "CEntityInstance",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CEntityComponent",
+      "role": "entity",
+      "components": []
+    },
+    {
+      "class": "CEntityIdentity",
+      "role": "entity",
+      "components": []
+    }
+  ]
+}

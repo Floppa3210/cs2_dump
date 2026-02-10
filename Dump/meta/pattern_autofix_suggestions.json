@@ -1,0 +1,15 @@
+{
+  "suggestions": [
+    {"module":"client.dll","name":"dwGameEntitySystem","fragility_score":4,"current_pattern":"48 8B 3D ? ? ? ? 48 89 3D","suggested_relaxed_pattern":"48 8B 3D ? ? ? ? 48 89 3D","note":"Re-validate this candidate against the next game update before promoting."},
+    {"module":"client.dll","name":"dwInputSystem","fragility_score":4,"current_pattern":"48 89 05 ? ? ? ? 48 8B 01 FF 50 08","suggested_relaxed_pattern":"48 89 05 ? ? ? ? ? ? 01 FF 50 08","note":"Re-validate this candidate against the next game update before promoting."},
+    {"module":"client.dll","name":"dwSensitivity","fragility_score":4,"current_pattern":"48 8D 0D ? ? ? ? ? ? ? ? 66 0F 6E CD","suggested_relaxed_pattern":"48 8D 0D ? ? ? ? ? ? ? ? 66 0F 6E CD","note":"Re-validate this candidate against the next game update before promoting."},
+    {"module":"client.dll","name":"dwSignOnState","fragility_score":4,"current_pattern":"44 8B 05 ? ? ? ? 83 F8 02","suggested_relaxed_pattern":"44 8B 05 ? ? ? ? 83 F8 02","note":"Re-validate this candidate against the next game update before promoting."},
+    {"module":"client.dll","name":"dwViewAngles_fieldOffset","fragility_score":4,"current_pattern":"F2 42 0F 10 84 28 ? ? ? ? 89 54 24 20","suggested_relaxed_pattern":"F2 42 0F 10 ? ? ? ? ? ? 89 54 24 20","note":"Re-validate this candidate against the next game update before promoting."},
+    {"module":"engine2.dll","name":"dwNetworkGameClient","fragility_score":4,"current_pattern":"48 89 3D ? ? ? ? FF 87 28 02 00 00","suggested_relaxed_pattern":"48 89 3D ? ? ? ? ? ? 28 02 00 00","note":"Re-validate this candidate against the next game update before promoting."},
+    {"module":"engine2.dll","name":"dwNetworkGameClient","fragility_score":4,"current_pattern":"48 89 3D ? ? ? ? FF 87 2C 02 00 00","suggested_relaxed_pattern":"48 89 3D ? ? ? ? ? ? 2C 02 00 00","note":"Re-validate this candidate against the next game update before promoting."},
+    {"module":"engine2.dll","name":"dwNetworkGameClient_clientTickCount","fragility_score":4,"current_pattern":"8B 81 ? ? ? ? C3 CC CC CC CC CC CC CC CC CC CC 8B 81","suggested_relaxed_pattern":"8B 81 ? ? ? ? ? ? ? ? ? ? ? ? ? CC CC 8B 81","note":"Re-validate this candidate against the next game update before promoting."},
+    {"module":"engine2.dll","name":"dwNetworkGameClient_serverTickCount","fragility_score":4,"current_pattern":"8B 81 ? ? ? ? C3 CC CC CC CC CC CC CC CC CC CC 83 B9","suggested_relaxed_pattern":"8B 81 ? ? ? ? ? ? ? ? ? ? ? ? ? CC CC 83 B9","note":"Re-validate this candidate against the next game update before promoting."},
+    {"module":"soundsystem.dll","name":"dwSoundSystem_engineViewData","fragility_score":4,"current_pattern":"0F 11 47 ? 0F 10 4B ? 0F 11 8F","suggested_relaxed_pattern":"0F 11 47 ? ? ? ? ? 0F 11 8F","note":"Re-validate this candidate against the next game update before promoting."}
+  ],
+  "generated_for": "2026-02-09 22:45:12"
+}

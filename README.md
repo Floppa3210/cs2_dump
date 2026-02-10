@@ -1,76 +1,189 @@
 # CS2 Dumper
 
-Professional CS2 SDK dumper with modular architecture, safe memory reads, and comprehensive outputs.
+A production-oriented Counter-Strike 2 dumper focused on update resilience, verification, and integration-safe outputs.
 
-## Features
+## Quick Start
 
-- **Schema Dump**: Extracts Source 2 schema information (classes, enums, fields)
-- **RTTI Dump**: Runtime type information extraction
-- **VTable Dump**: Virtual function table analysis
-- **ConVar Dump**: Console variable enumeration
-- **Interface Dump**: Game interface discovery
-- **Pattern Scanning**: Advanced signature-based memory scanning
-- **Button Dump**: Game input definitions
-- **Export Dump**: Module export enumeration
+1. Open `cs2_dumper.sln` in Visual Studio 2022.
+2. Select `Release | x64`.
+3. Build the project.
+4. Launch CS2.
+5. Inject/run `cs2_dumper.dll`.
+6. Review these files first:
+   - `Dump/docs/index.html`
+   - `Dump/meta/risk_report.json`
+   - `Dump/meta/coverage_report.json`
+   - `Dump/output/offsets/offsets.json`
 
-## Architecture
+## Core Features
 
-The dumper is organized into modular components:
-
-```
-cs2_dumper/
-├── include/           # Header-only module implementations
-│   ├── common.hpp     # Shared definitions and macros
-│   ├── logger.hpp     # Logging utilities
-│   ├── memory.hpp     # Safe memory reading primitives
-│   ├── pattern_scanner.hpp  # Pattern/signature scanning
-│   ├── schema_tools.hpp     # Schema analysis utilities
-│   ├── output_dump.hpp      # Output formatting
-│   └── ...            # Additional dump modules
-├── main.cpp           # Entry point and orchestration
-├── schemas.hpp        # Schema definitions
-├── schema_dump.hpp    # Schema dumping implementation
-├── schema_export.hpp  # Schema export formatting
-└── schema_stubs.hpp   # Schema stub definitions
-```
+- Pattern scanning with fallback candidates and per-pattern diagnostics.
+- Immediate extraction support for field displacements from matched instructions.
+- Interface discovery via `CreateInterface` export scanning.
+- Schema, RTTI, vtable, convar, export, and button dumping pipelines.
+- Build-aware archival flow (`Dump/anteriores/<build>`).
+- Reliability telemetry:
+  - Structural validation report.
+  - Semantic validation report.
+  - Module confidence scoring.
+  - Fragility and autofix suggestion reports.
+  - Stability and regression manifests.
+- Integration-focused outputs (`offsets_safe.json`, hot netvars, dashboard).
 
 ## Build Instructions
 
-### Visual Studio
+### Visual Studio 2022 (Recommended)
 
-1. Open `cs2_dumper.sln` in Visual Studio 2022 or later
-2. Select Release/x64 configuration
-3. Build the solution
+1. Open `cs2_dumper.sln`.
+2. Choose `Release | x64`.
+3. Build.
 
-### CMake
+### CMake (Optional)
 
 ```bash
-mkdir build && cd build
+mkdir build
+cd build
 cmake ..
 cmake --build . --config Release
 ```
 
-**Requirements:**
+Requirements:
+
 - Windows SDK
-- DirectX 11 (d3d11, dxgi)
-- C++17 compatible compiler
+- C++17 toolchain
+- DirectX 11 libraries (`d3d11`, `dxgi`)
 
-## Usage
+## Output Layout
 
-1. Launch CS2
-2. Run the dumper as DLL or standalone executable
-3. Output files are generated in the `Dump/` directory:
-   - `schema.json` - Schema definitions
-   - `interfaces.json` - Game interfaces
-   - `buttons.json` - Input definitions
-   - `convars.json` - Console variables
-   - Additional dump outputs as configured
+Main output root:
 
-## Credits
+- `Dump/output/` - multi-format generated data.
+- `Dump/meta/` - validation, risk, confidence, and lifecycle reports.
+- `Dump/docs/` - HTML dashboard.
+- `Dump/anteriores/` - archived previous builds.
 
-- Pattern base: [a2x/cs2-dumper](https://github.com/a2x/cs2-dumper)
-- Enhanced with improved stability and logging
+High-value output files:
+
+- `Dump/output/offsets/offsets.json`
+- `Dump/output/patterns/patterns.json`
+- `Dump/output/interfaces/interfaces.json`
+- `Dump/output/buttons/buttons.json`
+- `Dump/output/schemas/*.json`
+- `Dump/output/netvars/hotlist.json`
+- `Dump/output/netvars/hotlist.hpp`
+- `Dump/output/integration/offsets_safe.json`
+
+High-value reports:
+
+- `Dump/meta/validation_report.json`
+- `Dump/meta/semantic_validation.json`
+- `Dump/meta/schema_semantic_validation.json`
+- `Dump/meta/module_confidence.json`
+- `Dump/meta/coverage_report.json`
+- `Dump/meta/fragile_patterns.json`
+- `Dump/meta/pattern_autofix_suggestions.json`
+- `Dump/meta/build_diff.json`
+- `Dump/meta/risk_report.json`
+- `Dump/meta/regression_tests.json`
+- `Dump/meta/offset_stability.json`
+- `Dump/meta/build_timeline.json`
+- `Dump/anteriores/history_index.json`
+
+Dashboard:
+
+- `Dump/docs/index.html`
+
+## Post-Update Validation Checklist
+
+Use this order after every CS2 update:
+
+1. Check `Dump/meta/risk_report.json`.
+   - If `risk_level` is `high`, do not trust integration outputs yet.
+2. Check `Dump/meta/coverage_report.json`.
+   - Confirm core offsets are resolved.
+3. Check `Dump/meta/module_confidence.json`.
+   - Investigate low-tier modules first.
+4. Check `Dump/meta/fragile_patterns.json`.
+   - Prioritize top fragility-score entries.
+5. Check `Dump/output/offsets/offsets.json`.
+   - Verify critical offsets (entity list, view matrix, network client, etc.).
+6. Optional deeper checks:
+   - `Dump/meta/build_diff.json` for change impact.
+   - `Dump/meta/pattern_autofix_suggestions.json` for signature triage.
+
+## Troubleshooting
+
+### CMakeCache path mismatch
+
+Symptom:
+
+- CMake reports that `CMakeCache.txt` was created in a different directory.
+
+Fix:
+
+1. Delete `build/CMakeCache.txt` (or remove the whole `build/` directory).
+2. Reconfigure and rebuild.
+
+### Visual Studio generator/toolchain not found
+
+Symptom:
+
+- CMake cannot find `Visual Studio 17 2022` or C/C++ compiler.
+
+Fix:
+
+1. Install Visual Studio 2022.
+2. Install the "Desktop development with C++" workload.
+3. Ensure Windows SDK is installed.
+4. Re-run CMake configuration.
+
+### Slow scans and watchdog warnings
+
+What it means:
+
+- Some modules are intentionally cut short by watchdog limits to keep runtime bounded.
+- This can reduce candidate counts for that phase but does not necessarily invalidate the full dump.
+
+What to do:
+
+1. Check `Dump/meta/risk_report.json` and `Dump/meta/module_confidence.json`.
+2. If risk/confidence is acceptable, continue.
+3. If not, investigate affected module reports first.
+
+### Missing or duplicated pattern logs
+
+What it means:
+
+- Missing pattern: signature did not match in current build.
+- Duplicated pattern: multiple signatures resolve same name; best candidate is retained.
+
+What to do:
+
+1. Check `Dump/meta/fragile_patterns.json`.
+2. Check `Dump/meta/pattern_autofix_suggestions.json`.
+3. Confirm final resolved offsets in `Dump/output/offsets/offsets.json`.
+
+## Build Change and Archive Behavior
+
+- Previous dump content is staged before writing a new dump.
+- If build changes, previous dump is archived under `Dump/anteriores/<old_build>`.
+- If build is unchanged, output is overwritten and a warning is logged.
+- History/timeline metadata is refreshed on each run.
+
+## Notes for Integrators
+
+- Prefer `Dump/output/integration/offsets_safe.json` for production consumption.
+- Gate automated usage with `Dump/meta/risk_report.json`.
+- Treat field offsets and absolute addresses as different concepts:
+  - Field offset example: `dwGameEntitySystem_highestEntityIndex`
+  - Absolute address example: `dwGameEntitySystem_highestEntityIndex_absolute`
+- Revalidate consumers whenever `risk_level` is not `low`.
+
+## Public Interfaces and Compatibility
+
+- No public API changes are introduced by this documentation update.
+- Output/report naming in this README matches the current dumper pipeline.
 
 ## License
 
-MIT License - See LICENSE file for details
+MIT License. See `LICENSE`.

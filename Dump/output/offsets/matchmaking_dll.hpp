@@ -1,4 +1,4 @@
-// Auto-generated - a2x-like module offsets
+// Auto-generated module offsets
 #pragma once
 
 #include <cstddef>

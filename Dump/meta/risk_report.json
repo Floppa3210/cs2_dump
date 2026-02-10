@@ -1,0 +1,26 @@
+{
+  "risk_level": "low",
+  "current_build": "14135",
+  "previous_build": "",
+  "build_changed": false,
+  "validation": {
+    "current_ratio": 1.000000,
+    "previous_ratio": -1.000000,
+    "drop": 0.000000
+  },
+  "module_confidence": {
+    "weakest_module": "client.dll",
+    "weakest_score": 0.892308,
+    "has_low_tier_module": false
+  },
+  "core_coverage": {
+    "resolved": 24,
+    "total": 24,
+    "ratio": 1.000000,
+    "low_core_coverage": false,
+    "missing_critical_core": false
+  },
+  "reasons": [
+    "stable"
+  ]
+}

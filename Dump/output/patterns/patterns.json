@@ -2,18 +2,26 @@
   "client.dll": {
     "dwCSGOInput": "48 89 05 ? ? ? ? 0F 57 C0 0F 11 05",
     "dwEntityList": "48 89 35 ? ? ? ? 48 85 F6",
+    "dwEntityList": "48 89 0D ? ? ? ? E9 ? ? ? ? CC",
     "dwGameEntitySystem": "48 8B 3D ? ? ? ? 48 89 3D",
+    "dwGameEntitySystem": "48 8B 1D ? ? ? ? 48 89 1D ? ? ? ? 4C 63 B3",
     "dwGameRules": "48 89 1D ? ? ? ? FF 15 ? ? ? ? 84 C0",
     "dwGlobalVars": "48 89 15 ? ? ? ? 48 89 42",
     "dwGlowManager": "48 8B 05 ? ? ? ? C3 CC CC CC CC CC CC CC CC 8B 41",
     "dwLocalPlayerController": "48 8B 05 ? ? ? ? 41 89 BE",
     "dwPlantedC4": "48 8B 15 ? ? ? ? 41 FF C0",
+    "dwPlantedC4": "48 8B 15 ? ? ? ? 41 FF C0 48 8D 4C 24 ? 44 89 05",
     "dwPrediction": "48 8D 05 ? ? ? ? C3 CC CC CC CC CC CC CC CC 40 53 56 41 54",
     "dwSensitivity": "48 8D 0D ? ? ? ? 66 0F 6E CD",
+    "dwSensitivity": "48 8D 0D ? ? ? ? ? ? ? ? 66 0F 6E CD",
+    "dwSensitivity_sensitivity": "48 8D 7E ? 48 0F BA E0 ? 72 ? 85 D2 49 0F 4F FF",
+    "dwViewAngles_fieldOffset": "F2 42 0F 10 84 28 ? ? ? ? 89 54 24 20",
+    "dwLocalPlayerPawn_fieldOffset": "4C 39 B6 ? ? ? ? 74 ? 44 88 BE",
     "dwViewMatrix": "48 8D 0D ? ? ? ? 48 C1 E0 06",
     "dwViewRender": "48 89 05 ? ? ? ? 48 8B C8 48 85 C0",
     "dwWeaponC4": "48 89 05 ? ? ? ? F7 C1 ? ? ? ? 74",
-    "dwGameEntitySystem_highestEntityIndex": "FF 81 ? ? ? ? 48 85 D2",
+    "dwWeaponC4": "48 8B 15 ? ? ? ? 48 8B 5C 24 ? FF C0 89 05 ? ? ? ? 48 8B C6 48 89 34 EA 80 BE",
+    "dwGameEntitySystem_highestEntityIndex_offset": "FF 81 ? ? ? ? 48 85 D2",
     "dwInputSystem": "48 89 05 ? ? ? ? 48 8B 01 FF 50 08",
     "dwPlayerResource": "48 8B 0D ? ? ? ? 48 8B 01 FF 90 ? ? ? ? 48 8B",
     "dwSignOnState": "44 8B 05 ? ? ? ? 83 F8 02",
@@ -21,13 +29,20 @@
   },
   "engine2.dll": {
     "dwBuildNumber": "89 05 ? ? ? ? 48 8D 0D ? ? ? ? FF 15",
+    "dwBuildNumber": "89 05 ? ? ? ? 48 8D 0D ? ? ? ? FF 15 ? ? ? ? 48 8B 0D",
     "dwNetworkGameClient": "48 89 3D ? ? ? ? FF 87 28 02 00 00",
+    "dwNetworkGameClient": "48 89 3D ? ? ? ? FF 87",
+    "dwNetworkGameClient": "48 89 3D ? ? ? ? FF 87 2C 02 00 00",
     "dwWindowHeight": "8B 05 ? ? ? ? 89 03",
     "dwWindowWidth": "8B 05 ? ? ? ? 89 07",
     "dwNetworkGameClient_deltaTick": "4C 8D B7 ? ? ? ? 4C 89 7C 24",
     "dwNetworkGameClient_signOnState": "44 8B 81 ? ? ? ? 48 8D 0D",
     "dwNetworkGameClient_isBackgroundMap": "0F B6 81 ? ? ? ? C3 CC CC CC CC CC CC CC CC 0F B6 81",
-    "dwNetworkGameClient_localPlayer": "42 8B 94 D3 ? ? ? ? 5B 49 FF E3"
+    "dwNetworkGameClient_isBackgroundMap": "0F B6 81 ? ? ? ? C3 CC CC CC CC CC CC CC CC 40 53",
+    "dwNetworkGameClient_localPlayer": "42 8B 94 D3 ? ? ? ? 5B 49 FF E3",
+    "dwNetworkGameClient_clientTickCount": "8B 81 ? ? ? ? C3 CC CC CC CC CC CC CC CC CC CC 8B 81",
+    "dwNetworkGameClient_serverTickCount": "8B 81 ? ? ? ? C3 CC CC CC CC CC CC CC CC CC CC 83 B9",
+    "dwNetworkGameClient_maxClients": "8B 81 ? ? ? ? C3 CC CC CC CC CC CC CC CC 8B 81"
   },
   "inputsystem.dll": {
     "dwInputSystem": "48 89 05 ? ? ? ? 33 C0"
@@ -37,7 +52,8 @@
   },
   "soundsystem.dll": {
     "dwSoundSystem": "48 8D 05 ? ? ? ? C3 CC CC CC CC CC CC CC CC 48 89 15",
-    "dwSoundSystem_engineViewData": "0F 11 47 ? 0F 10 4B ? 0F 11 8F"
+    "dwSoundSystem_engineViewData": "0F 11 47 ? 0F 10 4B ? 0F 11 8F",
+    "dwSoundSystem_engineViewData": "0F 11 47 ? 0F 10 4E ? 0F 11 8F"
   },
   "tier0.dll": {
     "dwCommandLine": "48 8B 05 ? ? ? ? 48 85 C0 74 ? 48 8D 0D"
