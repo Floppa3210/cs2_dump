@@ -30,6 +30,10 @@ namespace cs2_dumper {
             constexpr const char* dwPlayerResource = "48 8B 0D ? ? ? ? 48 8B 01 FF 90 ? ? ? ? 48 8B";
             constexpr const char* dwSignOnState = "44 8B 05 ? ? ? ? 83 F8 02";
             constexpr const char* dwHostMaps = "48 8B 0D ? ? ? ? 48 85 C9 74 ? 48 8B 01 48 FF 60 30";
+            constexpr const char* dwViewMatrix = "48 8D 0D ? ? ? ? 48 C1 E0 06 48 03 C1 C3";
+            constexpr const char* dwViewRender = "48 89 05 ? ? ? ? 48 8B C8 48 85 C0 74 ? 48 8B 10";
+            constexpr const char* dwLocalPlayerController = "48 8B 05 ? ? ? ? 48 85 C0 74 ? 8B 88";
+            constexpr const char* dwGlobalVars = "48 89 15 ? ? ? ? 48 8B 42 ? 48 89 45";
         }
         namespace engine2_dll {
             constexpr const char* dwBuildNumber = "89 05 ? ? ? ? 48 8D 0D ? ? ? ? FF 15";
@@ -47,6 +51,9 @@ namespace cs2_dumper {
             constexpr const char* dwNetworkGameClient_clientTickCount = "8B 81 ? ? ? ? C3 CC CC CC CC CC CC CC CC CC CC 8B 81";
             constexpr const char* dwNetworkGameClient_serverTickCount = "8B 81 ? ? ? ? C3 CC CC CC CC CC CC CC CC CC CC 83 B9";
             constexpr const char* dwNetworkGameClient_maxClients = "8B 81 ? ? ? ? C3 CC CC CC CC CC CC CC CC 8B 81";
+            constexpr const char* dwWindowWidth = "89 05 ? ? ? ? 8B 05 ? ? ? ? 89 07";
+            constexpr const char* dwWindowHeight = "89 05 ? ? ? ? 8B 05 ? ? ? ? 89 03";
+            constexpr const char* dwBuildNumber = "8B 05 ? ? ? ? 89 05 ? ? ? ? 48 8D 0D";
         }
         namespace inputsystem_dll {
             constexpr const char* dwInputSystem = "48 89 05 ? ? ? ? 33 C0";

@@ -17,6 +17,8 @@
   "dwNetworkGameClient_signOnState_alt": 560,
   "dwNetworkGameClient_localPlayer_alt": 248,
   "dwNetworkGameClient_isBackgroundMap_alt": 2888735,
+  "dwNetworkGameClient_signOnState_fallback": 532,
+  "dwNetworkGameClient_maxClients_fallback": 548,
   "dwNetworkGameClient_clientTickCount_absolute": 9459360,
   "dwNetworkGameClient_serverTickCount_absolute": 9459364,
   "dwNetworkGameClient_deltaTick_absolute": 9459036,

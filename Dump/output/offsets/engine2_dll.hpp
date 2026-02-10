@@ -23,6 +23,8 @@ namespace cs2_dumper {
         constexpr std::ptrdiff_t dwNetworkGameClient_signOnState_alt = 0x230;
         constexpr std::ptrdiff_t dwNetworkGameClient_localPlayer_alt = 0xF8;
         constexpr std::ptrdiff_t dwNetworkGameClient_isBackgroundMap_alt = 0x2C141F;
+        constexpr std::ptrdiff_t dwNetworkGameClient_signOnState_fallback = 0x214;
+        constexpr std::ptrdiff_t dwNetworkGameClient_maxClients_fallback = 0x224;
         constexpr std::ptrdiff_t dwNetworkGameClient_clientTickCount_absolute = 0x9056A0;
         constexpr std::ptrdiff_t dwNetworkGameClient_serverTickCount_absolute = 0x9056A4;
         constexpr std::ptrdiff_t dwNetworkGameClient_deltaTick_absolute = 0x90555C;

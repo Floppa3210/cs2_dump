@@ -1,0 +1,16 @@
+{
+  "client.dll": {
+    "dwEntityList": 38445272,
+    "dwGameEntitySystem": 38445272,
+    "dwGameRules": 36736416,
+    "dwGlobalVars": 33920464,
+    "dwLocalPlayerController": 36630712,
+    "dwViewMatrix": 36744672
+  },
+  "engine2.dll": {
+    "dwBuildNumber": 6333700,
+    "dwNetworkGameClient": 9458448,
+    "dwWindowHeight": 9475804,
+    "dwWindowWidth": 9475800
+  }
+}

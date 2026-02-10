@@ -1,13 +1,53 @@
 {
   "build": "14135",
   "tests": [
-    {"name":"dwEntityList","module":"client.dll","exists":true,"expected":"resolved_and_semantic_valid"},
-    {"name":"dwLocalPlayerController","module":"client.dll","exists":true,"expected":"resolved_and_semantic_valid"},
-    {"name":"dwLocalPlayerPawn","module":"client.dll","exists":true,"expected":"resolved_and_semantic_valid"},
-    {"name":"dwViewMatrix","module":"client.dll","exists":true,"expected":"resolved_and_semantic_valid"},
-    {"name":"dwBuildNumber","module":"engine2.dll","exists":true,"expected":"resolved_and_semantic_valid"},
-    {"name":"dwNetworkGameClient","module":"engine2.dll","exists":true,"expected":"resolved_and_semantic_valid"},
-    {"name":"dwWindowWidth","module":"engine2.dll","exists":true,"expected":"resolved_and_semantic_valid"},
-    {"name":"dwWindowHeight","module":"engine2.dll","exists":true,"expected":"resolved_and_semantic_valid"}
+    {
+      "name": "dwEntityList",
+      "module": "client.dll",
+      "exists": true,
+      "expected": "resolved_and_semantic_valid"
+    },
+    {
+      "name": "dwLocalPlayerController",
+      "module": "client.dll",
+      "exists": true,
+      "expected": "resolved_and_semantic_valid"
+    },
+    {
+      "name": "dwLocalPlayerPawn",
+      "module": "client.dll",
+      "exists": true,
+      "expected": "resolved_and_semantic_valid"
+    },
+    {
+      "name": "dwViewMatrix",
+      "module": "client.dll",
+      "exists": true,
+      "expected": "resolved_and_semantic_valid"
+    },
+    {
+      "name": "dwBuildNumber",
+      "module": "engine2.dll",
+      "exists": true,
+      "expected": "resolved_and_semantic_valid"
+    },
+    {
+      "name": "dwNetworkGameClient",
+      "module": "engine2.dll",
+      "exists": true,
+      "expected": "resolved_and_semantic_valid"
+    },
+    {
+      "name": "dwWindowWidth",
+      "module": "engine2.dll",
+      "exists": true,
+      "expected": "resolved_and_semantic_valid"
+    },
+    {
+      "name": "dwWindowHeight",
+      "module": "engine2.dll",
+      "exists": true,
+      "expected": "resolved_and_semantic_valid"
+    }
   ]
 }

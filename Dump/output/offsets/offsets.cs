@@ -23,6 +23,8 @@ namespace cs2_dumper {
         public const nint dwViewAngles_offset = 0x4520;
         public const nint dwLocalPlayerPawn_offset = 0xE0;
         public const nint dwGameEntitySystem_highestEntityIndex_offset_alt = 0x20A0;
+        public const nint dwViewAngles_offset_alt = 0x4510;
+        public const nint dwLocalPlayerPawn_offset_alt = 0xE8;
         public const nint dwViewAngles = 0x2318E30;
         public const nint dwLocalPlayerPawn = 0x2064AE0;
         public const nint dwGameEntitySystem_highestEntityIndex = 0x20A0;
@@ -48,6 +50,8 @@ namespace cs2_dumper {
         public const nint dwNetworkGameClient_signOnState_alt = 0x230;
         public const nint dwNetworkGameClient_localPlayer_alt = 0xF8;
         public const nint dwNetworkGameClient_isBackgroundMap_alt = 0x2C141F;
+        public const nint dwNetworkGameClient_signOnState_fallback = 0x214;
+        public const nint dwNetworkGameClient_maxClients_fallback = 0x224;
         public const nint dwNetworkGameClient_clientTickCount_absolute = 0x9056A0;
         public const nint dwNetworkGameClient_serverTickCount_absolute = 0x9056A4;
         public const nint dwNetworkGameClient_deltaTick_absolute = 0x90555C;

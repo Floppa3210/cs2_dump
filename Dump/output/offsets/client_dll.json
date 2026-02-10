@@ -21,6 +21,8 @@
   "dwViewAngles_offset": 17696,
   "dwLocalPlayerPawn_offset": 224,
   "dwGameEntitySystem_highestEntityIndex_offset_alt": 8352,
+  "dwViewAngles_offset_alt": 17680,
+  "dwLocalPlayerPawn_offset_alt": 232,
   "dwViewAngles": 36802096,
   "dwLocalPlayerPawn": 33966816,
   "dwGameEntitySystem_highestEntityIndex": 8352,

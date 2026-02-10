@@ -1,61 +1,365 @@
 {
   "build_samples": 1,
   "entries": [
-    {"module":"client.dll","name":"dwCSGOInput","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwEntityList","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwGameEntitySystem","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwGameEntitySystem_highestEntityIndex","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwGameEntitySystem_highestEntityIndex_absolute","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwGameEntitySystem_highestEntityIndex_offset","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwGameEntitySystem_highestEntityIndex_offset_alt","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwGameRules","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwGlobalVars","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwGlowManager","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwHostMaps","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwLocalPlayerController","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwLocalPlayerPawn","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwLocalPlayerPawn_fieldOffset","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwLocalPlayerPawn_offset","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwPlantedC4","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwPlayerResource","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwPrediction","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwSensitivity","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwSensitivityValue","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwSensitivity_sensitivity","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwSensitivity_sensitivity_alt","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwViewAngles","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwViewAngles_offset","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwViewMatrix","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwViewRender","stability":1.000000,"samples":1},
-    {"module":"client.dll","name":"dwWeaponC4","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwBuildNumber","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwNetworkGameClient","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_clientTickCount","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_clientTickCount_absolute","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_clientTickCount_alt","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_deltaTick","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_deltaTick_absolute","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_deltaTick_alt","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_isBackgroundMap","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_isBackgroundMap_alt","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_localPlayer","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_localPlayer_absolute","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_localPlayer_alt","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_maxClients","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_maxClients_absolute","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_maxClients_alt","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_serverTickCount","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_serverTickCount_absolute","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_serverTickCount_alt","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_signOnState","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_signOnState_absolute","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_signOnState_alt","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwWindowHeight","stability":1.000000,"samples":1},
-    {"module":"engine2.dll","name":"dwWindowWidth","stability":1.000000,"samples":1},
-    {"module":"inputsystem.dll","name":"dwInputSystem","stability":1.000000,"samples":1},
-    {"module":"matchmaking.dll","name":"dwGameTypes","stability":1.000000,"samples":1},
-    {"module":"soundsystem.dll","name":"dwSoundSystem","stability":1.000000,"samples":1},
-    {"module":"soundsystem.dll","name":"dwSoundSystem_engineViewData","stability":1.000000,"samples":1},
-    {"module":"tier0.dll","name":"dwCommandLine","stability":1.000000,"samples":1}
+    {
+      "module": "client.dll",
+      "name": "dwCSGOInput",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwEntityList",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwGameEntitySystem",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwGameEntitySystem_highestEntityIndex",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwGameEntitySystem_highestEntityIndex_absolute",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwGameEntitySystem_highestEntityIndex_offset",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwGameEntitySystem_highestEntityIndex_offset_alt",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwGameRules",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwGlobalVars",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwGlowManager",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwHostMaps",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwLocalPlayerController",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwLocalPlayerPawn",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwLocalPlayerPawn_fieldOffset",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwLocalPlayerPawn_offset",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwLocalPlayerPawn_offset_alt",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwPlantedC4",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwPlayerResource",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwPrediction",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwSensitivity",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwSensitivityValue",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwSensitivity_sensitivity",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwSensitivity_sensitivity_alt",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwViewAngles",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwViewAngles_offset",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwViewAngles_offset_alt",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwViewMatrix",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwViewRender",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "client.dll",
+      "name": "dwWeaponC4",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwBuildNumber",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_clientTickCount",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_clientTickCount_absolute",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_clientTickCount_alt",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_deltaTick",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_deltaTick_absolute",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_deltaTick_alt",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_isBackgroundMap",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_isBackgroundMap_alt",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_localPlayer",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_localPlayer_absolute",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_localPlayer_alt",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_maxClients",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_maxClients_absolute",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_maxClients_alt",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_maxClients_fallback",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_serverTickCount",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_serverTickCount_absolute",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_serverTickCount_alt",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_signOnState",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_signOnState_absolute",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_signOnState_alt",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_signOnState_fallback",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwWindowHeight",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwWindowWidth",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "inputsystem.dll",
+      "name": "dwInputSystem",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "matchmaking.dll",
+      "name": "dwGameTypes",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "soundsystem.dll",
+      "name": "dwSoundSystem",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "soundsystem.dll",
+      "name": "dwSoundSystem_engineViewData",
+      "stability": 1,
+      "samples": 1
+    },
+    {
+      "module": "tier0.dll",
+      "name": "dwCommandLine",
+      "stability": 1,
+      "samples": 1
+    }
   ]
 }

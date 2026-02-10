@@ -27,6 +27,8 @@ namespace cs2_dumper {
         constexpr std::ptrdiff_t dwViewAngles_offset = 0x4520;
         constexpr std::ptrdiff_t dwLocalPlayerPawn_offset = 0xE0;
         constexpr std::ptrdiff_t dwGameEntitySystem_highestEntityIndex_offset_alt = 0x20A0;
+        constexpr std::ptrdiff_t dwViewAngles_offset_alt = 0x4510;
+        constexpr std::ptrdiff_t dwLocalPlayerPawn_offset_alt = 0xE8;
         constexpr std::ptrdiff_t dwViewAngles = 0x2318E30;
         constexpr std::ptrdiff_t dwLocalPlayerPawn = 0x2064AE0;
         constexpr std::ptrdiff_t dwGameEntitySystem_highestEntityIndex = 0x20A0;

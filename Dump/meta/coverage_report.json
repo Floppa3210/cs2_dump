@@ -1,44 +1,200 @@
 {
   "summary": {
-    "pattern_total": 47,
-    "pattern_found": 37,
-    "pattern_resolved": 37,
+    "pattern_total": 54,
+    "pattern_found": 38,
+    "pattern_resolved": 38,
     "core_offsets_total": 24,
     "core_offsets_resolved": 24,
     "core_offsets_missing": 0
   },
   "module_coverage": [
-    {"module":"client.dll","patterns_total":26,"patterns_found":21,"patterns_resolved":21,"offsets_emitted":27},
-    {"module":"engine2.dll","patterns_total":15,"patterns_found":11,"patterns_resolved":11,"offsets_emitted":24},
-    {"module":"inputsystem.dll","patterns_total":1,"patterns_found":1,"patterns_resolved":1,"offsets_emitted":1},
-    {"module":"matchmaking.dll","patterns_total":1,"patterns_found":1,"patterns_resolved":1,"offsets_emitted":1},
-    {"module":"soundsystem.dll","patterns_total":3,"patterns_found":2,"patterns_resolved":2,"offsets_emitted":2},
-    {"module":"tier0.dll","patterns_total":1,"patterns_found":1,"patterns_resolved":1,"offsets_emitted":1}
+    {
+      "module": "client.dll",
+      "patterns_total": 30,
+      "patterns_found": 22,
+      "patterns_resolved": 22,
+      "offsets_emitted": 29
+    },
+    {
+      "module": "engine2.dll",
+      "patterns_total": 18,
+      "patterns_found": 11,
+      "patterns_resolved": 11,
+      "offsets_emitted": 26
+    },
+    {
+      "module": "inputsystem.dll",
+      "patterns_total": 1,
+      "patterns_found": 1,
+      "patterns_resolved": 1,
+      "offsets_emitted": 1
+    },
+    {
+      "module": "matchmaking.dll",
+      "patterns_total": 1,
+      "patterns_found": 1,
+      "patterns_resolved": 1,
+      "offsets_emitted": 1
+    },
+    {
+      "module": "soundsystem.dll",
+      "patterns_total": 3,
+      "patterns_found": 2,
+      "patterns_resolved": 2,
+      "offsets_emitted": 2
+    },
+    {
+      "module": "tier0.dll",
+      "patterns_total": 1,
+      "patterns_found": 1,
+      "patterns_resolved": 1,
+      "offsets_emitted": 1
+    }
   ],
   "core_offsets": [
-    {"module":"client.dll","name":"dwCSGOInput","resolved":true,"value":"0x2314910"},
-    {"module":"client.dll","name":"dwEntityList","resolved":true,"value":"0x24AA0D8"},
-    {"module":"client.dll","name":"dwGameEntitySystem","resolved":true,"value":"0x24AA0D8"},
-    {"module":"client.dll","name":"dwGameEntitySystem_highestEntityIndex","resolved":true,"value":"0x20A0"},
-    {"module":"client.dll","name":"dwGlobalVars","resolved":true,"value":"0x20595D0"},
-    {"module":"client.dll","name":"dwLocalPlayerController","resolved":true,"value":"0x22EF0B8"},
-    {"module":"client.dll","name":"dwLocalPlayerPawn","resolved":true,"value":"0x2064AE0"},
-    {"module":"client.dll","name":"dwPrediction","resolved":true,"value":"0x20649F0"},
-    {"module":"client.dll","name":"dwSensitivity","resolved":true,"value":"0x23066B0"},
-    {"module":"client.dll","name":"dwSensitivity_sensitivity","resolved":true,"value":"0x58"},
-    {"module":"client.dll","name":"dwViewAngles","resolved":true,"value":"0x2318E30"},
-    {"module":"client.dll","name":"dwViewMatrix","resolved":true,"value":"0x230ADE0"},
-    {"module":"engine2.dll","name":"dwBuildNumber","resolved":true,"value":"0x60A504"},
-    {"module":"engine2.dll","name":"dwNetworkGameClient","resolved":true,"value":"0x905310"},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_clientTickCount","resolved":true,"value":"0x390"},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_serverTickCount","resolved":true,"value":"0x394"},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_deltaTick","resolved":true,"value":"0x24C"},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_signOnState","resolved":true,"value":"0x230"},
-    {"module":"engine2.dll","name":"dwWindowWidth","resolved":true,"value":"0x9096D8"},
-    {"module":"engine2.dll","name":"dwWindowHeight","resolved":true,"value":"0x9096DC"},
-    {"module":"inputsystem.dll","name":"dwInputSystem","resolved":true,"value":"0x45AD0"},
-    {"module":"matchmaking.dll","name":"dwGameTypes","resolved":true,"value":"0x1B8000"},
-    {"module":"soundsystem.dll","name":"dwSoundSystem","resolved":true,"value":"0x4F3490"},
-    {"module":"soundsystem.dll","name":"dwSoundSystem_engineViewData","resolved":true,"value":"0x7C"}
+    {
+      "module": "client.dll",
+      "name": "dwCSGOInput",
+      "resolved": true,
+      "value": "0x2314910"
+    },
+    {
+      "module": "client.dll",
+      "name": "dwEntityList",
+      "resolved": true,
+      "value": "0x24AA0D8"
+    },
+    {
+      "module": "client.dll",
+      "name": "dwGameEntitySystem",
+      "resolved": true,
+      "value": "0x24AA0D8"
+    },
+    {
+      "module": "client.dll",
+      "name": "dwGameEntitySystem_highestEntityIndex",
+      "resolved": true,
+      "value": "0x20A0"
+    },
+    {
+      "module": "client.dll",
+      "name": "dwGlobalVars",
+      "resolved": true,
+      "value": "0x20595D0"
+    },
+    {
+      "module": "client.dll",
+      "name": "dwLocalPlayerController",
+      "resolved": true,
+      "value": "0x22EF0B8"
+    },
+    {
+      "module": "client.dll",
+      "name": "dwLocalPlayerPawn",
+      "resolved": true,
+      "value": "0x2064AE0"
+    },
+    {
+      "module": "client.dll",
+      "name": "dwPrediction",
+      "resolved": true,
+      "value": "0x20649F0"
+    },
+    {
+      "module": "client.dll",
+      "name": "dwSensitivity",
+      "resolved": true,
+      "value": "0x23066B0"
+    },
+    {
+      "module": "client.dll",
+      "name": "dwSensitivity_sensitivity",
+      "resolved": true,
+      "value": "0x58"
+    },
+    {
+      "module": "client.dll",
+      "name": "dwViewAngles",
+      "resolved": true,
+      "value": "0x2318E30"
+    },
+    {
+      "module": "client.dll",
+      "name": "dwViewMatrix",
+      "resolved": true,
+      "value": "0x230ADE0"
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwBuildNumber",
+      "resolved": true,
+      "value": "0x60A504"
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient",
+      "resolved": true,
+      "value": "0x905310"
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_clientTickCount",
+      "resolved": true,
+      "value": "0x390"
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_serverTickCount",
+      "resolved": true,
+      "value": "0x394"
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_deltaTick",
+      "resolved": true,
+      "value": "0x24C"
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_signOnState",
+      "resolved": true,
+      "value": "0x230"
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwWindowWidth",
+      "resolved": true,
+      "value": "0x9096D8"
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwWindowHeight",
+      "resolved": true,
+      "value": "0x9096DC"
+    },
+    {
+      "module": "inputsystem.dll",
+      "name": "dwInputSystem",
+      "resolved": true,
+      "value": "0x45AD0"
+    },
+    {
+      "module": "matchmaking.dll",
+      "name": "dwGameTypes",
+      "resolved": true,
+      "value": "0x1B8000"
+    },
+    {
+      "module": "soundsystem.dll",
+      "name": "dwSoundSystem",
+      "resolved": true,
+      "value": "0x4F3490"
+    },
+    {
+      "module": "soundsystem.dll",
+      "name": "dwSoundSystem_engineViewData",
+      "resolved": true,
+      "value": "0x7C"
+    }
   ]
 }

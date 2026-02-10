@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total": 56,
-    "valid": 56,
+    "total": 60,
+    "valid": 60,
     "invalid": 0
   },
   "entries": [
@@ -50,6 +50,10 @@
     {"name":"dwNetworkGameClient_signOnState_alt","module":"engine2.dll","offset":"0x230","valid":true,"reason":"ok"},
     {"name":"dwNetworkGameClient_localPlayer_alt","module":"engine2.dll","offset":"0xf8","valid":true,"reason":"ok"},
     {"name":"dwNetworkGameClient_isBackgroundMap_alt","module":"engine2.dll","offset":"0x2c141f","valid":true,"reason":"ok"},
+    {"name":"dwViewAngles_offset_alt","module":"client.dll","offset":"0x4510","valid":true,"reason":"ok"},
+    {"name":"dwLocalPlayerPawn_offset_alt","module":"client.dll","offset":"0xe8","valid":true,"reason":"ok"},
+    {"name":"dwNetworkGameClient_signOnState_fallback","module":"engine2.dll","offset":"0x214","valid":true,"reason":"ok"},
+    {"name":"dwNetworkGameClient_maxClients_fallback","module":"engine2.dll","offset":"0x224","valid":true,"reason":"ok"},
     {"name":"dwViewAngles","module":"client.dll","offset":"0x2318e30","valid":true,"reason":"ok"},
     {"name":"dwLocalPlayerPawn","module":"client.dll","offset":"0x2064ae0","valid":true,"reason":"ok"},
     {"name":"dwNetworkGameClient_clientTickCount_absolute","module":"engine2.dll","offset":"0x9056a0","valid":true,"reason":"ok"},

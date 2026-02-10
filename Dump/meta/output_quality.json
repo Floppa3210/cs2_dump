@@ -1,0 +1,12 @@
+{
+  "summary": {
+    "raw_offsets": 60,
+    "fallback_or_candidate_offsets": 16,
+    "verified_offsets": 10,
+    "low_confidence_modules": 0
+  },
+  "notes": [
+    "offsets_verified.json includes only semantic-valid offsets and excludes fallback/candidate names.",
+    "Use offsets_safe.json for broad integration and offsets_verified.json for strict usage."
+  ]
+}

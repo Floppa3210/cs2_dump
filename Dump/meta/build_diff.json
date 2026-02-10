@@ -1,6 +1,6 @@
 {
   "current_build": "14135",
-  "previous_build": "",
+  "previous_build": "14135",
   "has_baseline": false,
   "summary": {
     "offset_changes": 0,
@@ -10,14 +10,12 @@
     "added": 0,
     "removed": 0,
     "changed": 0,
-    "entries": [
-    ]
+    "entries": []
   },
   "patterns": {
     "added": 0,
     "removed": 0,
     "changed": 0,
-    "entries": [
-    ]
+    "entries": []
   }
 }

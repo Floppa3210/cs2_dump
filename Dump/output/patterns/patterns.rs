@@ -26,6 +26,10 @@ pub mod client_dll {
     pub const DWPLAYERRESOURCE: &str = "48 8B 0D ? ? ? ? 48 8B 01 FF 90 ? ? ? ? 48 8B";
     pub const DWSIGNONSTATE: &str = "44 8B 05 ? ? ? ? 83 F8 02";
     pub const DWHOSTMAPS: &str = "48 8B 0D ? ? ? ? 48 85 C9 74 ? 48 8B 01 48 FF 60 30";
+    pub const DWVIEWMATRIX: &str = "48 8D 0D ? ? ? ? 48 C1 E0 06 48 03 C1 C3";
+    pub const DWVIEWRENDER: &str = "48 89 05 ? ? ? ? 48 8B C8 48 85 C0 74 ? 48 8B 10";
+    pub const DWLOCALPLAYERCONTROLLER: &str = "48 8B 05 ? ? ? ? 48 85 C0 74 ? 8B 88";
+    pub const DWGLOBALVARS: &str = "48 89 15 ? ? ? ? 48 8B 42 ? 48 89 45";
 }
 pub mod engine2_dll {
     pub const DWBUILDNUMBER: &str = "89 05 ? ? ? ? 48 8D 0D ? ? ? ? FF 15";
@@ -43,6 +47,9 @@ pub mod engine2_dll {
     pub const DWNETWORKGAMECLIENT_CLIENTTICKCOUNT: &str = "8B 81 ? ? ? ? C3 CC CC CC CC CC CC CC CC CC CC 8B 81";
     pub const DWNETWORKGAMECLIENT_SERVERTICKCOUNT: &str = "8B 81 ? ? ? ? C3 CC CC CC CC CC CC CC CC CC CC 83 B9";
     pub const DWNETWORKGAMECLIENT_MAXCLIENTS: &str = "8B 81 ? ? ? ? C3 CC CC CC CC CC CC CC CC 8B 81";
+    pub const DWWINDOWWIDTH: &str = "89 05 ? ? ? ? 8B 05 ? ? ? ? 89 07";
+    pub const DWWINDOWHEIGHT: &str = "89 05 ? ? ? ? 8B 05 ? ? ? ? 89 03";
+    pub const DWBUILDNUMBER: &str = "8B 05 ? ? ? ? 89 05 ? ? ? ? 48 8D 0D";
 }
 pub mod inputsystem_dll {
     pub const DWINPUTSYSTEM: &str = "48 89 05 ? ? ? ? 33 C0";

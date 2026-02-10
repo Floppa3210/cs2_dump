@@ -27,6 +27,10 @@ namespace cs2_dumper {
         public const string dwPlayerResource = "48 8B 0D ? ? ? ? 48 8B 01 FF 90 ? ? ? ? 48 8B";
         public const string dwSignOnState = "44 8B 05 ? ? ? ? 83 F8 02";
         public const string dwHostMaps = "48 8B 0D ? ? ? ? 48 85 C9 74 ? 48 8B 01 48 FF 60 30";
+        public const string dwViewMatrix = "48 8D 0D ? ? ? ? 48 C1 E0 06 48 03 C1 C3";
+        public const string dwViewRender = "48 89 05 ? ? ? ? 48 8B C8 48 85 C0 74 ? 48 8B 10";
+        public const string dwLocalPlayerController = "48 8B 05 ? ? ? ? 48 85 C0 74 ? 8B 88";
+        public const string dwGlobalVars = "48 89 15 ? ? ? ? 48 8B 42 ? 48 89 45";
     }
     public static class engine2_dll {
         public const string dwBuildNumber = "89 05 ? ? ? ? 48 8D 0D ? ? ? ? FF 15";
@@ -44,6 +48,9 @@ namespace cs2_dumper {
         public const string dwNetworkGameClient_clientTickCount = "8B 81 ? ? ? ? C3 CC CC CC CC CC CC CC CC CC CC 8B 81";
         public const string dwNetworkGameClient_serverTickCount = "8B 81 ? ? ? ? C3 CC CC CC CC CC CC CC CC CC CC 83 B9";
         public const string dwNetworkGameClient_maxClients = "8B 81 ? ? ? ? C3 CC CC CC CC CC CC CC CC 8B 81";
+        public const string dwWindowWidth = "89 05 ? ? ? ? 8B 05 ? ? ? ? 89 07";
+        public const string dwWindowHeight = "89 05 ? ? ? ? 8B 05 ? ? ? ? 89 03";
+        public const string dwBuildNumber = "8B 05 ? ? ? ? 89 05 ? ? ? ? 48 8D 0D";
     }
     public static class inputsystem_dll {
         public const string dwInputSystem = "48 89 05 ? ? ? ? 33 C0";

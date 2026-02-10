@@ -1,20 +1,188 @@
 {
   "summary": {
-    "total_fragile": 12,
+    "total_fragile": 18,
     "highest_score": 4
   },
   "entries": [
-    {"module":"client.dll","name":"dwGameEntitySystem","score":4,"resolved_rva":"0x0","recommendation":"Update signature bytes around this symbol from latest binary xrefs.","reasons":["pattern_not_found"]},
-    {"module":"client.dll","name":"dwInputSystem","score":4,"resolved_rva":"0x0","recommendation":"Update signature bytes around this symbol from latest binary xrefs.","reasons":["pattern_not_found"]},
-    {"module":"client.dll","name":"dwSensitivity","score":4,"resolved_rva":"0x0","recommendation":"Update signature bytes around this symbol from latest binary xrefs.","reasons":["pattern_not_found"]},
-    {"module":"client.dll","name":"dwSignOnState","score":4,"resolved_rva":"0x0","recommendation":"Update signature bytes around this symbol from latest binary xrefs.","reasons":["pattern_not_found"]},
-    {"module":"client.dll","name":"dwViewAngles_fieldOffset","score":4,"resolved_rva":"0x0","recommendation":"Update signature bytes around this symbol from latest binary xrefs.","reasons":["pattern_not_found"]},
-    {"module":"engine2.dll","name":"dwNetworkGameClient","score":4,"resolved_rva":"0x0","recommendation":"Update signature bytes around this symbol from latest binary xrefs.","reasons":["pattern_not_found"]},
-    {"module":"engine2.dll","name":"dwNetworkGameClient","score":4,"resolved_rva":"0x0","recommendation":"Update signature bytes around this symbol from latest binary xrefs.","reasons":["pattern_not_found"]},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_clientTickCount","score":4,"resolved_rva":"0x0","recommendation":"Update signature bytes around this symbol from latest binary xrefs.","reasons":["pattern_not_found"]},
-    {"module":"engine2.dll","name":"dwNetworkGameClient_serverTickCount","score":4,"resolved_rva":"0x0","recommendation":"Update signature bytes around this symbol from latest binary xrefs.","reasons":["pattern_not_found"]},
-    {"module":"soundsystem.dll","name":"dwSoundSystem_engineViewData","score":4,"resolved_rva":"0x0","recommendation":"Update signature bytes around this symbol from latest binary xrefs.","reasons":["pattern_not_found"]},
-    {"module":"client.dll","name":"dwPlantedC4","score":2,"resolved_rva":"0x227FBF0","recommendation":"Offset resolves but runtime value looks inconsistent; inspect data layout changes.","reasons":["semantic_check_failed"]},
-    {"module":"client.dll","name":"dwPlantedC4","score":2,"resolved_rva":"0x23120B0","recommendation":"Offset resolves but runtime value looks inconsistent; inspect data layout changes.","reasons":["semantic_check_failed"]}
+    {
+      "module": "client.dll",
+      "name": "dwGameEntitySystem",
+      "score": 4,
+      "resolved_rva": "0x0",
+      "recommendation": "Update signature bytes around this symbol from latest binary xrefs.",
+      "reasons": [
+        "pattern_not_found"
+      ]
+    },
+    {
+      "module": "client.dll",
+      "name": "dwGlobalVars",
+      "score": 4,
+      "resolved_rva": "0x0",
+      "recommendation": "Update signature bytes around this symbol from latest binary xrefs.",
+      "reasons": [
+        "pattern_not_found"
+      ]
+    },
+    {
+      "module": "client.dll",
+      "name": "dwInputSystem",
+      "score": 4,
+      "resolved_rva": "0x0",
+      "recommendation": "Update signature bytes around this symbol from latest binary xrefs.",
+      "reasons": [
+        "pattern_not_found"
+      ]
+    },
+    {
+      "module": "client.dll",
+      "name": "dwLocalPlayerController",
+      "score": 4,
+      "resolved_rva": "0x0",
+      "recommendation": "Update signature bytes around this symbol from latest binary xrefs.",
+      "reasons": [
+        "pattern_not_found"
+      ]
+    },
+    {
+      "module": "client.dll",
+      "name": "dwSensitivity",
+      "score": 4,
+      "resolved_rva": "0x0",
+      "recommendation": "Update signature bytes around this symbol from latest binary xrefs.",
+      "reasons": [
+        "pattern_not_found"
+      ]
+    },
+    {
+      "module": "client.dll",
+      "name": "dwSignOnState",
+      "score": 4,
+      "resolved_rva": "0x0",
+      "recommendation": "Update signature bytes around this symbol from latest binary xrefs.",
+      "reasons": [
+        "pattern_not_found"
+      ]
+    },
+    {
+      "module": "client.dll",
+      "name": "dwViewAngles_fieldOffset",
+      "score": 4,
+      "resolved_rva": "0x0",
+      "recommendation": "Update signature bytes around this symbol from latest binary xrefs.",
+      "reasons": [
+        "pattern_not_found"
+      ]
+    },
+    {
+      "module": "client.dll",
+      "name": "dwViewRender",
+      "score": 4,
+      "resolved_rva": "0x0",
+      "recommendation": "Update signature bytes around this symbol from latest binary xrefs.",
+      "reasons": [
+        "pattern_not_found"
+      ]
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwBuildNumber",
+      "score": 4,
+      "resolved_rva": "0x0",
+      "recommendation": "Update signature bytes around this symbol from latest binary xrefs.",
+      "reasons": [
+        "pattern_not_found"
+      ]
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient",
+      "score": 4,
+      "resolved_rva": "0x0",
+      "recommendation": "Update signature bytes around this symbol from latest binary xrefs.",
+      "reasons": [
+        "pattern_not_found"
+      ]
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient",
+      "score": 4,
+      "resolved_rva": "0x0",
+      "recommendation": "Update signature bytes around this symbol from latest binary xrefs.",
+      "reasons": [
+        "pattern_not_found"
+      ]
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_clientTickCount",
+      "score": 4,
+      "resolved_rva": "0x0",
+      "recommendation": "Update signature bytes around this symbol from latest binary xrefs.",
+      "reasons": [
+        "pattern_not_found"
+      ]
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwNetworkGameClient_serverTickCount",
+      "score": 4,
+      "resolved_rva": "0x0",
+      "recommendation": "Update signature bytes around this symbol from latest binary xrefs.",
+      "reasons": [
+        "pattern_not_found"
+      ]
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwWindowHeight",
+      "score": 4,
+      "resolved_rva": "0x0",
+      "recommendation": "Update signature bytes around this symbol from latest binary xrefs.",
+      "reasons": [
+        "pattern_not_found"
+      ]
+    },
+    {
+      "module": "engine2.dll",
+      "name": "dwWindowWidth",
+      "score": 4,
+      "resolved_rva": "0x0",
+      "recommendation": "Update signature bytes around this symbol from latest binary xrefs.",
+      "reasons": [
+        "pattern_not_found"
+      ]
+    },
+    {
+      "module": "soundsystem.dll",
+      "name": "dwSoundSystem_engineViewData",
+      "score": 4,
+      "resolved_rva": "0x0",
+      "recommendation": "Update signature bytes around this symbol from latest binary xrefs.",
+      "reasons": [
+        "pattern_not_found"
+      ]
+    },
+    {
+      "module": "client.dll",
+      "name": "dwPlantedC4",
+      "score": 2,
+      "resolved_rva": "0x227FBF0",
+      "recommendation": "Offset resolves but runtime value looks inconsistent; inspect data layout changes.",
+      "reasons": [
+        "semantic_check_failed"
+      ]
+    },
+    {
+      "module": "client.dll",
+      "name": "dwPlantedC4",
+      "score": 2,
+      "resolved_rva": "0x23120B0",
+      "recommendation": "Offset resolves but runtime value looks inconsistent; inspect data layout changes.",
+      "reasons": [
+        "semantic_check_failed"
+      ]
+    }
   ]
 }

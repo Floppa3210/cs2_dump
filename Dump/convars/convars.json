@@ -1,11 +1,15 @@
 {
   "convars": [
-    {"name":"engine_gcmessages.proto","module":"engine2.dll","address":"0x7ffd870b9b90"},
-    {"name":"sv_metaduplication","module":"engine2.dll","address":"0x7ffd870bdfa0"},
-    {"name":"debug_aranges","module":"tier0.dll","address":"0x7ffd8773a9f0"},
-    {"name":"debug_info","module":"tier0.dll","address":"0x7ffd8773a9c0"},
-    {"name":"debug_line_str","module":"tier0.dll","address":"0x7ffd8773a9e0"},
-    {"name":"debug_pubnames","module":"tier0.dll","address":"0x7ffd8773aa00"},
-    {"name":"debug_str","module":"tier0.dll","address":"0x7ffd8773a9d0"}
+    {"name":"engine_gcmessages.proto","module":"engine2.dll","address":"0x7ffbbb619b90"},
+    {"name":"sv_metaduplication","module":"engine2.dll","address":"0x7ffbbb61df88","default":"sv_spewmeta"},
+    {"name":"MOUSE_WHEEL","module":"inputsystem.dll","address":"0x7ffc0a109d90","default":"!link","description":"CUtlRBTree<struct CUtlOrderedMapBase<unsigned int,enum ButtonCode_t,class CDefLess<unsigned int>,int>::Node_t,class CUtlOrderedMapBase<unsigned int,enum ButtonCode_t,class CDefLess<unsigned int>,int>::CKeyLess,int,class CUtlLeanVector<struct UtlRBTreeNode_"},
+    {"name":"MOUSE_X","module":"inputsystem.dll","address":"0x7ffc0a109db0","default":"MOUSE_Y","description":"MOUSE_WHEEL"},
+    {"name":"R_AXIS","module":"inputsystem.dll","address":"0x7ffc0a109db8","default":"MOUSE_Y","description":"MOUSE_WHEEL"},
+    {"name":"R_AXIS_POS","module":"inputsystem.dll","address":"0x7ffc0a10b360","default":"R_AXIS_NEG","description":"U_AXIS_POS"},
+    {"name":"debug_aranges","module":"tier0.dll","address":"0x7ffc0629a9f0","default":"debug_rnglists","description":"debug_pubnames"},
+    {"name":"debug_info","module":"tier0.dll","address":"0x7ffc0629a9c0","default":"debug_abbrev","description":"debug_str"},
+    {"name":"debug_line_str","module":"tier0.dll","address":"0x7ffc0629a9e0","default":"debug_ranges","description":"debug_aranges"},
+    {"name":"debug_pubnames","module":"tier0.dll","address":"0x7ffc0629aa00","default":"debug_frame","description":"eh_frame"},
+    {"name":"debug_str","module":"tier0.dll","address":"0x7ffc0629a9d0","default":"debug_line","description":"debug_line_str"}
   ]
 }
