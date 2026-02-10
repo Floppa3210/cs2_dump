@@ -87,10 +87,25 @@ inline void ScanPatterns(PatternInfo* patterns, int count, const std::string& mo
                 off.module = moduleName;
                 off.offset = resolvedValue;
                 off.description = pat.description;
+
+                uintptr_t previousOffset = 0;
+                bool hadPrevious = false;
+                for (const auto& current : g_FoundOffsets) {
+                    if (current.module == off.module && current.name == off.name) {
+                        previousOffset = current.offset;
+                        hadPrevious = true;
+                        break;
+                    }
+                }
+
                 if (AddFoundOffset(off, true)) {
                     g_Logger.Success("Patterns", std::string(pat.name) + " = " + ToHex(resolvedValue));
                 } else {
-                    g_Logger.Warning("Patterns", std::string(pat.name) + " duplicated, keeping latest value " + ToHex(resolvedValue));
+                    if (hadPrevious && previousOffset == resolvedValue) {
+                        g_Logger.Trace("Patterns", std::string(pat.name) + " duplicate confirmed (same value " + ToHex(resolvedValue) + ")");
+                    } else {
+                        g_Logger.Warning("Patterns", std::string(pat.name) + " duplicated, updated value " + ToHex(previousOffset) + " -> " + ToHex(resolvedValue));
+                    }
                 }
             } else {
                 record.failureReason = "resolve_failed";

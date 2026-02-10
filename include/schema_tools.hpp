@@ -38,24 +38,85 @@ inline void BuildSchemaIndex() {
 inline void LinkRTTIToSchemas() {
     g_Logger.Info("Linking", "Linking RTTI classes to schemas...");
 
-    int linkedCount = 0;
+    auto ToLower = [](std::string value) -> std::string {
+        std::transform(value.begin(), value.end(), value.begin(), [](unsigned char c) {
+            return static_cast<char>(std::tolower(c));
+        });
+        return value;
+    };
+
+    auto NormalizeName = [&](std::string name) -> std::string {
+        if (name.rfind("class ", 0) == 0) name = name.substr(6);
+        if (name.rfind("struct ", 0) == 0) name = name.substr(7);
+        if (name.rfind(".?AV", 0) == 0 || name.rfind(".?AU", 0) == 0) {
+            size_t start = 4;
+            size_t end = name.find("@@");
+            if (end == std::string::npos) {
+                end = name.find('@', start);
+            }
+            if (end != std::string::npos && end > start) {
+                name = name.substr(start, end - start);
+            } else if (name.size() > start) {
+                name = name.substr(start);
+            }
+        }
+        return ToLower(name);
+    };
+
+    auto TryFindSchemaName = [&](const std::string& rawName, std::string& resolvedSchemaName) -> bool {
+        if (rawName.empty()) return false;
+
+        // Fast path exact.
+        auto exact = g_SchemaClassIndex.find(rawName);
+        if (exact != g_SchemaClassIndex.end()) {
+            resolvedSchemaName = exact->second->name;
+            return true;
+        }
+
+        const std::string norm = NormalizeName(rawName);
+        if (norm.empty()) return false;
+
+        for (const auto& [schemaName, schemaPtr] : g_SchemaClassIndex) {
+            (void)schemaPtr;
+            if (NormalizeName(schemaName) == norm) {
+                resolvedSchemaName = schemaName;
+                return true;
+            }
+        }
+
+        // Tail match for namespaced RTTI names (A::B::C -> C).
+        const size_t nsPos = rawName.rfind("::");
+        if (nsPos != std::string::npos && nsPos + 2 < rawName.size()) {
+            auto tailIt = g_SchemaClassIndex.find(rawName.substr(nsPos + 2));
+            if (tailIt != g_SchemaClassIndex.end()) {
+                resolvedSchemaName = tailIt->second->name;
+                return true;
+            }
+        }
+        return false;
+    };
+
+    int linkedRttiToSchema = 0;
+    int linkedVTableToSchema = 0;
 
     for (auto& rtti : g_RTTIClasses) {
-        if (g_SchemaClassIndex.count(rtti.name)) {
-            linkedCount++;
+        std::string resolvedName;
+        if (TryFindSchemaName(rtti.name, resolvedName)) {
+            rtti.name = resolvedName;
+            ++linkedRttiToSchema;
         }
     }
 
     for (auto& vt : g_VTables) {
-        for (auto& rtti : g_RTTIClasses) {
-            if (rtti.vtable == vt.address) {
-                vt.className = rtti.name;
-                break;
-            }
+        std::string resolvedName;
+        if (TryFindSchemaName(vt.className, resolvedName)) {
+            vt.className = resolvedName;
+            ++linkedVTableToSchema;
         }
     }
 
-    g_Logger.Success("Linking", "Linked " + std::to_string(linkedCount) + " RTTI classes to schemas");
+    g_Logger.Success("Linking", "Linked RTTI->Schema: " + std::to_string(linkedRttiToSchema) +
+        ", VTable->Schema: " + std::to_string(linkedVTableToSchema));
 }
 
 inline void FlattenInheritance() {

@@ -42,6 +42,12 @@ cmake_install.cmake
 Makefile
 *.cmake
 !CMakeLists.txt
+build_codex_refactor/
+build_codex_refactor*/
+build_codex_refactor\\
+build_codex/
+build_codex*/
+build_codex\\
 
 # Logs and dumps
 logs/

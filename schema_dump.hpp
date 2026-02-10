@@ -41,6 +41,20 @@ extern uintptr_t PatternScan(uintptr_t base, size_t size, const char* pattern);
 
 inline void DumpSchemas(uintptr_t moduleBase, size_t moduleSize) {
     g_Logger.Info("Schemas", "DumpSchemas starting...");
+    auto IsLikelyTypeName = [](const std::string& name) -> bool {
+        if (name.size() < 2 || name.size() > 128) return false;
+        if (name.find(' ') != std::string::npos) return false;
+        if (!(std::isalpha(static_cast<unsigned char>(name[0])) || name[0] == '_' || name[0] == 'C' || name[0] == 'I')) {
+            return false;
+        }
+        for (char ch : name) {
+            const unsigned char c = static_cast<unsigned char>(ch);
+            if (!(std::isalnum(c) || ch == '_' || ch == ':' || ch == '<' || ch == '>' || ch == ',')) {
+                return false;
+            }
+        }
+        return true;
+    };
 
     // Find SchemaSystem using current a2x-like pattern first, then fallbacks
     const char* schemaPatterns[] = {
@@ -115,7 +129,8 @@ inline void DumpSchemas(uintptr_t moduleBase, size_t moduleSize) {
     int nonEmptyScopes = 0;
     int totalClassesExtracted = 0;
     for (int s = 0; s < scopeCount; s++) {
-        uintptr_t pScope = *reinterpret_cast<uintptr_t*>(scopeData + s * 8);
+        uintptr_t pScope = 0;
+        if (!ReadPtr(scopeData + static_cast<uintptr_t>(s) * sizeof(uintptr_t), pScope)) continue;
         if (!IsSafeToRead((void*)pScope, 0x600)) continue;
         
         std::string scopeName = SafeReadCString(reinterpret_cast<const char*>(pScope + SCHEMA_TYPE_SCOPE_NAME_OFFSET), 64);
@@ -162,6 +177,9 @@ inline void DumpSchemas(uintptr_t moduleBase, size_t moduleSize) {
                 if (classInfo && IsSafeToRead((void*)classInfo, 0x50)) {
                     SchemaClass cls;
                     cls.module = normalizedScope;
+                    cls.parent.clear();
+                    cls.parentClass.clear();
+                    cls.hasBaseClass = false;
                     
                     uintptr_t namePtr = 0;
                     ReadPtr(classInfo + SCHEMA_CLASS_NAME_OFFSET, namePtr);
@@ -207,6 +225,29 @@ inline void DumpSchemas(uintptr_t moduleBase, size_t moduleSize) {
                                 field.size = DeduceFieldSize(field.type);  // E3
                                 
                                 cls.fields.push_back(field);
+                            }
+                        }
+
+                        // Parent class resolution (best-effort, guarded).
+                        uintptr_t parentInfo = 0;
+                        if (ReadPtr(classInfo + SCHEMA_CLASS_PARENT_OFFSET, parentInfo) &&
+                            parentInfo && IsSafeToRead((void*)parentInfo, 0x20)) {
+                            std::string parentName;
+
+                            uintptr_t parentNamePtr = 0;
+                            if (ReadPtr(parentInfo + SCHEMA_CLASS_NAME_OFFSET, parentNamePtr) && parentNamePtr) {
+                                parentName = SafeReadCString(reinterpret_cast<const char*>(parentNamePtr), 128);
+                            }
+
+                            if (parentName.empty()) {
+                                // Fallback for unusual layouts where parent points directly to name-like data.
+                                parentName = SafeReadCString(reinterpret_cast<const char*>(parentInfo), 128);
+                            }
+
+                            if (IsLikelyTypeName(parentName) && parentName != cls.name) {
+                                cls.parent = parentName;
+                                cls.parentClass = parentName;
+                                cls.hasBaseClass = true;
                             }
                         }
                         

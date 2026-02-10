@@ -107,6 +107,8 @@ inline bool ValidateSchemaClass(SchemaClass& cls) {
 }
 
 // Global storage
-std::map<std::string, std::vector<SchemaClass>> g_SchemaClasses;
-std::map<std::string, std::vector<SchemaEnum>> g_SchemaEnums;
-std::map<std::string, SchemaClass*> g_SchemaClassIndex;
+// NOTE: These are `inline` to be ODR-safe across multiple translation units.
+// They will be removed once SchemaStore lives exclusively inside DumpContext.
+inline std::map<std::string, std::vector<SchemaClass>> g_SchemaClasses;
+inline std::map<std::string, std::vector<SchemaEnum>> g_SchemaEnums;
+inline std::map<std::string, SchemaClass*> g_SchemaClassIndex;

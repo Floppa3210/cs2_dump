@@ -27,7 +27,7 @@ inline void ScanVTables() {
     constexpr size_t MAX_SCAN_BYTES_PER_MODULE = 64 * 1024 * 1024; // 64 MB
     constexpr int MAX_SECONDS_TOTAL = 30;
     constexpr int MAX_TOTAL_RESULTS = 20000;
-    constexpr bool kScanAllModules = true;
+    constexpr bool kScanAllModules = false;
 
     auto startTime = std::chrono::steady_clock::now();
     auto isGameModule = [](const std::string& name) -> bool {
@@ -41,6 +41,66 @@ inline void ScanVTables() {
             "server.dll"
         };
         return kAllowed.find(name) != kAllowed.end();
+    };
+
+    auto DecodeMsvcRttiName = [](const std::string& decorated) -> std::string {
+        // Typical MSVC names: .?AVClassName@@ or .?AUClassName@@
+        if (decorated.rfind(".?AV", 0) == 0 || decorated.rfind(".?AU", 0) == 0) {
+            size_t start = 4;
+            size_t end = decorated.find("@@");
+            if (end == std::string::npos) {
+                end = decorated.find('@', start);
+            }
+            if (end != std::string::npos && end > start) {
+                return decorated.substr(start, end - start);
+            }
+            if (decorated.size() > start) {
+                return decorated.substr(start);
+            }
+        }
+        return decorated;
+    };
+
+    auto TryResolveClassNameFromCol = [&](const ModuleInfo& mod, uintptr_t colPtr) -> std::string {
+        int32_t signature = 0;
+        if (!ReadInt32(colPtr, signature)) {
+            return {};
+        }
+        if (!(signature == 0 || signature == 1)) {
+            return {};
+        }
+
+        uintptr_t typeDescriptor = 0;
+        if (signature == 1) {
+            // x64 COL layout uses RVAs.
+            int32_t typeDescRva = 0;
+            if (!ReadInt32(colPtr + 0x0C, typeDescRva)) {
+                return {};
+            }
+            if (typeDescRva <= 0 || static_cast<size_t>(typeDescRva) >= mod.size) {
+                return {};
+            }
+            typeDescriptor = mod.base + static_cast<uintptr_t>(typeDescRva);
+        } else {
+            // Legacy layout can hold absolute pointers.
+            if (!ReadPtr(colPtr + 0x0C, typeDescriptor) || !typeDescriptor) {
+                return {};
+            }
+        }
+
+        if (!IsSafeToRead(reinterpret_cast<void*>(typeDescriptor), 0x20)) {
+            return {};
+        }
+
+        // x64 TypeDescriptor name normally starts at +0x10 (fallback +0x08).
+        std::string decorated = SafeReadCString(reinterpret_cast<const char*>(typeDescriptor + 0x10), 128);
+        if (decorated.empty()) {
+            decorated = SafeReadCString(reinterpret_cast<const char*>(typeDescriptor + 0x08), 128);
+        }
+        if (decorated.empty()) {
+            return {};
+        }
+        return DecodeMsvcRttiName(decorated);
     };
 
     // VTables are found by looking for RTTI Complete Object Locator references
@@ -104,33 +164,31 @@ inline void ScanVTables() {
                 }
                 if (rttiPtr >= mod.base && rttiPtr < mod.base + mod.size) {
                     if (IsSafeToRead((void*)rttiPtr, 0x20)) {
-                        // Try to extract class name from RTTI
-                        int32_t signature = 0;
-                        if (!ReadInt32(rttiPtr, signature)) {
+                        const std::string resolvedClassName = TryResolveClassNameFromCol(mod, rttiPtr);
+                        if (resolvedClassName.empty()) {
                             continue;
                         }
-                        if (signature == 0 || signature == 1) {
-                            // Count function pointers
-                            int funcCount = 0;
-                            for (int i = 0; i < 200; i++) {
-                                uintptr_t fptr = 0;
-                                if (!ReadPtr(reinterpret_cast<uintptr_t>(base + offset + i * 8), fptr)) break;
-                                if (fptr < mod.base || fptr > mod.base + mod.size) break;
-                                funcCount++;
-                            }
 
-                            if (funcCount >= 3) {
-                                VTable vt;
-                                vt.address = mod.base + offset;
-                                vt.functionCount = funcCount;
-                                vt.module = mod.name;
-                                vt.className = "VTable_" + std::to_string(offset);
-                                g_VTables.push_back(vt);
-                                foundInModule++;
+                        // Count function pointers
+                        int funcCount = 0;
+                        for (int i = 0; i < 200; i++) {
+                            uintptr_t fptr = 0;
+                            if (!ReadPtr(reinterpret_cast<uintptr_t>(base + offset + i * 8), fptr)) break;
+                            if (fptr < mod.base || fptr > mod.base + mod.size) break;
+                            funcCount++;
+                        }
 
-                                if ((int)g_VTables.size() >= MAX_TOTAL_RESULTS) {
-                                    break;
-                                }
+                        if (funcCount >= 3) {
+                            VTable vt;
+                            vt.address = mod.base + offset;
+                            vt.functionCount = funcCount;
+                            vt.module = mod.name;
+                            vt.className = resolvedClassName;
+                            g_VTables.push_back(vt);
+                            foundInModule++;
+
+                            if ((int)g_VTables.size() >= MAX_TOTAL_RESULTS) {
+                                break;
                             }
                         }
                     }

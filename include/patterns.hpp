@@ -43,6 +43,10 @@ inline PatternInfo g_ClientPatterns[] = {
     {"dwPlayerResource", "48 8B 0D ? ? ? ? 48 8B 01 FF 90 ? ? ? ? 48 8B", 3, 7, "Player resource"},
     {"dwSignOnState", "44 8B 05 ? ? ? ? 83 F8 02", 3, 7, "Sign on state"},
     {"dwHostMaps", "48 8B 0D ? ? ? ? 48 85 C9 74 ? 48 8B 01 48 FF 60 30", 3, 7, "Hosted maps"},
+    {"dwViewMatrix", "48 8D 0D ? ? ? ? 48 C1 E0 06 48 03 C1 C3", 3, 7, "View matrix (alt signature)"},
+    {"dwViewRender", "48 89 05 ? ? ? ? 48 8B C8 48 85 C0 74 ? 48 8B 10", 3, 7, "View render (alt signature)"},
+    {"dwLocalPlayerController", "48 8B 05 ? ? ? ? 48 85 C0 74 ? 8B 88", 3, 7, "Local player controller (alt signature)"},
+    {"dwGlobalVars", "48 89 15 ? ? ? ? 48 8B 42 ? 48 89 45", 3, 7, "Global variables pointer (alt signature)"},
 };
 
 // engine2.dll patterns - Only patterns that work
@@ -62,6 +66,9 @@ inline PatternInfo g_Engine2Patterns[] = {
     {"dwNetworkGameClient_clientTickCount", "8B 81 ? ? ? ? C3 CC CC CC CC CC CC CC CC CC CC 8B 81", 2, 6, "Client tick count (dynamic)", true, 4},
     {"dwNetworkGameClient_serverTickCount", "8B 81 ? ? ? ? C3 CC CC CC CC CC CC CC CC CC CC 83 B9", 2, 6, "Server tick count (dynamic)", true, 4},
     {"dwNetworkGameClient_maxClients", "8B 81 ? ? ? ? C3 CC CC CC CC CC CC CC CC 8B 81", 2, 6, "Max clients (dynamic)", true, 4},
+    {"dwWindowWidth", "89 05 ? ? ? ? 8B 05 ? ? ? ? 89 07", 2, 6, "Window width (alt signature)"},
+    {"dwWindowHeight", "89 05 ? ? ? ? 8B 05 ? ? ? ? 89 03", 2, 6, "Window height (alt signature)"},
+    {"dwBuildNumber", "8B 05 ? ? ? ? 89 05 ? ? ? ? 48 8D 0D", 2, 6, "Build number (fallback signature)"},
 };
 
 // inputsystem.dll patterns
@@ -116,6 +123,10 @@ inline StaticOffset g_StaticOffsets[] = {
     {"dwNetworkGameClient_localPlayer_alt", 0xF8, "engine2.dll", "Local player index candidate from newer build"},
     {"dwNetworkGameClient_isBackgroundMap_alt", 0x2C141F, "engine2.dll", "Is background map candidate from newer build"},
     {"dwSoundSystem_engineViewData", 0x7C, "soundsystem.dll", "Engine view data offset from dwSoundSystem"},
+    {"dwViewAngles_offset_alt", 0x4510, "client.dll", "ViewAngles offset candidate from CSGOInput"},
+    {"dwLocalPlayerPawn_offset_alt", 0xE8, "client.dll", "LocalPlayerPawn offset candidate from Prediction"},
+    {"dwNetworkGameClient_signOnState_fallback", 0x214, "engine2.dll", "Sign on state conservative fallback"},
+    {"dwNetworkGameClient_maxClients_fallback", 0x224, "engine2.dll", "Max clients conservative fallback"},
 };
 
 // Button list pattern

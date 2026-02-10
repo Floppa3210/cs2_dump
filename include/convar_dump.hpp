@@ -3,6 +3,8 @@
 #include "logger.hpp"
 #include "memory.hpp"
 #include "dump_data.hpp"
+#include <unordered_set>
+#include <cstring>
 
 //=============================================================================
 // CONVAR SCANNER - Extract Console Variables (modularized)
@@ -25,11 +27,11 @@ inline void ScanConVars() {
     g_Logger.Info("ConVars", "Scanning for console variables...");
     g_ConVars.clear();
 
-    constexpr size_t MAX_SCAN_BYTES_PER_MODULE = 64 * 1024 * 1024; // 64 MB
+    constexpr size_t MAX_SCAN_BYTES_PER_MODULE = 48 * 1024 * 1024; // hard cap per module
     constexpr int MAX_TOTAL_RESULTS = 12000;
-    constexpr int MAX_SECONDS_TOTAL = 40;
-    constexpr int MAX_SECONDS_PER_MODULE = 8;
-    constexpr size_t STEP_BYTES = 16; // avoid over-dense 8-byte stepping
+    constexpr int MAX_SECONDS_TOTAL = 36;
+    constexpr int MAX_SECONDS_PER_MODULE = 7;
+    constexpr size_t STEP_BYTES = 16;
     constexpr bool kScanAllModules = false;
 
     auto isGameModule = [](const std::string& name) -> bool {
@@ -39,16 +41,141 @@ inline void ScanConVars() {
             "engine2.dll",
             "server.dll",
             "tier0.dll",
-            "vstdlib.dll"
+            "vstdlib.dll",
+            "vstdlib_s64.dll",
+            "inputsystem.dll"
         };
         return kAllowed.find(name) != kAllowed.end();
     };
 
+    auto modulePriority = [](const std::string& name) -> int {
+        if (name == "tier0.dll") return 0;
+        if (name == "engine2.dll") return 1;
+        if (name == "client.dll") return 2;
+        if (name == "server.dll") return 3;
+        if (name == "cs2.exe") return 4;
+        return 5;
+    };
+
+    auto toLower = [](std::string value) -> std::string {
+        std::transform(value.begin(), value.end(), value.begin(), [](unsigned char c) {
+            return static_cast<char>(std::tolower(c));
+        });
+        return value;
+    };
+
+    auto startsWith = [](const std::string& value, const char* prefix) -> bool {
+        const size_t len = std::strlen(prefix);
+        return value.size() >= len && std::memcmp(value.data(), prefix, len) == 0;
+    };
+
+    auto isLikelyText = [](const std::string& value, size_t minLen, size_t maxLen) -> bool {
+        if (value.size() < minLen || value.size() > maxLen) return false;
+        int printable = 0;
+        for (unsigned char c : value) {
+            if ((c >= 32 && c <= 126) || c == '\t') {
+                ++printable;
+            }
+        }
+        return (printable * 100) / static_cast<int>(value.size()) >= 90;
+    };
+
+    auto tryReadLikelyString = [&](uintptr_t ptr, size_t maxLen, std::string& out) -> bool {
+        out.clear();
+        if (ptr < 0x10000) return false;
+        out = SafeReadCString(reinterpret_cast<const char*>(ptr), maxLen);
+        return isLikelyText(out, 1, maxLen);
+    };
+
+    auto isLikelyConVarName = [&](const std::string& rawName) -> bool {
+        if (rawName.size() < 3 || rawName.size() > 64) return false;
+        if (!std::isalpha(static_cast<unsigned char>(rawName[0]))) return false;
+        if (rawName.find('_') == std::string::npos) return false;
+        if (!std::all_of(rawName.begin(), rawName.end(), [](unsigned char c) {
+            return std::isalnum(c) || c == '_' || c == '.';
+        })) return false;
+
+        const std::string name = toLower(rawName);
+        static const char* kPrefixes[] = {
+            "sv_", "cl_", "mp_", "net_", "ui_", "bot_", "spec_", "r_", "snd_", "mat_",
+            "host_", "debug_", "developer_", "fps_", "engine_", "physics_", "weapon_",
+            "game_", "hud_", "voice_", "con_", "dsp_", "joy_", "mouse_", "sens_",
+            "crosshair_", "player_", "tv_", "demo_", "replay_", "steam_", "css_",
+            "rate_", "mm_", "volume_", "cam_", "viewmodel_", "zoom_", "radar_"
+        };
+        for (const char* p : kPrefixes) {
+            if (startsWith(name, p)) return true;
+        }
+        return false;
+    };
+
+    auto getSectionScanRanges = [&](const ModuleInfo& mod) -> std::vector<std::pair<uintptr_t, size_t>> {
+        std::vector<std::pair<uintptr_t, size_t>> ranges;
+
+        if (!IsSafeToRead(reinterpret_cast<void*>(mod.base), 0x1000)) {
+            return ranges;
+        }
+
+        IMAGE_DOS_HEADER dos{};
+        if (!SafeRead(mod.base, dos) || dos.e_magic != IMAGE_DOS_SIGNATURE) {
+            return ranges;
+        }
+
+        const uintptr_t ntAddr = mod.base + static_cast<uintptr_t>(dos.e_lfanew);
+        if (!IsSafeToRead(reinterpret_cast<void*>(ntAddr), 0x200)) {
+            return ranges;
+        }
+
+#if defined(_WIN64)
+        using NtHeadersT = IMAGE_NT_HEADERS64;
+#else
+        using NtHeadersT = IMAGE_NT_HEADERS32;
+#endif
+        NtHeadersT nt{};
+        if (!SafeRead(ntAddr, nt) || nt.Signature != IMAGE_NT_SIGNATURE) {
+            return ranges;
+        }
+
+        const uintptr_t sectionAddr = ntAddr + sizeof(uint32_t) + sizeof(IMAGE_FILE_HEADER) + nt.FileHeader.SizeOfOptionalHeader;
+        const WORD sectionCount = nt.FileHeader.NumberOfSections;
+
+        for (WORD i = 0; i < sectionCount; ++i) {
+            IMAGE_SECTION_HEADER sec{};
+            if (!SafeRead(sectionAddr + static_cast<uintptr_t>(i) * sizeof(IMAGE_SECTION_HEADER), sec)) {
+                continue;
+            }
+
+            const DWORD ch = sec.Characteristics;
+            const bool isExecutable = (ch & IMAGE_SCN_MEM_EXECUTE) != 0;
+            const bool isDataLike = (ch & IMAGE_SCN_CNT_INITIALIZED_DATA) != 0 || (ch & IMAGE_SCN_MEM_WRITE) != 0;
+            if (isExecutable || !isDataLike) {
+                continue;
+            }
+
+            const size_t rawSize = static_cast<size_t>((std::max)(sec.SizeOfRawData, sec.Misc.VirtualSize));
+            if (rawSize < 0x100) {
+                continue;
+            }
+
+            uintptr_t start = mod.base + static_cast<uintptr_t>(sec.VirtualAddress);
+            size_t size = rawSize;
+            if (start < mod.base || start >= mod.base + mod.size) {
+                continue;
+            }
+            if (start + size > mod.base + mod.size) {
+                size = static_cast<size_t>((mod.base + mod.size) - start);
+            }
+            if (size >= 0x100 && IsSafeToRead(reinterpret_cast<void*>(start), std::min<size_t>(size, 0x1000))) {
+                ranges.emplace_back(start, size);
+            }
+        }
+
+        return ranges;
+    };
+
     auto startTime = std::chrono::steady_clock::now();
     int modulesScanned = 0;
-
-    // ConVars are typically found in tier0.dll or through the ConVar vtable
-    // Pattern: ConVar name string followed by default value and description
+    bool stopAllScanning = false;
 
     std::vector<const ModuleInfo*> orderedModules;
     orderedModules.reserve(g_Modules.size());
@@ -60,6 +187,10 @@ inline void ScanConVars() {
             if (!isGameModule(mod.name)) orderedModules.push_back(&mod);
         }
     }
+    std::stable_sort(orderedModules.begin(), orderedModules.end(),
+        [&](const ModuleInfo* a, const ModuleInfo* b) {
+            return modulePriority(a->name) < modulePriority(b->name);
+        });
 
     auto isPtrInGameModules = [&](uintptr_t ptr) -> bool {
         for (const auto& mod : g_Modules) {
@@ -71,7 +202,12 @@ inline void ScanConVars() {
         return false;
     };
 
+    std::unordered_set<std::string> seenNameModule;
+
     for (const auto* modPtr : orderedModules) {
+        if (stopAllScanning) {
+            break;
+        }
         const auto& mod = *modPtr;
         const auto moduleStart = std::chrono::steady_clock::now();
         auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(
@@ -87,156 +223,149 @@ inline void ScanConVars() {
 
         if (!kScanAllModules && !isGameModule(mod.name)) continue;
 
-        uint8_t* base = reinterpret_cast<uint8_t*>(mod.base);
-        if (!base) continue;
-
-        size_t scanLimit = mod.size;
-        if (scanLimit > MAX_SCAN_BYTES_PER_MODULE) {
-            scanLimit = MAX_SCAN_BYTES_PER_MODULE;
-            g_Logger.Warning("ConVars", mod.name + ": Limited scan to 64MB");
+        std::vector<std::pair<uintptr_t, size_t>> ranges = getSectionScanRanges(mod);
+        if (ranges.empty()) {
+            size_t fallbackSize = std::min<size_t>(mod.size, MAX_SCAN_BYTES_PER_MODULE);
+            if (fallbackSize > 0x100) {
+                ranges.emplace_back(mod.base, fallbackSize);
+            }
+        }
+        if (ranges.empty()) {
+            continue;
         }
 
-        // Scan for ConVar name strings directly
-        // CS2 ConVars don't have traditional vtables - they use 160-byte structures
-        if (scanLimit <= 0x100) continue;
-
         int foundInModule = 0;
-        for (size_t offset = 0; offset <= (scanLimit - 0x20); offset += STEP_BYTES) {
-            if ((offset & 0x7FFFF) == 0) {
+        size_t bytesScannedInModule = 0;
+        bool moduleTimedOut = false;
+        bool globalTimedOut = false;
+        for (const auto& [rangeStart, rangeSize] : ranges) {
+            if (moduleTimedOut || globalTimedOut) {
+                break;
+            }
+            if (rangeSize <= 0x20) {
+                continue;
+            }
+            uint8_t* base = reinterpret_cast<uint8_t*>(rangeStart);
+            if (!base) continue;
+
+            const size_t scanLimit = std::min<size_t>(rangeSize, MAX_SCAN_BYTES_PER_MODULE);
+            if (scanLimit <= 0x20) continue;
+
+            for (size_t offset = 0; offset <= (scanLimit - 0x20); offset += STEP_BYTES) {
                 auto globalElapsed = std::chrono::duration_cast<std::chrono::seconds>(
                     std::chrono::steady_clock::now() - startTime);
                 if (globalElapsed.count() >= MAX_SECONDS_TOTAL) {
-                    g_Logger.Warning("ConVars", mod.name + ": watchdog timeout inside module");
+                    g_Logger.Warning("ConVars", mod.name + ": global watchdog timeout");
+                    globalTimedOut = true;
                     break;
                 }
                 auto moduleElapsed = std::chrono::duration_cast<std::chrono::seconds>(
                     std::chrono::steady_clock::now() - moduleStart);
                 if (moduleElapsed.count() >= MAX_SECONDS_PER_MODULE) {
                     g_Logger.Warning("ConVars", mod.name + ": per-module watchdog timeout");
+                    moduleTimedOut = true;
                     break;
                 }
-            }
 
-            if (!IsSafeToRead(base + offset, 0x60)) continue;
+                if (!IsSafeToRead(base + offset, 0x60)) continue;
+                bytesScannedInModule += STEP_BYTES;
 
-            // Try reading as a pointer to string (potential ConVar name)
-            uintptr_t possibleName = 0;
-            if (!ReadPtr(reinterpret_cast<uintptr_t>(base + offset), possibleName)) continue;
-            if (possibleName < 0x10000) continue;
+                uintptr_t possibleName = 0;
+                if (!ReadPtr(reinterpret_cast<uintptr_t>(base + offset), possibleName)) continue;
 
-            // Try to read name string
-            std::string name = SafeReadCString(reinterpret_cast<const char*>(possibleName), 64);
+                std::string name;
+                if (!tryReadLikelyString(possibleName, 64, name)) continue;
+                if (!isLikelyConVarName(name)) continue;
 
-            // ConVar names typically start with sv_, cl_, mp_, or other prefixes
-            if (name.empty() || name.length() < 3 || name.length() > 64) continue;
-            if (name.find("_") == std::string::npos) continue;
-            if (!std::isalpha(static_cast<unsigned char>(name[0]))) continue;
-            if (!std::all_of(name.begin(), name.end(), [](unsigned char c) {
-                return std::isalnum(c) || c == '_' || c == '.';
-            })) continue;
+                const std::string key = mod.name + "::" + name;
+                if (seenNameModule.find(key) != seenNameModule.end()) continue;
 
-            // Check for common prefixes (comprehensive list)
-            bool hasPrefix = (
-                name.substr(0, 3) == "sv_" || name.substr(0, 3) == "cl_" ||
-                name.substr(0, 3) == "mp_" || name.substr(0, 4) == "net_" ||
-                name.substr(0, 3) == "ui_" || name.substr(0, 4) == "bot_" ||
-                name.substr(0, 5) == "spec_" || name.substr(0, 2) == "r_" ||
-                name.substr(0, 4) == "snd_" || name.substr(0, 4) == "mat_" ||
-                name.substr(0, 5) == "host_" || name.substr(0, 6) == "debug_" ||
-                name.substr(0, 10) == "developer_" || name.substr(0, 4) == "fps_" ||
-                name.substr(0, 7) == "engine_" || name.substr(0, 8) == "physics_" ||
-                name.substr(0, 7) == "weapon_" || name.substr(0, 5) == "game_" ||
-                name.substr(0, 4) == "hud_" || name.substr(0, 6) == "voice_" ||
-                name.substr(0, 4) == "con_" || name.substr(0, 4) == "dsp_" ||
-                name.substr(0, 4) == "joy_" || name.substr(0, 6) == "mouse_" ||
-                name.substr(0, 5) == "sens_" || name.substr(0, 10) == "crosshair_" ||
-                name.substr(0, 7) == "player_" || name.substr(0, 3) == "tv_" ||
-                name.substr(0, 5) == "demo_" || name.substr(0, 7) == "replay_" ||
-                name.substr(0, 6) == "steam_" || name.substr(0, 4) == "css_" ||
-                name.substr(0, 5) == "rate_" || name.substr(0, 3) == "mm_"
-            );
+                int bestScore = -1;
+                uintptr_t bestStruct = reinterpret_cast<uintptr_t>(base + offset);
+                std::string bestDefault;
+                std::string bestDescription;
 
-            if (hasPrefix && name.find(" ") == std::string::npos) {
-                // Verify this looks like a real ConVar by checking nearby structure
-                // In CS2, ConVars are 160-byte structures. Try to find the structure start.
-                bool validConVar = false;
-                uintptr_t structAddrCandidate = 0;
-                
-                // Check if this could be within a ConVar structure
-                // Try reading potential value/default value fields
-                for (int backOffset = 0; backOffset <= 0x40; backOffset += 8) {
-                    if (offset < (size_t)backOffset) continue;
-                    
-                    uintptr_t structAddr = reinterpret_cast<uintptr_t>(base + offset - backOffset);
-                    if (!IsSafeToRead(reinterpret_cast<void*>(structAddr), 0xA0)) continue;
-                    
-                    // Look for reasonable values that indicate a ConVar
-                    // Check various offsets for string pointers (default value, description)
-                    uintptr_t field1 = 0, field2 = 0;
-                    ReadPtr(structAddr + 0x10, field1);
-                    ReadPtr(structAddr + 0x18, field2);
-                    
-                    // If we find additional string pointers nearby, likely a ConVar
-                    if ((field1 > 0x10000 && field1 < 0x7FFF00000000) ||
-                        (field2 > 0x10000 && field2 < 0x7FFF00000000)) {
-                        validConVar = true;
-                        structAddrCandidate = structAddr;
-                        break;
+                for (int backOffset = 0; backOffset <= 0x60; backOffset += 8) {
+                    if (offset < static_cast<size_t>(backOffset)) continue;
+
+                    const uintptr_t structAddr = reinterpret_cast<uintptr_t>(base + offset - backOffset);
+                    if (!IsSafeToRead(reinterpret_cast<void*>(structAddr), 0x90)) continue;
+
+                    int score = 0;
+                    int textPtrCount = 0;
+                    bool hasNameReference = false;
+                    std::string candidateDefault;
+                    std::string candidateDescription;
+
+                    for (int fieldOffset = 0; fieldOffset <= 0x58; fieldOffset += 8) {
+                        uintptr_t fieldPtr = 0;
+                        if (!ReadPtr(structAddr + fieldOffset, fieldPtr)) continue;
+                        if (fieldPtr == possibleName) {
+                            hasNameReference = true;
+                            score += 2;
+                        }
+
+                        std::string text;
+                        if (!tryReadLikelyString(fieldPtr, 256, text)) continue;
+
+                        ++textPtrCount;
+                        if (text == name) {
+                            hasNameReference = true;
+                        } else if (candidateDefault.empty() &&
+                                   isLikelyText(text, 1, 64) &&
+                                   text.find(' ') == std::string::npos &&
+                                   text.find('\n') == std::string::npos) {
+                            candidateDefault = text;
+                        } else if (candidateDescription.empty() && isLikelyText(text, 8, 256)) {
+                            candidateDescription = text;
+                        }
+                    }
+
+                    if (hasNameReference) score += 3;
+                    if (textPtrCount >= 2) score += 2;
+                    if (!candidateDefault.empty()) score += 2;
+                    if (!candidateDescription.empty()) score += 2;
+                    if (isPtrInGameModules(possibleName)) score += 1;
+
+                    if (score > bestScore) {
+                        bestScore = score;
+                        bestStruct = structAddr;
+                        bestDefault = candidateDefault;
+                        bestDescription = candidateDescription;
                     }
                 }
-                
-                // Also accept if we just found the name (relaxed validation)
-                if (!validConVar) {
-                    // Check if the string pointer itself looks valid
-                    validConVar = isPtrInGameModules(possibleName) || (possibleName > 0x180000000);
-                    structAddrCandidate = reinterpret_cast<uintptr_t>(base + offset);
-                }
 
-                if (validConVar) {
-                    uintptr_t structAddr = structAddrCandidate ? structAddrCandidate
-                        : reinterpret_cast<uintptr_t>(base + offset);
+                if (bestScore >= 5) {
                     ConVar cv;
                     cv.name = name;
                     cv.module = mod.name;
-                    cv.address = structAddr;
+                    cv.address = bestStruct;
+                    cv.defaultValue = bestDefault;
+                    cv.description = bestDescription;
 
-                    // Try to read description at nearby offsets
-                    // In CS2 ConVar structure (160 bytes), description is usually at offset 0x30-0x40
-                    uintptr_t descPtr = 0;
-                    for (int descOffset = 0x28; descOffset <= 0x48; descOffset += 8) {
-                        if (ReadPtr(structAddr + descOffset, descPtr) && descPtr > 0x10000) {
-                            std::string desc = SafeReadCString(reinterpret_cast<const char*>(descPtr), 256);
-                            if (!desc.empty() && desc.length() < 256) {
-                                cv.description = desc;
-                                break;
-                            }
-                        }
-                    }
-                    
-                    // Try to read default value
-                    uintptr_t defaultPtr = 0;
-                    for (int valOffset = 0x10; valOffset <= 0x28; valOffset += 8) {
-                        if (ReadPtr(structAddr + valOffset, defaultPtr) && defaultPtr > 0x10000) {
-                            std::string val = SafeReadCString(reinterpret_cast<const char*>(defaultPtr), 64);
-                            if (!val.empty() && val.length() < 64) {
-                                cv.defaultValue = val;
-                                break;
-                            }
-                        }
-                    }
-
-                    g_ConVars.push_back(cv);
-                    foundInModule++;
+                    g_ConVars.push_back(std::move(cv));
+                    seenNameModule.insert(key);
+                    ++foundInModule;
 
                     if ((int)g_ConVars.size() >= MAX_TOTAL_RESULTS) {
                         break;
                     }
                 }
+
+                if (!kScanAllModules && foundInModule == 0 && bytesScannedInModule >= (12 * 1024 * 1024)) {
+                    // No signal in this module after a sizable pass; bail out early.
+                    break;
+                }
             }
         }
 
         modulesScanned++;
-        g_Logger.Info("ConVars", mod.name + ": candidates=" + std::to_string(foundInModule));
+        g_Logger.Info("ConVars", mod.name + ": candidates=" + std::to_string(foundInModule) +
+            ", scanned=" + std::to_string(bytesScannedInModule / 1024) + " KB");
+
+        if (globalTimedOut) {
+            stopAllScanning = true;
+        }
     }
 
     // Remove duplicates
@@ -261,7 +390,14 @@ inline void WriteConVarsJson() {
     for (size_t i = 0; i < g_ConVars.size(); i++) {
         auto& cv = g_ConVars[i];
         out << "    {\"name\":\"" << JsonEscape(cv.name) << "\",\"module\":\"" << JsonEscape(cv.module)
-            << "\",\"address\":\"0x" << std::hex << cv.address << std::dec << "\"}";
+            << "\",\"address\":\"0x" << std::hex << cv.address << std::dec << "\"";
+        if (!cv.defaultValue.empty()) {
+            out << ",\"default\":\"" << JsonEscape(cv.defaultValue) << "\"";
+        }
+        if (!cv.description.empty()) {
+            out << ",\"description\":\"" << JsonEscape(cv.description) << "\"";
+        }
+        out << "}";
         out << (i < g_ConVars.size() - 1 ? "," : "") << "\n";
     }
     out << "  ]\n}\n";
